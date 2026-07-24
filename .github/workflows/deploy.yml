@@ -19,6 +19,6 @@ jobs:
           REMOTE_USER: redkingt
           REMOTE_PORT: 22
           SOURCE: "./"
-          TARGET: "public_html/"
+          TARGET: "public_html/hosted/the-league/"
           EXCLUDE: "/.git/, /.github/, /.DS_Store, /Season Win Tracker 02282026.xlsx, /scripts/"
           ARGS: "-rlgoDzvc -i --delete"
