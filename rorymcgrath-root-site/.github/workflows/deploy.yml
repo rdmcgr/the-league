@@ -1,0 +1,35 @@
+name: Deploy Root Site to Bluehost
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      REMOTE_HOST: box5379.bluehost.com
+      REMOTE_USER: redkingt
+      REMOTE_PORT: 22
+      TARGET_PATH: public_html/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Configure SSH
+        env:
+          BLUEHOST_SSH_KEY: ${{ secrets.BLUEHOST_SSH_KEY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$BLUEHOST_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p "$REMOTE_PORT" "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+      - name: Sync root site to Bluehost
+        run: |
+          rsync -rlgoDzvc --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.DS_Store' \
+            -e "ssh -i ~/.ssh/id_rsa -p $REMOTE_PORT" \
+            ./ "$REMOTE_USER@$REMOTE_HOST:$TARGET_PATH"
