@@ -1,0 +1,890 @@
+const state = {
+  data: null,
+  sortKey: 'team',
+  sortDir: 'asc',
+  winsMetric: 'last3Total',
+  pointsMetric: 'last3Avg',
+  trophyMetric: 'weighted',
+  selectedTeam: null,
+};
+
+const TEAM_COLORS = {
+  'Rory M.': '#ff8c1a',
+  'Rich S.': '#4da3ff',
+  'Kevin E.': '#f2c14e',
+  'Dan F.': '#40c57e',
+  'Mike L.': '#b88cff',
+  'Kevin L.': '#23c9d6',
+  'Nick P.': '#f26ca7',
+  'Adam D.': '#a5d96a',
+  'Paul L.': '#ff5a5f',
+  'Nikki T.': '#c0cad8',
+};
+
+const teamColor = (name) => TEAM_COLORS[name] || '#dbe5f2';
+
+const fmtPct = (n) => (n == null ? '-' : (n * 100).toFixed(1) + '%');
+const fmtNum = (n, d = 0) => (n == null ? '-' : Number(n).toFixed(d));
+
+function initTabs() {
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      panels.forEach((p) => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+function sortedAllTime() {
+  const items = [...state.data.allTime];
+  const dir = state.sortDir === 'asc' ? 1 : -1;
+  return items.sort((a, b) => {
+    const av = a[state.sortKey];
+    const bv = b[state.sortKey];
+    if (typeof av === 'string') return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+}
+
+function renderAllTimeTable() {
+  const tbody = document.querySelector('#all-time-table tbody');
+  tbody.innerHTML = sortedAllTime()
+    .map(
+      (r) => `<tr><td>${r.team}</td><td>${r.wins}</td><td>${r.losses}</td><td>${fmtPct(r.winPct)}</td></tr>`,
+    )
+    .join('');
+}
+
+function initAllTimeEvents() {
+  document.querySelectorAll('#all-time-table th[data-sort]').forEach((th) => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (state.sortKey === key) state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+      else {
+        state.sortKey = key;
+        state.sortDir = 'desc';
+      }
+      renderAllTimeTable();
+    });
+  });
+}
+
+function renderTrophyMini() {
+  const list = [...state.data.trophies]
+    .filter((t) => t.weighted >= 10)
+    .sort((a, b) => b.weighted - a.weighted);
+  const header = '<div class="mini-row mini-head"><span>Team</span><span>Weighted Trophy Count</span></div>';
+  const rows = list
+    .map((t) => `<div class="mini-row"><span>${t.team}</span><span>${t.weighted}</span></div>`)
+    .join('');
+  document.getElementById('trophy-mini').innerHTML = `${header}${rows}`;
+}
+
+function renderChampionshipMini() {
+  const list = [...state.data.trophies]
+    .filter((t) => t.first >= 2)
+    .sort((a, b) => b.first - a.first || a.team.localeCompare(b.team));
+  const header = '<div class="mini-row mini-head"><span>Team</span><span>Years</span><span>Total</span></div>';
+  const rows = list
+    .map((t) => {
+      const years = t.years?.first || '-';
+      return `<div class="mini-row"><span>${t.team}</span><span>${years}</span><span>${t.first}</span></div>`;
+    })
+    .join('');
+  document.getElementById('championship-mini').innerHTML = `${header}${rows}`;
+}
+
+function parseYearList(text) {
+  if (!text) return [];
+  return String(text)
+    .split(',')
+    .map((s) => Number(s.trim()))
+    .filter((n) => Number.isFinite(n));
+}
+
+function renderCurrentChampion() {
+  const seasons = state.data.trophies.flatMap((t) =>
+    parseYearList(t.years?.first).map((year) => ({ team: t.team, year })),
+  );
+  const holder = document.getElementById('current-champion');
+
+  if (!seasons.length) {
+    holder.innerHTML = '<div class="small">No championship year data found.</div>';
+    return;
+  }
+
+  const latestYear = Math.max(...seasons.map((s) => s.year));
+  const champs = seasons.filter((s) => s.year === latestYear).map((s) => s.team);
+  const displayChamps = champs.map((name) => (name === 'Nikki T.' ? `${name} 🏆` : name));
+  const championPhoto =
+    latestYear === 2025
+      ? '<figure class="champion-photo-wrap"><img class="champion-photo" src="./images/nikki-2025-champion.JPG" alt="2025 Champion" loading="lazy" /></figure>'
+      : '';
+  holder.innerHTML = `<div class="champion-name">${displayChamps.join(', ')}</div><div class="small">Champion${champs.length > 1 ? 's' : ''} of the ${latestYear} season</div>${championPhoto}`;
+}
+
+function renderWinsTable() {
+  const table = document.getElementById('wins-table');
+  const legend = document.getElementById('wins-legend');
+  const years = [...state.data.years].reverse();
+  const rows = [...state.data.yearlyWins].sort((a, b) => b.wins.reduce((s, n) => s + n, 0) - a.wins.reduce((s, n) => s + n, 0));
+  const valuesByYear = years.map((_, idx) => rows.map((r) => [...r.wins].reverse()[idx]));
+  const rangeByYear = valuesByYear.map((vals) => ({ min: Math.min(...vals), max: Math.max(...vals) }));
+
+  legend.innerHTML =
+    '<span>Low</span><span class="heat-scale"></span><span>High</span><span class="small">(relative to each year)</span>';
+
+  const head = `<thead><tr><th>Team</th>${years.map((y) => `<th>${y}</th>`).join('')}</tr></thead>`;
+  const body = `<tbody>${rows
+    .map((r) => {
+      const winsDesc = [...r.wins].reverse();
+      return `<tr><td>${r.team}</td>${winsDesc
+        .map((w, i) => {
+          if (w === 0) {
+            return `<td style="background:transparent; color:#9aa8bb; font-weight:700">${w}</td>`;
+          }
+          const { min, max } = rangeByYear[i];
+          const ratio = max === min ? 0.5 : (w - min) / (max - min);
+          const hue = 355 - ratio * 225;
+          const lightness = 17 + ratio * 24;
+          const bg = `hsl(${hue.toFixed(1)} 68% ${lightness.toFixed(1)}%)`;
+          const text = ratio > 0.55 ? '#08120b' : '#f4f7fb';
+          return `<td style="background:${bg}; color:${text}; font-weight:700">${w}</td>`;
+        })
+        .join('')}</tr>`;
+    })
+    .join('')}</tbody>`;
+  table.innerHTML = head + body;
+}
+
+function renderWinsBarChart() {
+  const container = document.getElementById('wins-bar-chart');
+  if (!container) return;
+
+  const years = state.data.years || [];
+  const yearIdx = new Map(years.map((y, i) => [y, i]));
+  const rangeYears = state.winsMetric === 'last3Total' ? [2023, 2024, 2025] : [2020, 2021, 2022, 2023, 2024, 2025];
+
+  const rows = state.data.yearlyWins
+    .map((r) => ({
+      team: r.team,
+      total: rangeYears.reduce((sum, y) => sum + (r.wins[yearIdx.get(y)] || 0), 0),
+    }))
+    .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
+
+  renderHorizontalBarChart(
+    container,
+    rows.map((r) => ({ team: r.team, value: r.total })),
+    'value',
+    'count',
+  );
+}
+
+function renderWinsLeaders() {
+  const holder = document.getElementById('wins-leaders');
+  if (!holder) return;
+
+  const years = state.data.years || [];
+  const yearIdx = new Map(years.map((y, i) => [y, i]));
+  const totalSince2020 = state.data.yearlyWins
+    .map((r) => ({
+      team: r.team,
+      total: [2020, 2021, 2022, 2023, 2024, 2025].reduce((sum, y) => sum + (r.wins[yearIdx.get(y)] || 0), 0),
+    }))
+    .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
+  const totalLast3 = state.data.yearlyWins
+    .map((r) => ({
+      team: r.team,
+      total: [2023, 2024, 2025].reduce((sum, y) => sum + (r.wins[yearIdx.get(y)] || 0), 0),
+    }))
+    .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
+
+  const since2020Leader = totalSince2020[0];
+  const last3Leader = totalLast3[0];
+  const since2020Leaders = totalSince2020.filter((r) => r.total === since2020Leader?.total);
+  const last3Leaders = totalLast3.filter((r) => r.total === last3Leader?.total);
+  const formatColoredNames = (leaders) =>
+    leaders.map((r) => `<span style="color:${teamColor(r.team)}">${r.team}</span>`).join(', ');
+  const since2020Names = formatColoredNames(since2020Leaders);
+  const last3Names = formatColoredNames(last3Leaders);
+  holder.innerHTML =
+    since2020Leader && last3Leader
+      ? `<span class="leader-chip">Most Wins Since 2020: ${since2020Names} (${since2020Leader.total})</span><span class="leader-sep">|</span><span class="leader-chip">Most Wins Last 3 Years: ${last3Names} (${last3Leader.total})</span>`
+      : '<span class="small">Wins leaders unavailable with current data.</span>';
+}
+
+function makeSvg(width, height) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  return svg;
+}
+
+function renderHorizontalBarChart(container, rows, valueKey, mode = 'count') {
+  const width = Math.max(container.clientWidth - 20, 520);
+  const rowH = 28;
+  const height = Math.max(200, rows.length * rowH + 28);
+  const m = { t: 14, r: 52, b: 12, l: 96 };
+  const chartW = width - m.l - m.r;
+  const maxV = Math.max(1, ...rows.map((r) => Number(r[valueKey]) || 0));
+  const svg = makeSvg(width, height);
+
+  rows.forEach((r, i) => {
+    const y = m.t + i * rowH;
+    const v = Number(r[valueKey]) || 0;
+    const w = (v / maxV) * chartW;
+
+    const team = document.createElementNS(svg.namespaceURI, 'text');
+    team.setAttribute('x', 8);
+    team.setAttribute('y', y + 14);
+    team.setAttribute('fill', '#dbe5f2');
+    team.setAttribute('font-size', '11');
+    team.textContent = r.team;
+    svg.appendChild(team);
+
+    const rect = document.createElementNS(svg.namespaceURI, 'rect');
+    rect.setAttribute('x', m.l);
+    rect.setAttribute('y', y + 4);
+    rect.setAttribute('width', Math.max(2, w));
+    rect.setAttribute('height', 14);
+    rect.setAttribute('rx', '4');
+    rect.setAttribute('fill', teamColor(r.team));
+    svg.appendChild(rect);
+
+    const val = document.createElementNS(svg.namespaceURI, 'text');
+    val.setAttribute('x', Math.min(width - m.r + 4, m.l + w + 6));
+    val.setAttribute('y', y + 15);
+    val.setAttribute('fill', '#dbe5f2');
+    val.setAttribute('font-size', '10');
+    val.textContent = mode === 'count' ? `${Math.round(v)}` : fmtNum(v, 1);
+    svg.appendChild(val);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function renderLineChart(containerId = 'line-chart') {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const isMobile = window.innerWidth <= 700;
+  const width = Math.max(container.clientWidth - 20, 520);
+  const height = isMobile ? 240 : 320;
+  const m = isMobile ? { t: 12, r: 14, b: 28, l: 40 } : { t: 16, r: 18, b: 40, l: 48 };
+  const chartW = width - m.l - m.r;
+  const chartH = height - m.t - m.b;
+
+  const years = state.data.years;
+  const series = state.data.cumulativeWins.find((s) => s.team === state.selectedTeam) || state.data.cumulativeWins[0];
+  const maxY = Math.max(...series.totals) + 5;
+
+  const x = (i) => m.l + (i / (years.length - 1)) * chartW;
+  const y = (v) => m.t + (1 - v / maxY) * chartH;
+
+  const svg = makeSvg(width, height);
+
+  for (let g = 0; g <= 5; g += 1) {
+    const gy = m.t + (g / 5) * chartH;
+    const line = document.createElementNS(svg.namespaceURI, 'line');
+    line.setAttribute('x1', m.l);
+    line.setAttribute('x2', width - m.r);
+    line.setAttribute('y1', gy);
+    line.setAttribute('y2', gy);
+    line.setAttribute('stroke', '#2a3443');
+    line.setAttribute('stroke-width', '1');
+    svg.appendChild(line);
+
+    const val = document.createElementNS(svg.namespaceURI, 'text');
+    val.setAttribute('x', 8);
+    val.setAttribute('y', gy + 4);
+    val.setAttribute('fill', '#9aa8bb');
+    val.setAttribute('font-size', '11');
+    val.textContent = Math.round(maxY * (1 - g / 5));
+    svg.appendChild(val);
+  }
+
+  let pathData = '';
+  series.totals.forEach((v, i) => {
+    pathData += `${i === 0 ? 'M' : 'L'} ${x(i)} ${y(v)} `;
+  });
+
+  const path = document.createElementNS(svg.namespaceURI, 'path');
+  path.setAttribute('d', pathData.trim());
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', teamColor(series.team));
+  path.setAttribute('stroke-width', '4');
+  svg.appendChild(path);
+
+  series.totals.forEach((v, i) => {
+    const c = document.createElementNS(svg.namespaceURI, 'circle');
+    c.setAttribute('cx', x(i));
+    c.setAttribute('cy', y(v));
+    c.setAttribute('r', 3.5);
+    c.setAttribute('fill', teamColor(series.team));
+    svg.appendChild(c);
+
+    if (i % 2 === 0 || i === years.length - 1) {
+      const tx = document.createElementNS(svg.namespaceURI, 'text');
+      tx.setAttribute('x', x(i) - 12);
+      tx.setAttribute('y', height - 12);
+      tx.setAttribute('fill', '#9aa8bb');
+      tx.setAttribute('font-size', '10');
+      tx.textContent = years[i];
+      svg.appendChild(tx);
+    }
+  });
+
+  const label = document.createElementNS(svg.namespaceURI, 'text');
+  label.setAttribute('x', m.l + 8);
+  label.setAttribute('y', m.t + 16);
+  label.setAttribute('fill', '#f4f7fb');
+  label.setAttribute('font-size', '14');
+  label.setAttribute('font-weight', '700');
+  label.textContent = `${series.team} | ${series.totals[series.totals.length - 1]} wins`;
+  svg.appendChild(label);
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function initTeamSelects() {
+  const teams = state.data.cumulativeWins.map((s) => s.team);
+  state.selectedTeam = state.selectedTeam || teams[0];
+  ['wins-team-select'].forEach((id) => {
+    const select = document.getElementById(id);
+    if (!select) return;
+    select.innerHTML = teams.map((t) => `<option value="${t}">${t}</option>`).join('');
+    select.value = state.selectedTeam;
+    select.onchange = () => {
+      state.selectedTeam = select.value;
+      ['wins-team-select'].forEach((otherId) => {
+        const other = document.getElementById(otherId);
+        if (other) other.value = state.selectedTeam;
+      });
+      renderLineChart('wins-line-chart');
+    };
+  });
+}
+
+function renderRollingChart() {
+  const container = document.getElementById('rolling-chart');
+  if (!container) return;
+  const width = Math.max(container.clientWidth - 20, 650);
+  const height = 340;
+  const m = { t: 20, r: 18, b: 42, l: 48 };
+  const chartW = width - m.l - m.r;
+  const chartH = height - m.t - m.b;
+
+  const years = state.data.years || [];
+  if (years.length < 3) {
+    container.innerHTML = '<div class="small">Not enough years for rolling window.</div>';
+    return;
+  }
+  const fullRollingYears = years.slice(2);
+  const firstShownYear = 2020;
+  const startIdx = Math.max(0, fullRollingYears.findIndex((y) => y >= firstShownYear));
+  const rollingYears = fullRollingYears.slice(startIdx);
+  const seasonGames = 14;
+  const series = state.data.yearlyWins.map((team) => ({
+    team: team.team,
+    values: team.wins
+      .slice(2)
+      .map((_, i) => (team.wins[i] + team.wins[i + 1] + team.wins[i + 2]) / (3 * seasonGames))
+      .slice(startIdx),
+  }));
+
+  const x = (i) => m.l + (i / (rollingYears.length - 1 || 1)) * chartW;
+  const y = (v) => m.t + (1 - v) * chartH;
+  const svg = makeSvg(width, height);
+
+  [0, 0.25, 0.5, 0.75, 1].forEach((tick) => {
+    const gy = y(tick);
+    const line = document.createElementNS(svg.namespaceURI, 'line');
+    line.setAttribute('x1', m.l);
+    line.setAttribute('x2', width - m.r);
+    line.setAttribute('y1', gy);
+    line.setAttribute('y2', gy);
+    line.setAttribute('stroke', '#2a3443');
+    line.setAttribute('stroke-width', '1');
+    svg.appendChild(line);
+
+    const lbl = document.createElementNS(svg.namespaceURI, 'text');
+    lbl.setAttribute('x', 8);
+    lbl.setAttribute('y', gy + 4);
+    lbl.setAttribute('fill', '#9aa8bb');
+    lbl.setAttribute('font-size', '11');
+    lbl.textContent = `${Math.round(tick * 100)}%`;
+    svg.appendChild(lbl);
+  });
+
+  series.forEach((s) => {
+    let pathData = '';
+    s.values.forEach((v, i) => {
+      pathData += `${i === 0 ? 'M' : 'L'} ${x(i)} ${y(v)} `;
+    });
+    const path = document.createElementNS(svg.namespaceURI, 'path');
+    path.setAttribute('d', pathData.trim());
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', teamColor(s.team));
+    path.setAttribute('stroke-width', '2.5');
+    svg.appendChild(path);
+  });
+
+  rollingYears.forEach((yr, i) => {
+    if (i % 2 !== 0 && i !== rollingYears.length - 1) return;
+    const tx = document.createElementNS(svg.namespaceURI, 'text');
+    tx.setAttribute('x', x(i) - 12);
+    tx.setAttribute('y', height - 12);
+    tx.setAttribute('fill', '#9aa8bb');
+    tx.setAttribute('font-size', '10');
+    tx.textContent = yr;
+    svg.appendChild(tx);
+  });
+
+  const latest = [...series].sort((a, b) => b.values[b.values.length - 1] - a.values[a.values.length - 1]);
+  latest.forEach((s, i) => {
+    const ly = m.t + 12 + i * 14;
+    const line = document.createElementNS(svg.namespaceURI, 'line');
+    line.setAttribute('x1', width - m.r - 180);
+    line.setAttribute('x2', width - m.r - 166);
+    line.setAttribute('y1', ly - 4);
+    line.setAttribute('y2', ly - 4);
+    line.setAttribute('stroke', teamColor(s.team));
+    line.setAttribute('stroke-width', '3');
+    svg.appendChild(line);
+
+    const txt = document.createElementNS(svg.namespaceURI, 'text');
+    txt.setAttribute('x', width - m.r - 160);
+    txt.setAttribute('y', ly);
+    txt.setAttribute('fill', '#dbe5f2');
+    txt.setAttribute('font-size', '11');
+    txt.textContent = `${s.team} ${fmtPct(s.values[s.values.length - 1])}`;
+    svg.appendChild(txt);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function renderYoYChart() {
+  const container = document.getElementById('yoy-chart');
+  if (!container) return;
+  const years = state.data.years || [];
+  if (years.length < 2) {
+    container.innerHTML = '<div class="small">Not enough years for year-over-year comparison.</div>';
+    return;
+  }
+
+  const prevYear = years[years.length - 2];
+  const currYear = years[years.length - 1];
+  document.getElementById('yoy-title').textContent = `Year-over-Year Win Change (${currYear} vs ${prevYear})`;
+
+  const rows = state.data.yearlyWins
+    .map((r) => ({
+      team: r.team,
+      delta: r.wins[years.length - 1] - r.wins[years.length - 2],
+    }))
+    .sort((a, b) => b.delta - a.delta || a.team.localeCompare(b.team));
+
+  const isMobile = window.innerWidth <= 700;
+  const width = Math.max(container.clientWidth - 20, 650);
+  const height = isMobile ? 240 : 300;
+  const m = isMobile ? { t: 14, r: 14, b: 46, l: 40 } : { t: 20, r: 18, b: 80, l: 44 };
+  const chartW = width - m.l - m.r;
+  const chartH = height - m.t - m.b;
+  const maxAbs = Math.max(1, ...rows.map((r) => Math.abs(r.delta)));
+  const svg = makeSvg(width, height);
+  const barW = chartW / rows.length;
+  const zeroY = m.t + chartH / 2;
+
+  const zeroLine = document.createElementNS(svg.namespaceURI, 'line');
+  zeroLine.setAttribute('x1', m.l);
+  zeroLine.setAttribute('x2', width - m.r);
+  zeroLine.setAttribute('y1', zeroY);
+  zeroLine.setAttribute('y2', zeroY);
+  zeroLine.setAttribute('stroke', '#6d7b8f');
+  zeroLine.setAttribute('stroke-width', '1.2');
+  svg.appendChild(zeroLine);
+
+  rows.forEach((r, i) => {
+    const h = (Math.abs(r.delta) / maxAbs) * (chartH / 2 - 8);
+    const x = m.l + i * barW + 6;
+    const y = r.delta >= 0 ? zeroY - h : zeroY;
+    const rect = document.createElementNS(svg.namespaceURI, 'rect');
+    rect.setAttribute('x', x);
+    rect.setAttribute('y', y);
+    rect.setAttribute('width', Math.max(barW - 10, 10));
+    rect.setAttribute('height', h);
+    rect.setAttribute('fill', r.delta >= 0 ? '#38c172' : '#d64550');
+    rect.setAttribute('rx', '3');
+    svg.appendChild(rect);
+
+    const tv = document.createElementNS(svg.namespaceURI, 'text');
+    tv.setAttribute('x', x + 2);
+    tv.setAttribute('y', r.delta >= 0 ? y - 3 : y + h + 12);
+    tv.setAttribute('fill', '#dbe5f2');
+    tv.setAttribute('font-size', '10');
+    tv.textContent = r.delta > 0 ? `+${r.delta}` : `${r.delta}`;
+    svg.appendChild(tv);
+
+    const tl = document.createElementNS(svg.namespaceURI, 'text');
+    tl.setAttribute('x', x);
+    tl.setAttribute('y', height - 18);
+    tl.setAttribute('fill', '#9aa8bb');
+    tl.setAttribute('font-size', '10');
+    tl.setAttribute('transform', `rotate(30 ${x} ${height - 18})`);
+    tl.textContent = r.team;
+    svg.appendChild(tl);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function renderRankTable() {
+  const table = document.getElementById('rank-table');
+  if (!table) return;
+  const allYears = state.data.years || [];
+  const years = allYears.filter((y) => y >= 2022 && y <= 2025).sort((a, b) => b - a);
+  const teams = state.data.yearlyWins.map((r) => r.team).sort((a, b) => a.localeCompare(b));
+  const yearIndexMap = new Map(allYears.map((y, i) => [y, i]));
+
+  const ranksByYear = years.map((_, idx) => {
+    const sourceIdx = yearIndexMap.get(years[idx]);
+    const ordered = [...state.data.yearlyWins]
+      .map((r) => ({
+        team: r.team,
+        wins:
+          (r.wins[sourceIdx] || 0) +
+          (r.wins[sourceIdx - 1] || 0) +
+          (r.wins[sourceIdx - 2] || 0),
+      }))
+      .sort((a, b) => b.wins - a.wins || a.team.localeCompare(b.team));
+    const rankMap = {};
+    ordered.forEach((r, i) => {
+      rankMap[r.team] = i + 1;
+    });
+    return rankMap;
+  });
+
+  const head = `<thead><tr><th>Team</th><th>Change</th>${years.map((y) => `<th>${y}</th>`).join('')}</tr></thead>`;
+  const body = `<tbody>${teams
+    .map((team) => {
+      const rowRanks = ranksByYear.map((m) => m[team]);
+      const change = rowRanks[rowRanks.length - 1] - rowRanks[0];
+      const changeText = change > 0 ? `+${change}` : `${change}`;
+      const changeColor = change > 0 ? '#38c172' : change < 0 ? '#d64550' : '#9aa8bb';
+      return `<tr><td>${team}</td><td style="color:${changeColor}; font-weight:700">${changeText}</td>${rowRanks.map((r) => `<td>${r}</td>`).join('')}</tr>`;
+    })
+    .join('')}</tbody>`;
+  table.innerHTML = head + body;
+}
+
+function renderPointsRankTable() {
+  const table = document.getElementById('rank-points-table');
+  if (!table) return;
+  const allYears = state.data.years || [];
+  const years = allYears.filter((y) => y >= 2022 && y <= 2025).sort((a, b) => b - a);
+  const teams = state.data.yearlyWins.map((r) => r.team).sort((a, b) => a.localeCompare(b));
+
+  const pointsByTeamYear = {};
+  state.data.points.forEach((p) => {
+    const byYear = {};
+    (p.byYear || []).forEach((entry) => {
+      byYear[entry.year] = Number(entry.points) || 0;
+    });
+    pointsByTeamYear[p.team] = byYear;
+  });
+
+  const ranksByYear = years.map((year) => {
+    const ordered = teams
+      .map((team) => {
+        const byYear = pointsByTeamYear[team] || {};
+        const total = (byYear[year] || 0) + (byYear[year - 1] || 0) + (byYear[year - 2] || 0);
+        return { team, total };
+      })
+      .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
+
+    const rankMap = {};
+    ordered.forEach((r, i) => {
+      rankMap[r.team] = i + 1;
+    });
+    return rankMap;
+  });
+
+  const head = `<thead><tr><th>Team</th><th>Change</th>${years.map((y) => `<th>${y}</th>`).join('')}</tr></thead>`;
+  const body = `<tbody>${teams
+    .map((team) => {
+      const rowRanks = ranksByYear.map((m) => m[team] ?? teams.length);
+      const change = rowRanks[rowRanks.length - 1] - rowRanks[0];
+      const changeText = change > 0 ? `+${change}` : `${change}`;
+      const changeColor = change > 0 ? '#38c172' : change < 0 ? '#d64550' : '#9aa8bb';
+      return `<tr><td>${team}</td><td style="color:${changeColor}; font-weight:700">${changeText}</td>${rowRanks.map((r) => `<td>${r}</td>`).join('')}</tr>`;
+    })
+    .join('')}</tbody>`;
+  table.innerHTML = head + body;
+}
+
+function renderPointsLeaders() {
+  const holder = document.getElementById('points-leaders');
+  if (!holder) return;
+
+  const since2020 = state.data.points
+    .map((p) => {
+      const vals = (p.byYear || [])
+        .filter((entry) => entry.year >= 2020)
+        .map((entry) => Number(entry.points))
+        .filter((v) => Number.isFinite(v));
+      if (!vals.length) return null;
+      const avg = vals.reduce((s, v) => s + v, 0) / vals.length;
+      return { team: p.team, avg };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.avg - a.avg);
+
+  const last3 = state.data.points
+    .map((p) => {
+      const vals = [...(p.byYear || [])]
+        .sort((a, b) => b.year - a.year)
+        .slice(0, 3)
+        .map((entry) => Number(entry.points))
+        .filter((v) => Number.isFinite(v));
+      if (vals.length < 3) return null;
+      const avg = vals.reduce((s, v) => s + v, 0) / vals.length;
+      return { team: p.team, avg };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.avg - a.avg);
+
+  const since2020Leader = since2020[0];
+  const last3Leader = last3[0];
+  const since2020Leaders = since2020.filter((r) => r.avg === since2020Leader?.avg);
+  const last3Leaders = last3.filter((r) => r.avg === last3Leader?.avg);
+  const formatColoredNames = (leaders) =>
+    leaders.map((r) => `<span style="color:${teamColor(r.team)}">${r.team}</span>`).join(', ');
+  const since2020Names = formatColoredNames(since2020Leaders);
+  const last3Names = formatColoredNames(last3Leaders);
+  holder.innerHTML =
+    since2020Leader && last3Leader
+      ? `<span class="leader-chip">Best Point Average Since 2020: ${since2020Names} (${fmtNum(since2020Leader.avg, 1)})</span><span class="leader-sep">|</span><span class="leader-chip">Best Point Average Last 3 Years: ${last3Names} (${fmtNum(last3Leader.avg, 1)})</span>`
+      : '<span class="small">Best point-average leaders unavailable with current data.</span>';
+}
+
+function renderPointsChart() {
+  const container = document.getElementById('bar-chart');
+  if (!container) return;
+
+  const valueForMetric = (r) => {
+    if (state.pointsMetric === 'overallAvg') {
+      const vals = (r.byYear || [])
+        .filter((entry) => entry.year >= 2020 && entry.year <= 2025)
+        .map((entry) => Number(entry.points))
+        .filter((v) => Number.isFinite(v));
+      if (!vals.length) return null;
+      return vals.reduce((s, v) => s + v, 0) / vals.length;
+    }
+    return r[state.pointsMetric];
+  };
+
+  const rows = [...state.data.points]
+    .map((r) => ({ ...r, metricValue: valueForMetric(r) }))
+    .filter((r) => r.metricValue != null)
+    .sort((a, b) => b.metricValue - a.metricValue);
+
+  renderHorizontalBarChart(
+    container,
+    rows.map((r) => ({ team: r.team, value: r.metricValue })),
+    'value',
+    'decimal',
+  );
+}
+
+function initMetricToggle() {
+  document.querySelectorAll('.metric-toggle[data-metric]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.metric-toggle[data-metric]').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.pointsMetric = btn.dataset.metric;
+      renderPointsChart();
+    });
+  });
+}
+
+function initWinsToggle() {
+  document.querySelectorAll('.wins-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.wins-toggle').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.winsMetric = btn.dataset.winsMetric;
+      renderWinsBarChart();
+    });
+  });
+}
+
+function renderTrophyChart() {
+  const container = document.getElementById('trophy-chart');
+  const isMobile = window.innerWidth <= 700;
+  const width = Math.max(container.clientWidth - 20, 520);
+  const height = isMobile ? 250 : 340;
+  const m = isMobile ? { t: 12, r: 14, b: 44, l: 42 } : { t: 14, r: 18, b: 78, l: 52 };
+  const chartW = width - m.l - m.r;
+  const chartH = height - m.t - m.b;
+
+  const metric = state.trophyMetric;
+  const units = metric === 'weighted' ? { first: 3, second: 2, third: 1 } : { first: 1, second: 1, third: 1 };
+  const rows = [...state.data.trophies].sort((a, b) =>
+    metric === 'weighted' ? b.weighted - a.weighted : b.total - a.total,
+  );
+  const maxStack = Math.max(...rows.map((r) => (metric === 'weighted' ? r.weighted : r.total)));
+  const barW = chartW / rows.length;
+
+  const svg = makeSvg(width, height);
+  const colors = { first: '#f2c14e', second: '#c0cad8', third: '#cd7f32' };
+
+  rows.forEach((r, i) => {
+    const x = m.l + i * barW + 8;
+    const bw = Math.max(barW - 14, 10);
+    let yBase = m.t + chartH;
+    ['third', 'second', 'first'].forEach((k) => {
+      const segmentValue = r[k] * units[k];
+      const h = (segmentValue / maxStack) * chartH;
+      if (!h) return;
+      const rect = document.createElementNS(svg.namespaceURI, 'rect');
+      rect.setAttribute('x', x);
+      rect.setAttribute('y', yBase - h);
+      rect.setAttribute('width', bw);
+      rect.setAttribute('height', h);
+      rect.setAttribute('fill', colors[k]);
+      svg.appendChild(rect);
+      yBase -= h;
+    });
+
+    const lbl = document.createElementNS(svg.namespaceURI, 'text');
+    lbl.setAttribute('x', x);
+    lbl.setAttribute('y', height - 18);
+    lbl.setAttribute('fill', '#9aa8bb');
+    lbl.setAttribute('font-size', '10');
+    lbl.setAttribute('transform', `rotate(30 ${x} ${height - 18})`);
+    lbl.textContent = r.team;
+    svg.appendChild(lbl);
+  });
+
+  if (metric === 'weighted') {
+    const isMobile = window.innerWidth <= 700;
+    const modeLabel = document.createElementNS(svg.namespaceURI, 'text');
+    modeLabel.setAttribute('x', width - m.r - 4);
+    modeLabel.setAttribute('y', isMobile ? 12 : 14);
+    modeLabel.setAttribute('text-anchor', 'end');
+    modeLabel.setAttribute('fill', '#9aa8bb');
+    modeLabel.setAttribute('font-size', isMobile ? '9' : '11');
+    modeLabel.textContent = 'Weighted Methodology: 1st x3, 2nd x2, 3rd x1';
+    svg.appendChild(modeLabel);
+  }
+
+  const legend = [
+    ['1st', colors.first],
+    ['2nd', colors.second],
+    ['3rd', colors.third],
+  ];
+  legend.forEach(([t, c], i) => {
+    const rect = document.createElementNS(svg.namespaceURI, 'rect');
+    rect.setAttribute('x', width - m.r - 64);
+    rect.setAttribute('y', m.t + 24 + i * 18);
+    rect.setAttribute('width', 12);
+    rect.setAttribute('height', 12);
+    rect.setAttribute('fill', c);
+    svg.appendChild(rect);
+
+    const tx = document.createElementNS(svg.namespaceURI, 'text');
+    tx.setAttribute('x', width - m.r - 46);
+    tx.setAttribute('y', m.t + 34 + i * 18);
+    tx.setAttribute('fill', '#e8edf6');
+    tx.setAttribute('font-size', '11');
+    tx.textContent = t;
+    svg.appendChild(tx);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function initTrophyToggle() {
+  document.querySelectorAll('.trophy-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.trophy-toggle').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.trophyMetric = btn.dataset.trophyMetric;
+      renderTrophyChart();
+    });
+  });
+}
+
+function renderTrophyTable() {
+  const tbody = document.querySelector('#trophy-table tbody');
+  tbody.innerHTML = [...state.data.trophies]
+    .sort((a, b) => b.weighted - a.weighted)
+    .map((r) => `<tr><td>${r.team}</td><td>${r.first}</td><td>${r.second}</td><td>${r.third}</td><td>${r.total}</td><td>${r.weighted}</td></tr>`)
+    .join('');
+}
+
+function renderAll() {
+  const years = state.data.years || [];
+  if (years.length) {
+    const title = `Cumulative Wins (${years[0]}-${years[years.length - 1]})`;
+    document.getElementById('wins-trends-title').textContent = title;
+    const rankYears = years.filter((y) => y >= 2022 && y <= 2025);
+    const rankStart = rankYears[0] ?? years[0];
+    const rankEnd = rankYears[rankYears.length - 1] ?? years[years.length - 1];
+    document.getElementById('rank-title').textContent = `Rank of 3-Year Rolling Win Total (${rankStart}-${rankEnd})`;
+    document.getElementById('rank-points-title').textContent = `Rank of 3-Year Rolling Point Total (${rankStart}-${rankEnd})`;
+  }
+  const pointsYears = [...new Set(state.data.points.flatMap((r) => (r.byYear || []).map((p) => p.year)))].sort((a, b) => a - b);
+  document.getElementById('points-note').textContent = pointsYears.length
+    ? `Note: includes data starting with the ${pointsYears[0]} season.`
+    : 'Note: includes data starting with the N/A season.';
+  renderPointsLeaders();
+  renderCurrentChampion();
+  renderAllTimeTable();
+  renderChampionshipMini();
+  renderTrophyMini();
+  renderWinsLeaders();
+  renderWinsBarChart();
+  renderWinsTable();
+  initTeamSelects();
+  renderLineChart('wins-line-chart');
+  renderYoYChart();
+  renderRankTable();
+  renderPointsRankTable();
+  renderPointsChart();
+  renderTrophyChart();
+  renderTrophyTable();
+}
+
+async function boot() {
+  initTabs();
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  const res = await fetch('./data/league-data.json?v=20260228c', { cache: 'no-store' });
+  state.data = await res.json();
+
+  renderAll();
+  initAllTimeEvents();
+  initMetricToggle();
+  initWinsToggle();
+  initTrophyToggle();
+
+  window.addEventListener('resize', () => {
+    renderWinsBarChart();
+    renderLineChart('wins-line-chart');
+    renderYoYChart();
+    renderPointsChart();
+    renderTrophyChart();
+  });
+}
+
+boot().catch((err) => {
+  document.body.innerHTML = `<main style="padding:2rem;color:#fff">Failed to load dashboard data.<br><pre>${String(err)}</pre></main>`;
+});

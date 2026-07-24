@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The League | Shockafella Fantasy Football</title>
+    <link rel="stylesheet" href="./styles.css?v=20260228e" />
+  </head>
+  <body>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <header class="hero">
+      <div class="hero-inner">
+        <img class="hero-belt" src="./images/the-league-belt.png" alt="The League Championship Belt" />
+        <div>
+          <div class="hero-topline">Shockafella Fantasy Football</div>
+          <h1>The League</h1>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Views">
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="trophies">Trophies</button>
+      <button class="tab" data-tab="points">Points</button>
+      <button class="tab" data-tab="wins">Wins</button>
+      <button class="tab" data-tab="trends">Trends</button>
+    </nav>
+
+    <main>
+      <section class="panel active" id="dashboard">
+        <div class="dashboard-grid">
+          <article class="card block champion-card">
+            <div class="block-header">
+              <h2>Current Champion</h2>
+            </div>
+            <div id="current-champion" class="champion-content"></div>
+          </article>
+
+          <article class="card block">
+            <div class="block-header">
+              <h2>Most Championships</h2>
+            </div>
+            <div id="championship-mini" class="mini-list"></div>
+          </article>
+
+          <article class="card block">
+            <div class="block-header">
+              <h2>Weighted Trophy Standings</h2>
+            </div>
+            <div id="trophy-mini" class="mini-list"></div>
+          </article>
+
+          <article class="card block">
+            <div class="block-header">
+              <h2>All-Time Standings</h2>
+            </div>
+            <div class="table-wrap">
+              <table id="all-time-table">
+                <thead>
+                  <tr>
+                    <th data-sort="team">Team</th>
+                    <th data-sort="wins">W</th>
+                    <th data-sort="losses">L</th>
+                    <th data-sort="winPct">Win %</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="wins">
+        <div id="wins-leaders" class="points-leaders"></div>
+        <article class="card block">
+          <div class="block-header">
+            <h2>Total Wins</h2>
+            <div class="toggle-group">
+              <button class="wins-toggle metric-toggle" data-wins-metric="overallTotal">Overall Total</button>
+              <button class="wins-toggle metric-toggle active" data-wins-metric="last3Total">Last 3 Years</button>
+            </div>
+          </div>
+          <div id="wins-bar-chart" class="chart"></div>
+          <p class="small points-note">Note: includes data starting with the 2020 season.</p>
+        </article>
+        <article class="card block">
+          <div class="block-header">
+            <h2>Yearly Wins Heat Map</h2>
+          </div>
+          <div id="wins-legend" class="heat-legend"></div>
+          <div class="table-wrap">
+            <table id="wins-table"></table>
+          </div>
+        </article>
+        <article class="card block">
+          <div class="block-header">
+            <h2 id="wins-trends-title">Cumulative Wins</h2>
+            <label for="wins-team-select">Team</label>
+            <select id="wins-team-select"></select>
+          </div>
+          <div id="wins-line-chart" class="chart"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="trends">
+        <h3 class="section-subheader trends-subheader">WINS-RELATED TRENDS</h3>
+        <article class="card block">
+          <div class="block-header">
+            <h2 id="yoy-title">Year-over-Year Win Change</h2>
+          </div>
+          <div id="yoy-chart" class="chart"></div>
+        </article>
+        <article class="card block">
+          <div class="block-header">
+            <h2 id="rank-title">Rank Movement</h2>
+          </div>
+          <div class="table-wrap">
+            <table id="rank-table"></table>
+          </div>
+          <p class="small points-note">Note: data point reflects the relative rank of total wins for the most recent 3 seasons, e.g., 2025 rank reflects the 2023-25 seasons.</p>
+        </article>
+        <h3 class="section-subheader trends-subheader">POINTS-RELATED TRENDS</h3>
+        <article class="card block">
+          <div class="block-header">
+            <h2 id="rank-points-title">Rank of 3-Year Rolling Point Total</h2>
+          </div>
+          <div class="table-wrap">
+            <table id="rank-points-table"></table>
+          </div>
+          <p class="small points-note">Note: data point reflects the relative rank of total points for the most recent 3 seasons, e.g., 2025 rank reflects the 2023-25 seasons.</p>
+        </article>
+      </section>
+
+      <section class="panel" id="points">
+        <div id="points-leaders" class="points-leaders"></div>
+        <article class="card block">
+          <div class="block-header">
+            <h2>Points Per Season</h2>
+            <div class="toggle-group">
+              <button class="metric-toggle" data-metric="overallAvg">Overall Avg</button>
+              <button class="metric-toggle active" data-metric="last3Avg">Last 3 Years Avg</button>
+            </div>
+          </div>
+          <div id="bar-chart" class="chart"></div>
+          <p id="points-note" class="small points-note"></p>
+        </article>
+      </section>
+
+      <section class="panel" id="trophies">
+        <article class="card block">
+          <div class="block-header">
+            <h2>Trophy Breakdown</h2>
+            <div class="toggle-group">
+              <button class="trophy-toggle metric-toggle" data-trophy-metric="total">Total Trophies</button>
+              <button class="trophy-toggle metric-toggle active" data-trophy-metric="weighted">Weighted Trophies</button>
+            </div>
+          </div>
+          <div id="trophy-chart" class="chart"></div>
+          <div class="table-wrap">
+            <table id="trophy-table">
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>1st</th>
+                  <th>2nd</th>
+                  <th>3rd</th>
+                  <th>Total</th>
+                  <th>Weighted</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="current-year"></span> Shockafella LLC. Made with ❤️ in PDX. Hosted live and free in New Hampshire.</p>
+    </footer>
+
+    <script src="./app.js?v=20260228e"></script>
+  </body>
+</html>

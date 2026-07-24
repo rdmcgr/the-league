@@ -1,0 +1,1618 @@
+{
+  "meta": {
+    "league": "The League",
+    "generatedFrom": "Season Win Tracker 02282026.xlsx"
+  },
+  "years": [
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "allTime": [
+    {
+      "team": "Rich S.",
+      "wins": 84,
+      "losses": 70,
+      "games": 154,
+      "winPct": 0.5454545454545454,
+      "active": true
+    },
+    {
+      "team": "Kevin E.",
+      "wins": 83,
+      "losses": 68,
+      "games": 151,
+      "winPct": 0.5496688741721855,
+      "active": true
+    },
+    {
+      "team": "Dan F.",
+      "wins": 109,
+      "losses": 96,
+      "games": 205,
+      "winPct": 0.5317073170731708,
+      "active": true
+    },
+    {
+      "team": "Rory M.",
+      "wins": 131,
+      "losses": 123,
+      "games": 254,
+      "winPct": 0.515748031496063,
+      "active": true
+    },
+    {
+      "team": "Mike L.",
+      "wins": 125,
+      "losses": 135,
+      "games": 260,
+      "winPct": 0.4807692307692308,
+      "active": true
+    },
+    {
+      "team": "Kevin L.",
+      "wins": 85,
+      "losses": 97,
+      "games": 182,
+      "winPct": 0.46703296703296704,
+      "active": true
+    },
+    {
+      "team": "Nick P.",
+      "wins": 119,
+      "losses": 132,
+      "games": 251,
+      "winPct": 0.47410358565737054,
+      "active": true
+    },
+    {
+      "team": "Adam D.",
+      "wins": 110,
+      "losses": 133,
+      "games": 243,
+      "winPct": 0.45267489711934156,
+      "active": true
+    },
+    {
+      "team": "Paul L.",
+      "wins": 113,
+      "losses": 144,
+      "games": 257,
+      "winPct": 0.4396887159533074,
+      "active": true
+    },
+    {
+      "team": "Nikki T.",
+      "wins": 31,
+      "losses": 44,
+      "games": 75,
+      "winPct": 0.41333333333333333,
+      "active": true
+    }
+  ],
+  "yearlyWins": [
+    {
+      "team": "Rich S.",
+      "wins": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        9,
+        8,
+        6,
+        8,
+        3,
+        11,
+        13,
+        6,
+        8,
+        6
+      ]
+    },
+    {
+      "team": "Kevin E.",
+      "wins": [
+        8,
+        8,
+        7,
+        9,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        7,
+        8,
+        7,
+        10,
+        9
+      ]
+    },
+    {
+      "team": "Dan F.",
+      "wins": [
+        5,
+        10,
+        0,
+        0,
+        0,
+        0,
+        4,
+        8,
+        3,
+        8,
+        10,
+        5,
+        7,
+        6,
+        10,
+        8,
+        8,
+        8,
+        9,
+        7
+      ]
+    },
+    {
+      "team": "Rory M.",
+      "wins": [
+        11,
+        8,
+        4,
+        9,
+        8,
+        6,
+        7,
+        8,
+        5,
+        6,
+        5,
+        8,
+        7,
+        5,
+        7,
+        7,
+        4,
+        11,
+        5,
+        9
+      ]
+    },
+    {
+      "team": "Mike L.",
+      "wins": [
+        4,
+        4,
+        10,
+        5,
+        6,
+        10,
+        9,
+        5,
+        6,
+        4,
+        3,
+        10,
+        11,
+        4,
+        4,
+        7,
+        9,
+        6,
+        8,
+        4
+      ]
+    },
+    {
+      "team": "Kevin L.",
+      "wins": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        7,
+        12,
+        6,
+        9,
+        7,
+        6,
+        9,
+        7,
+        5,
+        5,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "team": "Nick P.",
+      "wins": [
+        6,
+        5,
+        3,
+        6,
+        7,
+        5,
+        4,
+        5,
+        8,
+        6,
+        8,
+        7,
+        5,
+        7,
+        5,
+        9,
+        7,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "team": "Adam D.",
+      "wins": [
+        6,
+        2,
+        0,
+        3,
+        6,
+        6,
+        8,
+        5,
+        6,
+        8,
+        1,
+        7,
+        9,
+        10,
+        7,
+        8,
+        6,
+        8,
+        4,
+        7
+      ]
+    },
+    {
+      "team": "Paul L.",
+      "wins": [
+        5,
+        7,
+        5,
+        5,
+        6,
+        5,
+        6,
+        5,
+        5,
+        9,
+        7,
+        5,
+        7,
+        5,
+        7,
+        4,
+        4,
+        8,
+        8,
+        5
+      ]
+    },
+    {
+      "team": "Nikki T.",
+      "wins": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        4,
+        6,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "cumulativeWins": [
+    {
+      "team": "Rich S.",
+      "totals": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        12,
+        21,
+        29,
+        35,
+        43,
+        46,
+        57,
+        70,
+        76,
+        84,
+        90
+      ]
+    },
+    {
+      "team": "Kevin E.",
+      "totals": [
+        8,
+        16,
+        23,
+        32,
+        39,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        51,
+        58,
+        66,
+        73,
+        83,
+        92
+      ]
+    },
+    {
+      "team": "Dan F.",
+      "totals": [
+        5,
+        15,
+        15,
+        15,
+        15,
+        15,
+        19,
+        27,
+        30,
+        38,
+        48,
+        53,
+        60,
+        66,
+        76,
+        84,
+        92,
+        100,
+        109,
+        116
+      ]
+    },
+    {
+      "team": "Rory M.",
+      "totals": [
+        11,
+        19,
+        23,
+        32,
+        40,
+        46,
+        53,
+        61,
+        66,
+        72,
+        77,
+        85,
+        92,
+        97,
+        104,
+        111,
+        115,
+        126,
+        131,
+        140
+      ]
+    },
+    {
+      "team": "Mike L.",
+      "totals": [
+        4,
+        8,
+        18,
+        23,
+        29,
+        39,
+        48,
+        53,
+        59,
+        63,
+        66,
+        76,
+        87,
+        91,
+        95,
+        102,
+        111,
+        117,
+        125,
+        129
+      ]
+    },
+    {
+      "team": "Kevin L.",
+      "totals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        14,
+        26,
+        32,
+        41,
+        48,
+        54,
+        63,
+        70,
+        75,
+        80,
+        82,
+        85,
+        90
+      ]
+    },
+    {
+      "team": "Nick P.",
+      "totals": [
+        6,
+        11,
+        14,
+        20,
+        27,
+        32,
+        36,
+        41,
+        49,
+        55,
+        63,
+        70,
+        75,
+        82,
+        87,
+        96,
+        103,
+        111,
+        119,
+        129
+      ]
+    },
+    {
+      "team": "Adam D.",
+      "totals": [
+        6,
+        8,
+        8,
+        11,
+        17,
+        23,
+        31,
+        36,
+        42,
+        50,
+        51,
+        58,
+        67,
+        77,
+        84,
+        92,
+        98,
+        106,
+        110,
+        117
+      ]
+    },
+    {
+      "team": "Paul L.",
+      "totals": [
+        5,
+        12,
+        17,
+        22,
+        28,
+        33,
+        39,
+        44,
+        49,
+        58,
+        65,
+        70,
+        77,
+        82,
+        89,
+        93,
+        97,
+        105,
+        113,
+        118
+      ]
+    },
+    {
+      "team": "Nikki T.",
+      "totals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        12,
+        18,
+        24,
+        31,
+        39
+      ]
+    }
+  ],
+  "points": [
+    {
+      "team": "Rory M.",
+      "overallAvg": 1406.4679999999998,
+      "last3Avg": 1457.8466666666666,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1459.52
+        },
+        {
+          "year": 2024,
+          "points": 1226.54
+        },
+        {
+          "year": 2023,
+          "points": 1687.48
+        },
+        {
+          "year": 2022,
+          "points": 1396.8
+        },
+        {
+          "year": 2021,
+          "points": 1406.98
+        },
+        {
+          "year": 2020,
+          "points": 1314.54
+        }
+      ]
+    },
+    {
+      "team": "Kevin E.",
+      "overallAvg": 1350.976,
+      "last3Avg": 1452.76,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1456.26
+        },
+        {
+          "year": 2024,
+          "points": 1460.74
+        },
+        {
+          "year": 2023,
+          "points": 1441.28
+        },
+        {
+          "year": 2022,
+          "points": 1295.14
+        },
+        {
+          "year": 2021,
+          "points": 1307.94
+        },
+        {
+          "year": 2020,
+          "points": 1249.78
+        }
+      ]
+    },
+    {
+      "team": "Rich S.",
+      "overallAvg": 1424.028,
+      "last3Avg": 1399.1066666666666,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1368.1
+        },
+        {
+          "year": 2024,
+          "points": 1453.1
+        },
+        {
+          "year": 2023,
+          "points": 1376.12
+        },
+        {
+          "year": 2022,
+          "points": 1521.78
+        },
+        {
+          "year": 2021,
+          "points": 1563.5
+        },
+        {
+          "year": 2020,
+          "points": 1205.64
+        }
+      ]
+    },
+    {
+      "team": "Mike L.",
+      "overallAvg": 1319.836,
+      "last3Avg": 1346.6466666666668,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1293.96
+        },
+        {
+          "year": 2024,
+          "points": 1510.84
+        },
+        {
+          "year": 2023,
+          "points": 1235.14
+        },
+        {
+          "year": 2022,
+          "points": 1316.38
+        },
+        {
+          "year": 2021,
+          "points": 1406.06
+        },
+        {
+          "year": 2020,
+          "points": 1130.76
+        }
+      ]
+    },
+    {
+      "team": "Nick P.",
+      "overallAvg": 1337.632,
+      "last3Avg": 1336.9933333333336,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1435.92
+        },
+        {
+          "year": 2024,
+          "points": 1359.18
+        },
+        {
+          "year": 2023,
+          "points": 1215.88
+        },
+        {
+          "year": 2022,
+          "points": 1486.44
+        },
+        {
+          "year": 2021,
+          "points": 1430.3
+        },
+        {
+          "year": 2020,
+          "points": 1196.36
+        }
+      ]
+    },
+    {
+      "team": "Paul L.",
+      "overallAvg": 1338.108,
+      "last3Avg": 1333.1066666666666,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1197.46
+        },
+        {
+          "year": 2024,
+          "points": 1460.74
+        },
+        {
+          "year": 2023,
+          "points": 1341.12
+        },
+        {
+          "year": 2022,
+          "points": 1304.88
+        },
+        {
+          "year": 2021,
+          "points": 1246.12
+        },
+        {
+          "year": 2020,
+          "points": 1337.68
+        }
+      ]
+    },
+    {
+      "team": "Adam D.",
+      "overallAvg": 1326.948,
+      "last3Avg": 1293.0733333333333,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1247.06
+        },
+        {
+          "year": 2024,
+          "points": 1272.58
+        },
+        {
+          "year": 2023,
+          "points": 1359.58
+        },
+        {
+          "year": 2022,
+          "points": 1253.64
+        },
+        {
+          "year": 2021,
+          "points": 1462.3
+        },
+        {
+          "year": 2020,
+          "points": 1286.64
+        }
+      ]
+    },
+    {
+      "team": "Nikki T.",
+      "overallAvg": 1239.392,
+      "last3Avg": 1264.0733333333335,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1323.4
+        },
+        {
+          "year": 2024,
+          "points": 1328.64
+        },
+        {
+          "year": 2023,
+          "points": 1140.18
+        },
+        {
+          "year": 2022,
+          "points": 1241.3
+        },
+        {
+          "year": 2021,
+          "points": 1258.48
+        },
+        {
+          "year": 2020,
+          "points": 1228.36
+        }
+      ]
+    },
+    {
+      "team": "Kevin L.",
+      "overallAvg": 1287.896,
+      "last3Avg": 1248.3266666666668,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1338.06
+        },
+        {
+          "year": 2024,
+          "points": 1264.24
+        },
+        {
+          "year": 2023,
+          "points": 1142.68
+        },
+        {
+          "year": 2022,
+          "points": 1269.16
+        },
+        {
+          "year": 2021,
+          "points": 1346.0
+        },
+        {
+          "year": 2020,
+          "points": 1417.4
+        }
+      ]
+    },
+    {
+      "team": "Dan F.",
+      "overallAvg": 1308.364,
+      "last3Avg": 1225.7266666666667,
+      "byYear": [
+        {
+          "year": 2025,
+          "points": 1111.04
+        },
+        {
+          "year": 2024,
+          "points": 1377.46
+        },
+        {
+          "year": 2023,
+          "points": 1188.68
+        },
+        {
+          "year": 2022,
+          "points": 1315.64
+        },
+        {
+          "year": 2021,
+          "points": 1364.08
+        },
+        {
+          "year": 2020,
+          "points": 1295.96
+        }
+      ]
+    }
+  ],
+  "trophies": [
+    {
+      "team": "Mike L.",
+      "active": true,
+      "first": 3,
+      "second": 3,
+      "third": 1,
+      "total": 7,
+      "weighted": 16,
+      "years": {
+        "first": "2018, 2017, 2014",
+        "second": "2012, 2010, 2008",
+        "third": "2011"
+      }
+    },
+    {
+      "team": "Rory M.",
+      "active": true,
+      "first": 2,
+      "second": 4,
+      "third": 2,
+      "total": 8,
+      "weighted": 16,
+      "years": {
+        "first": "2021, 2012",
+        "second": "2025, 2023, 2007, 2006",
+        "third": "2018, 2010"
+      }
+    },
+    {
+      "team": "Dan F.",
+      "active": true,
+      "first": 1,
+      "second": 3,
+      "third": 2,
+      "total": 6,
+      "weighted": 11,
+      "years": {
+        "first": "2024",
+        "second": "2022, 2018, 2013",
+        "third": "2020, 2007"
+      }
+    },
+    {
+      "team": "Nick P.",
+      "active": true,
+      "first": 0,
+      "second": 3,
+      "third": 4,
+      "total": 7,
+      "weighted": 10,
+      "years": {
+        "first": "",
+        "second": "2021, 2016, 2009",
+        "third": "2025, 2023, 2015, 2014"
+      }
+    },
+    {
+      "team": "Paul L.",
+      "active": true,
+      "first": 2,
+      "second": 1,
+      "third": 1,
+      "total": 4,
+      "weighted": 9,
+      "years": {
+        "first": "2020, 2007",
+        "second": "2015",
+        "third": "2024"
+      }
+    },
+    {
+      "team": "Adam D.",
+      "active": true,
+      "first": 2,
+      "second": 0,
+      "third": 3,
+      "total": 5,
+      "weighted": 9,
+      "years": {
+        "first": "2023, 2011",
+        "second": "",
+        "third": "2019, 2017, 2006"
+      }
+    },
+    {
+      "team": "Rich S.",
+      "active": true,
+      "first": 0,
+      "second": 2,
+      "third": 2,
+      "total": 4,
+      "weighted": 6,
+      "years": {
+        "first": "",
+        "second": "2019, 2017",
+        "third": "2022, 2021"
+      }
+    },
+    {
+      "team": "Kevin E.",
+      "active": true,
+      "first": 1,
+      "second": 1,
+      "third": 1,
+      "total": 3,
+      "weighted": 6,
+      "years": {
+        "first": "2022",
+        "second": "2024",
+        "third": "2009"
+      }
+    },
+    {
+      "team": "Kevin L.",
+      "active": true,
+      "first": 1,
+      "second": 1,
+      "third": 0,
+      "total": 2,
+      "weighted": 5,
+      "years": {
+        "first": "2016",
+        "second": "2020",
+        "third": ""
+      }
+    },
+    {
+      "team": "Nikki T.",
+      "active": true,
+      "first": 1,
+      "second": 0,
+      "third": 0,
+      "total": 1,
+      "weighted": 3,
+      "years": {
+        "first": "2025",
+        "second": "",
+        "third": ""
+      }
+    }
+  ],
+  "threeSeason": [
+    {
+      "team": "Rich S.",
+      "wins": 20,
+      "losses": 22,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        }
+      ]
+    },
+    {
+      "team": "Dan F.",
+      "wins": 24,
+      "losses": 18,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2023,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Kevin E.",
+      "wins": 26,
+      "losses": 16,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2023,
+          "wins": 10,
+          "losses": 4
+        },
+        {
+          "year": 2022,
+          "wins": 7,
+          "losses": 7
+        }
+      ]
+    },
+    {
+      "team": "Nick P.",
+      "wins": 26,
+      "losses": 16,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 10,
+          "losses": 4
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Mike L.",
+      "wins": 18,
+      "losses": 24,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        }
+      ]
+    },
+    {
+      "team": "Rory M.",
+      "wins": 25,
+      "losses": 17,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2023,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2022,
+          "wins": 11,
+          "losses": 3
+        }
+      ]
+    },
+    {
+      "team": "Paul L.",
+      "wins": 21,
+      "losses": 21,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Nikki T.",
+      "wins": 21,
+      "losses": 21,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2023,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        }
+      ]
+    },
+    {
+      "team": "Adam D.",
+      "wins": 19,
+      "losses": 23,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2023,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Kevin L.",
+      "wins": 10,
+      "losses": 32,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2023,
+          "wins": 3,
+          "losses": 11
+        },
+        {
+          "year": 2022,
+          "wins": 2,
+          "losses": 12
+        }
+      ]
+    }
+  ],
+  "fiveSeason": [
+    {
+      "team": "Dan F.",
+      "wins": 40,
+      "losses": 30,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2023,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2021,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2020,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Rich S.",
+      "wins": 44,
+      "losses": 26,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2021,
+          "wins": 13,
+          "losses": 1
+        },
+        {
+          "year": 2020,
+          "wins": 11,
+          "losses": 3
+        }
+      ]
+    },
+    {
+      "team": "Kevin E.",
+      "wins": 41,
+      "losses": 29,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2023,
+          "wins": 10,
+          "losses": 4
+        },
+        {
+          "year": 2022,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2021,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2020,
+          "wins": 7,
+          "losses": 7
+        }
+      ]
+    },
+    {
+      "team": "Nick P.",
+      "wins": 42,
+      "losses": 28,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 10,
+          "losses": 4
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2021,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2020,
+          "wins": 9,
+          "losses": 5
+        }
+      ]
+    },
+    {
+      "team": "Rory M.",
+      "wins": 36,
+      "losses": 34,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2023,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2022,
+          "wins": 11,
+          "losses": 3
+        },
+        {
+          "year": 2021,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2020,
+          "wins": 7,
+          "losses": 7
+        }
+      ]
+    },
+    {
+      "team": "Mike L.",
+      "wins": 34,
+      "losses": 36,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2021,
+          "wins": 9,
+          "losses": 5
+        },
+        {
+          "year": 2020,
+          "wins": 7,
+          "losses": 7
+        }
+      ]
+    },
+    {
+      "team": "Adam D.",
+      "wins": 33,
+      "losses": 37,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2023,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2021,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2020,
+          "wins": 8,
+          "losses": 6
+        }
+      ]
+    },
+    {
+      "team": "Paul L.",
+      "wins": 29,
+      "losses": 41,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2023,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2022,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2021,
+          "wins": 4,
+          "losses": 10
+        },
+        {
+          "year": 2020,
+          "wins": 4,
+          "losses": 10
+        }
+      ]
+    },
+    {
+      "team": "Nikki T.",
+      "wins": 31,
+      "losses": 39,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 8,
+          "losses": 6
+        },
+        {
+          "year": 2023,
+          "wins": 7,
+          "losses": 7
+        },
+        {
+          "year": 2022,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2021,
+          "wins": 6,
+          "losses": 8
+        },
+        {
+          "year": 2020,
+          "wins": 4,
+          "losses": 10
+        }
+      ]
+    },
+    {
+      "team": "Kevin L.",
+      "wins": 20,
+      "losses": 50,
+      "years": [
+        {
+          "year": 2024,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2023,
+          "wins": 3,
+          "losses": 11
+        },
+        {
+          "year": 2022,
+          "wins": 2,
+          "losses": 12
+        },
+        {
+          "year": 2021,
+          "wins": 5,
+          "losses": 9
+        },
+        {
+          "year": 2020,
+          "wins": 5,
+          "losses": 9
+        }
+      ]
+    }
+  ],
+  "kpi": {
+    "mostWins": "Rory M.",
+    "bestWinPct": "Kevin E.",
+    "trophyLeader": "Mike L.",
+    "bestPointsAvg": "Rich S."
+  }
+}

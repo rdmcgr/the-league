@@ -1,0 +1,24 @@
+name: Deploy to Bluehost
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH (rsync)
+        uses: easingthemes/ssh-deploy@v4.1.10
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.BLUEHOST_SSH_KEY }}
+          REMOTE_HOST: box5379.bluehost.com
+          REMOTE_USER: redkingt
+          REMOTE_PORT: 22
+          SOURCE: "./"
+          TARGET: "public_html/"
+          EXCLUDE: "/.git/, /.github/, /.DS_Store, /Season Win Tracker 02282026.xlsx, /scripts/"
+          ARGS: "-rlgoDzvc -i --delete"
