@@ -149,7 +149,7 @@ main {
 .video-embed {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: none;
   aspect-ratio: 16 / 9;
   margin-top: 0.75rem;
   overflow: hidden;
