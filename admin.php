@@ -38,6 +38,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 
 $loggedIn = !empty($_SESSION['poll_admin']);
 
+if ($loggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_name'])) {
+  $removeName = trim((string) $_POST['remove_name']);
+  if ($removeName !== '' && isset($data['votes'][$removeName])) {
+    $previous = $data['votes'][$removeName];
+    unset($data['votes'][$removeName]);
+    if (isset($data['totals'][$previous])) {
+      $data['totals'][$previous] -= 1;
+      if ($data['totals'][$previous] <= 0) {
+        unset($data['totals'][$previous]);
+      }
+    }
+    file_put_contents($storeFile, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
+  }
+  header('Location: admin.php');
+  exit;
+}
+
 if ($loggedIn && isset($_GET['export']) && $_GET['export'] === 'csv') {
   $filename = 'poll-results-' . date('Y-m-d') . '.csv';
   header('Content-Type: text/csv; charset=utf-8');
@@ -137,6 +154,7 @@ function esc($value) {
                 <tr>
                   <th>Team</th>
                   <th>Vote</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -144,6 +162,12 @@ function esc($value) {
                   <tr>
                     <td><?= esc($name) ?></td>
                     <td><?= esc($vote) ?></td>
+                    <td>
+                      <form method="post" onsubmit="return confirm('Remove <?= esc($name) ?>\\'s vote?');">
+                        <input type="hidden" name="remove_name" value="<?= esc($name) ?>" />
+                        <button type="submit" class="poll-submit" style="padding: 0.45rem 0.7rem; font-size: 0.82rem;">Remove</button>
+                      </form>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
