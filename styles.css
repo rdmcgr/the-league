@@ -122,6 +122,7 @@ main {
   color: var(--muted);
   font-size: 0.86rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .site-footer p {
