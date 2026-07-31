@@ -26,26 +26,7 @@
         <p class="small">
           The 2026 season opens with a reflection on how remarkably balanced the recent stretch of seasons have been.
         </p>
-        <p class="small">
-          Last year, the league celebrated its 20th season&mdash;an achievement that, frankly, puts America&rsquo;s 250th birthday this year in perspective. The United States may have a Constitution, national parks, and a moon landing (maybe), but it didn't survive two decades of veto arguments, thousands of roster moves (And that's just the tally from Rafi Bombs. He's a tinkerer.), and Team Winner&rsquo;s heroic commitment to almost winning&mdash;a legacy of noble defeat not seen since the Confederacy tried to run a league without waiver rules.
-        </p>
-      </section>
-
-      <section class="card block" style="margin-top: 0.8rem;">
-        <div class="block-header">
-          <h2>Key Storylines</h2>
-        </div>
-        <div class="cards">
-          <article class="card kpi">
-            <div class="label">Top of the mountain</div>
-            <div class="value">AgnesTing: 3 titles</div>
-            <p class="small">Championship years: 2014, 2017, 2018. And the league's only repeat!</p>
-          </article>
-          <article class="card kpi">
-            <div class="label">Great Near-Miss</div>
-            <div class="value">Team Winner</div>
-            <p class="small">Six top-three finishes, but still no championship. The closest thing to a heartbreak dynasty.</p>
-          </article>
+        <div class="cards" style="margin-top: 0.8rem;">
           <article class="card kpi">
             <div class="label">Wins over Points</div>
             <div class="value">Only 1 champion</div>
@@ -57,6 +38,24 @@
             <p class="small">From 2020 through 2025, every season produced a different champion. With Nikki becoming a first-time champion in '25. About Damn Time indeed.</p>
           </article>
         </div>
+        <p class="small">
+          Last year, the league celebrated its 20th season — an achievement that, frankly, puts America&rsquo;s 250th birthday this year in perspective. The United States may have a Constitution, national parks, and a moon landing (maybe), but it didn't survive two decades of veto arguments, thousands of roster moves (And that's just the tally from Rafi Bombs. He's a tinkerer.), and Team Winner&rsquo;s heroic commitment to almost winning — a legacy of noble defeat not seen since the Confederacy tried to run a league without waiver rules.
+        </p>
+        <div class="cards">
+          <article class="card kpi">
+            <div class="label">Top of the mountain</div>
+            <div class="value">AgnesTing: 3 titles</div>
+            <p class="small">Championship years: 2014, 2017, 2018. And the league's only repeat!</p>
+          </article>
+          <article class="card kpi">
+            <div class="label">Great Near-Miss</div>
+            <div class="value">Team Winner</div>
+            <p class="small">Six top-three finishes, but still no championship. The closest thing to a heartbreak dynasty.</p>
+          </article>
+        </div>
+        <p class="small">
+          In what continues to be the most amazing stat  —  Rachel Niquols Espn has now been in the consolation bracket title game for 5 consecutive years. He won his 4th and is now on the clock!
+        </p>
       </section>
 
       <section class="card block" style="margin-top: 0.8rem;">
@@ -76,7 +75,7 @@
 
       <section class="card block" style="margin-top: 0.8rem;">
         <div class="block-header">
-          <h2>2026 Poll</h2>
+          <h2>Poll</h2>
         </div>
         <p class="small">Enter your name, then cast your vote.</p>
         <form id="poll-form" class="poll-form">
@@ -86,16 +85,20 @@
           </label>
           <fieldset class="poll-field poll-options">
             <legend>Do you know the name of the band referenced in the last question?</legend>
-            <label><input type="radio" name="vote" value="Yes" required /> Yes</label>
-            <label><input type="radio" name="vote" value="No" /> No</label>
+            <label><input type="radio" name="band-answer" value="Yes" required /> Yes</label>
+            <label><input type="radio" name="band-answer" value="No" /> No</label>
+          </fieldset>
+          <fieldset class="poll-field poll-options">
+            <legend>Select your draft time availability:</legend>
+            <label class="inline-choice"><input type="checkbox" name="availability" value="Wed, 8/26 @ 6pm" /> Wed, 8/26 @ 6pm</label>
+            <label class="inline-choice"><input type="checkbox" name="availability" value="Thurs, 8/27 @ 6pm" /> Thurs, 8/27 @ 6pm</label>
+            <label class="inline-choice"><input type="checkbox" name="availability" value="Thurs, 9/3 @ 6pm" /> Thurs, 9/3 @ 6pm</label>
+            <label class="inline-choice"><input type="checkbox" name="availability" value="Mon, 9/7 @ 6pm (Labor Day)" /> Mon, 9/7 @ 6pm (Labor Day)</label>
+            <label class="inline-choice"><input type="checkbox" name="availability" value="Tues, 9/8 @ 6pm" /> Tues, 9/8 @ 6pm</label>
           </fieldset>
           <button type="submit" class="poll-submit">Submit Vote</button>
         </form>
         <div id="poll-message" class="small poll-message"></div>
-        <div class="poll-results-wrap">
-          <div class="poll-results-title">Current Results</div>
-          <div id="poll-results" class="poll-results small">Loading results...</div>
-        </div>
         <p class="small" style="margin-top: 0.65rem;"><a href="./admin.php">Open poll admin</a></p>
       </section>
     </main>
@@ -113,29 +116,7 @@
       (function () {
         const form = document.getElementById('poll-form');
         const message = document.getElementById('poll-message');
-        const results = document.getElementById('poll-results');
         const storageKey = 'league-poll-name';
-
-        const renderResults = (data) => {
-          if (!data || !data.totals) {
-            results.textContent = 'No results yet.';
-            return;
-          }
-          const items = Object.entries(data.totals)
-            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-            .map(([choice, count]) => `<div class="poll-result-row"><span>${choice}</span><span>${count}</span></div>`)
-            .join('');
-          results.innerHTML = items || 'No votes yet.';
-        };
-
-        const loadResults = async () => {
-          try {
-            const res = await fetch('./poll.php', { cache: 'no-store' });
-            renderResults(await res.json());
-          } catch (err) {
-            results.textContent = 'Unable to load results.';
-          }
-        };
 
         const savedName = window.localStorage.getItem(storageKey);
         if (savedName) document.getElementById('poll-name').value = savedName;
@@ -143,13 +124,18 @@
         form.addEventListener('submit', async (event) => {
           event.preventDefault();
           const name = document.getElementById('poll-name').value.trim();
-          const vote = new FormData(form).get('vote');
+          const bandAnswer = new FormData(form).get('band-answer');
+          const availability = Array.from(form.querySelectorAll('input[name="availability"]:checked')).map((input) => input.value);
           if (!name) {
             message.textContent = 'Please enter your name first.';
             return;
           }
-          if (!vote) {
-            message.textContent = 'Please select an answer.';
+          if (!bandAnswer) {
+            message.textContent = 'Please answer the band question.';
+            return;
+          }
+          if (availability.length === 0) {
+            message.textContent = 'Please select at least one draft time.';
             return;
           }
 
@@ -157,20 +143,17 @@
             const res = await fetch('./poll.php', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, vote }),
+              body: JSON.stringify({ name, bandAnswer, availability }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data.error || 'Vote could not be saved.');
             window.localStorage.setItem(storageKey, name);
             message.textContent = `Thanks, ${name}. Your vote was recorded.`;
-            renderResults(data);
-            form.querySelectorAll('input[type="radio"]').forEach((input) => (input.checked = false));
+            form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((input) => (input.checked = false));
           } catch (err) {
             message.textContent = err.message || 'Vote could not be saved.';
           }
         });
-
-        loadResults();
       })();
     </script>
   </body>

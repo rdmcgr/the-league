@@ -9,24 +9,42 @@ if (!file_exists($storeDir)) {
 }
 
 if (!file_exists($storeFile)) {
-  file_put_contents($storeFile, json_encode(['votes' => [], 'totals' => new stdClass()], JSON_PRETTY_PRINT));
+  file_put_contents($storeFile, json_encode(['votes' => [], 'totals' => ['band' => [], 'availability' => []]], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 }
 
-$stats = null;
+$bandChoices = ['Yes', 'No'];
+$availabilityChoices = [
+  'Wed, 8/26 @ 6pm',
+  'Thurs, 8/27 @ 6pm',
+  'Thurs, 9/3 @ 6pm',
+  'Mon, 9/7 @ 6pm (Labor Day)',
+  'Tues, 9/8 @ 6pm',
+];
 
 function read_store($storeFile) {
   $raw = file_get_contents($storeFile);
   $data = json_decode($raw, true);
   if (!is_array($data)) {
-    $data = ['votes' => [], 'totals' => []];
+    $data = ['votes' => [], 'totals' => ['band' => [], 'availability' => []]];
   }
   if (!isset($data['votes']) || !is_array($data['votes'])) $data['votes'] = [];
   if (!isset($data['totals']) || !is_array($data['totals'])) $data['totals'] = [];
+  if (!isset($data['totals']['band']) || !is_array($data['totals']['band'])) $data['totals']['band'] = [];
+  if (!isset($data['totals']['availability']) || !is_array($data['totals']['availability'])) $data['totals']['availability'] = [];
   return $data;
 }
 
 function write_store($storeFile, $data) {
   file_put_contents($storeFile, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
+}
+
+function norm_name($name) {
+  return strtolower(trim($name));
+}
+
+function normalize_choices($choices) {
+  if (!is_array($choices)) return [];
+  return array_values(array_unique(array_filter(array_map('trim', $choices), fn($v) => $v !== '')));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -43,31 +61,59 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $input = json_decode(file_get_contents('php://input'), true);
 $name = trim($input['name'] ?? '');
-$vote = trim($input['vote'] ?? '');
-$allowed = ['Yes', 'No'];
+$bandAnswer = trim($input['bandAnswer'] ?? '');
+$availability = normalize_choices($input['availability'] ?? []);
 
-if ($name === '' || $vote === '' || !in_array($vote, $allowed, true)) {
+if ($name === '' || !in_array($bandAnswer, $bandChoices, true) || count($availability) === 0) {
   http_response_code(400);
-  echo json_encode(['error' => 'Please provide a name and a valid vote.']);
+  echo json_encode(['error' => 'Please provide a name, answer the band question, and select at least one draft time.']);
   exit;
 }
 
-$data = read_store($storeFile);
-$key = strtolower($name);
-
-if (isset($data['votes'][$key])) {
-  $previous = $data['votes'][$key];
-  if (isset($data['totals'][$previous])) {
-    $data['totals'][$previous] -= 1;
-    if ($data['totals'][$previous] <= 0) unset($data['totals'][$previous]);
+foreach ($availability as $choice) {
+  if (!in_array($choice, $availabilityChoices, true)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Please select valid draft time options.']);
+    exit;
   }
 }
 
-$data['votes'][$key] = $vote;
-if (!isset($data['totals'][$vote])) {
-  $data['totals'][$vote] = 0;
+$data = read_store($storeFile);
+$key = norm_name($name);
+
+if (isset($data['votes'][$key])) {
+  $previous = $data['votes'][$key];
+  if (isset($previous['band']) && isset($data['totals']['band'][$previous['band']])) {
+    $data['totals']['band'][$previous['band']] -= 1;
+    if ($data['totals']['band'][$previous['band']] <= 0) unset($data['totals']['band'][$previous['band']]);
+  }
+  if (isset($previous['availability']) && is_array($previous['availability'])) {
+    foreach ($previous['availability'] as $choice) {
+      if (isset($data['totals']['availability'][$choice])) {
+        $data['totals']['availability'][$choice] -= 1;
+        if ($data['totals']['availability'][$choice] <= 0) unset($data['totals']['availability'][$choice]);
+      }
+    }
+  }
 }
-$data['totals'][$vote] += 1;
+
+$data['votes'][$key] = [
+  'name' => $name,
+  'band' => $bandAnswer,
+  'availability' => $availability,
+];
+
+if (!isset($data['totals']['band'][$bandAnswer])) {
+  $data['totals']['band'][$bandAnswer] = 0;
+}
+$data['totals']['band'][$bandAnswer] += 1;
+
+foreach ($availability as $choice) {
+  if (!isset($data['totals']['availability'][$choice])) {
+    $data['totals']['availability'][$choice] = 0;
+  }
+  $data['totals']['availability'][$choice] += 1;
+}
 
 write_store($storeFile, $data);
 

@@ -208,6 +208,16 @@ main {
   color: var(--text);
 }
 
+.poll-options label.inline-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.poll-options label.inline-choice input {
+  margin-top: 0.2rem;
+}
+
 .poll-options input {
   margin-right: 0.45rem;
 }
@@ -303,6 +313,20 @@ main {
 .admin-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+}
+
+.admin-chart + .table-wrap {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .admin-bar-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-bar-count {
+    justify-self: end;
+  }
 }
 
 @media (max-width: 720px) {
