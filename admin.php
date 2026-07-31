@@ -95,6 +95,25 @@ function max_count($values) {
   $nums = array_values($values);
   return max(1, ...($nums ?: [1]));
 }
+
+function slot_names($votes, $slot) {
+  $names = [];
+  foreach ($votes as $entry) {
+    $availability = $entry['availability'] ?? [];
+    if (is_array($availability) && in_array($slot, $availability, true)) {
+      $names[] = $entry['name'] ?? '';
+    }
+  }
+  return array_values(array_filter($names, fn($name) => $name !== ''));
+}
+
+$availabilitySlots = [
+  'Wed, 8/26 @ 6pm',
+  'Thurs, 8/27 @ 6pm',
+  'Thurs, 9/3 @ 6pm',
+  'Mon, 9/7 @ 6pm (Labor Day)',
+  'Tues, 9/8 @ 6pm',
+];
 ?>
 <!doctype html>
 <html lang="en">
@@ -142,6 +161,22 @@ function max_count($values) {
               <a class="admin-link" href="?logout=1">Logout</a>
             </div>
           </div>
+          <?php
+            $bestAvailability = [];
+            $bestAvailabilityCount = 0;
+            foreach ($data['totals']['availability'] as $choice => $count) {
+              if ($count > $bestAvailabilityCount) {
+                $bestAvailability = [$choice];
+                $bestAvailabilityCount = $count;
+              } elseif ($count === $bestAvailabilityCount) {
+                $bestAvailability[] = $choice;
+              }
+            }
+            $bestAvailabilityLabel = $bestAvailabilityCount > 0
+              ? implode(' | ', $bestAvailability) . ' with ' . $bestAvailabilityCount . ' available'
+              : 'No availability votes yet.';
+          ?>
+          <p class="small" style="margin: 0 0 0.75rem; color: var(--accent-2); font-weight: 700;">Best match so far: <?= esc($bestAvailabilityLabel) ?></p>
           <?php $availabilityMax = max_count($data['totals']['availability']); ?>
           <div class="admin-chart">
             <?php foreach ($data['totals']['availability'] as $choice => $count): ?>
@@ -157,6 +192,38 @@ function max_count($values) {
             <?php if (!$data['totals']['availability']): ?>
               <p class="small">No availability votes yet.</p>
             <?php endif; ?>
+          </div>
+          <div class="table-wrap" style="margin-top: 0.85rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <?php foreach ($availabilitySlots as $slot): ?>
+                    <th><?= esc($slot) ?></th>
+                  <?php endforeach; ?>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($data['votes'] as $key => $entry): ?>
+                  <?php $available = $entry['availability'] ?? []; ?>
+                  <tr>
+                    <td><?= esc($entry['name'] ?? $key) ?></td>
+                    <?php foreach ($availabilitySlots as $slot): ?>
+                      <td style="text-align:center;"><?= in_array($slot, $available, true) ? '✓' : '' ?></td>
+                    <?php endforeach; ?>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+          <div class="poll-results" style="margin-top: 0.85rem;">
+            <?php foreach ($availabilitySlots as $slot): ?>
+              <?php $names = slot_names($data['votes'], $slot); ?>
+              <div class="poll-result-row">
+                <span><?= esc($slot) ?></span>
+                <span><?= esc(implode(', ', $names) ?: 'No one yet') ?></span>
+              </div>
+            <?php endforeach; ?>
           </div>
         </section>
 
