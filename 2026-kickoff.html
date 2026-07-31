@@ -31,6 +31,8 @@
       <p>&copy;2005 - <span id="current-year"></span> Shockafella LLC. Made with ❤️ in PDX. Hosted live and free in New Hampshire.</p>
     </footer>
 
-    <script src="./app.js?v=20260228e"></script>
+    <script>
+      document.getElementById('current-year').textContent = String(new Date().getFullYear());
+    </script>
   </body>
 </html>
