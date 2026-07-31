@@ -73,6 +73,31 @@
           ></iframe>
         </div>
       </section>
+
+      <section class="card block" style="margin-top: 0.8rem;">
+        <div class="block-header">
+          <h2>2026 Poll</h2>
+        </div>
+        <p class="small">Enter your name, then cast your vote.</p>
+        <form id="poll-form" class="poll-form">
+          <label class="poll-field">
+            <span>Name</span>
+            <input id="poll-name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+          </label>
+          <fieldset class="poll-field poll-options">
+            <legend>Do you know the name of the band referenced in the last question?</legend>
+            <label><input type="radio" name="vote" value="Yes" required /> Yes</label>
+            <label><input type="radio" name="vote" value="No" /> No</label>
+          </fieldset>
+          <button type="submit" class="poll-submit">Submit Vote</button>
+        </form>
+        <div id="poll-message" class="small poll-message"></div>
+        <div class="poll-results-wrap">
+          <div class="poll-results-title">Current Results</div>
+          <div id="poll-results" class="poll-results small">Loading results...</div>
+        </div>
+        <p class="small" style="margin-top: 0.65rem;"><a href="./admin.php">Open poll admin</a></p>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -83,6 +108,70 @@
 
     <script>
       document.getElementById('current-year').textContent = String(new Date().getFullYear());
+    </script>
+    <script>
+      (function () {
+        const form = document.getElementById('poll-form');
+        const message = document.getElementById('poll-message');
+        const results = document.getElementById('poll-results');
+        const storageKey = 'league-poll-name';
+
+        const renderResults = (data) => {
+          if (!data || !data.totals) {
+            results.textContent = 'No results yet.';
+            return;
+          }
+          const items = Object.entries(data.totals)
+            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+            .map(([choice, count]) => `<div class="poll-result-row"><span>${choice}</span><span>${count}</span></div>`)
+            .join('');
+          results.innerHTML = items || 'No votes yet.';
+        };
+
+        const loadResults = async () => {
+          try {
+            const res = await fetch('./poll.php', { cache: 'no-store' });
+            renderResults(await res.json());
+          } catch (err) {
+            results.textContent = 'Unable to load results.';
+          }
+        };
+
+        const savedName = window.localStorage.getItem(storageKey);
+        if (savedName) document.getElementById('poll-name').value = savedName;
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const name = document.getElementById('poll-name').value.trim();
+          const vote = new FormData(form).get('vote');
+          if (!name) {
+            message.textContent = 'Please enter your name first.';
+            return;
+          }
+          if (!vote) {
+            message.textContent = 'Please select an answer.';
+            return;
+          }
+
+          try {
+            const res = await fetch('./poll.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, vote }),
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Vote could not be saved.');
+            window.localStorage.setItem(storageKey, name);
+            message.textContent = `Thanks, ${name}. Your vote was recorded.`;
+            renderResults(data);
+            form.querySelectorAll('input[type="radio"]').forEach((input) => (input.checked = false));
+          } catch (err) {
+            message.textContent = err.message || 'Vote could not be saved.';
+          }
+        });
+
+        loadResults();
+      })();
     </script>
   </body>
 </html>
