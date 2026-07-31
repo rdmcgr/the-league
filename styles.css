@@ -128,6 +128,21 @@ main {
   margin: 0;
   border-top: 1px solid var(--line);
   padding-top: 0.8rem;
+  white-space: nowrap;
+}
+
+.footer-joint {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 2.1em;
+  height: auto;
+  vertical-align: -0.18em;
+  margin: 0 0.12em;
 }
 
 .panel {
