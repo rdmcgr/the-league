@@ -146,6 +146,16 @@ main {
   margin: 0 0.12em;
 }
 
+@media (max-width: 720px) {
+  .site-footer p {
+    white-space: normal;
+  }
+
+  .footer-joint {
+    white-space: normal;
+  }
+}
+
 .panel {
   display: none;
 }
