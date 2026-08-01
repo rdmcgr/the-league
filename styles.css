@@ -419,6 +419,18 @@ main {
   padding: 0.75rem;
 }
 
+.kickoff-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.kickoff-logo {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+}
+
 .block-header {
   display: flex;
   align-items: center;
