@@ -38,5 +38,6 @@ jobs:
             --exclude='.DS_Store' \
             --exclude='Season Win Tracker 02282026.xlsx' \
             --exclude='scripts/' \
+            --exclude='data/poll-votes.json' \
             -e "ssh -i ~/.ssh/id_rsa -p $REMOTE_PORT" \
             ./ "$REMOTE_USER@$REMOTE_HOST:$TARGET_PATH"
