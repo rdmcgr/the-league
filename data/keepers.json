@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "source": "FF Keepers 0892026.xlsm",
+    "sheet": "2025"
+  },
+  "headerYears": [
+    "2025"
+  ],
+  "notes": [],
+  "keepers": [
+    {
+      "owner": "He Hate Me",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Jahmyr Gibbs (2)",
+          "style": "49",
+          "fill": "0"
+        },
+        {
+          "value": "Sam LaPorta (14)",
+          "style": "54",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "Rachel Niquols Espn",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Terry McLaurin (7)",
+          "style": "63",
+          "fill": "11"
+        },
+        {
+          "value": "Jaylen Warren (8)",
+          "style": "57",
+          "fill": "11"
+        }
+      ]
+    },
+    {
+      "owner": "Veto My Trades",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Jonathan Taylor (6)",
+          "style": "58",
+          "fill": "10"
+        },
+        {
+          "value": "Puka Nacua (14)",
+          "style": "54",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "The Herdsman",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Josh Allen (3)",
+          "style": "56",
+          "fill": "11"
+        },
+        {
+          "value": "George Kittle (5)",
+          "style": "59",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "You Just Got Stewed",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Jayden Daniels (8)",
+          "style": "62",
+          "fill": "11"
+        },
+        {
+          "value": "Brock Bowers (10)",
+          "style": "57",
+          "fill": "11"
+        }
+      ]
+    },
+    {
+      "owner": "AngnesTing",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Ja'Marr Chase (1)",
+          "style": "63",
+          "fill": "11"
+        },
+        {
+          "value": "Nico Collins (6)",
+          "style": "57",
+          "fill": "11"
+        }
+      ]
+    },
+    {
+      "owner": "About Damn Time",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Deebo Samuel (3)",
+          "style": "62",
+          "fill": "11"
+        },
+        {
+          "value": "Tua Tagovailoa (11)",
+          "style": "54",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "Sunset Strips",
+      "year": "2025",
+      "values": [
+        {
+          "value": "D'Andre Swift (6)",
+          "style": "64",
+          "fill": "11"
+        },
+        {
+          "value": "Mike Evans (11)",
+          "style": "54",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "Team Winner",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Bucky Irving (12)",
+          "style": "62",
+          "fill": "11"
+        },
+        {
+          "value": "Kyren Williams (14)",
+          "style": "54",
+          "fill": "10"
+        }
+      ]
+    },
+    {
+      "owner": "Androgynous Danny",
+      "year": "2025",
+      "values": [
+        {
+          "value": "Saquon Barkley (1)",
+          "style": "62",
+          "fill": "11"
+        },
+        {
+          "value": "Brian Thomas Jr. (14)",
+          "style": "107",
+          "fill": "11"
+        }
+      ]
+    }
+  ]
+}

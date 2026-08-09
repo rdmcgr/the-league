@@ -264,6 +264,107 @@ main {
   border: 1px solid var(--line);
 }
 
+.keepers-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.keepers-card {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #111923;
+}
+
+.keepers-card-label {
+  font-weight: 800;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.82rem;
+}
+
+.keepers-card-values {
+  color: var(--text);
+  line-height: 1.35;
+  font-size: 0.9rem;
+}
+
+.keepers-na {
+  color: var(--muted);
+}
+
+#keepers-table {
+  min-width: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#keepers-table th,
+#keepers-table td {
+  white-space: nowrap;
+}
+
+#keepers-table td {
+  text-align: left;
+  padding: 0.34rem 0.28rem;
+  font-size: 0.82rem;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.keepers-cell {
+  background: #111923;
+}
+
+.keepers-yellow {
+  background: #fff200;
+  color: #10151c;
+  font-weight: 800;
+}
+
+.keepers-red {
+  background: #ff5050;
+  color: #10151c;
+  font-weight: 800;
+}
+
+.keepers-key {
+  margin-top: 0.85rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.keepers-key p {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.keepers-swatch {
+  flex: 0 0 auto;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-top: 0.2rem;
+  border-radius: 0.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.keepers-yellow-swatch {
+  background: #fff200;
+}
+
+.keepers-red-swatch {
+  background: #ff5050;
+}
+
 .poll-admin-login {
   max-width: 420px;
 }
@@ -319,7 +420,41 @@ main {
   margin-top: 0.5rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 560px) {
+  #keepers-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #keepers-table tbody,
+  #keepers-table tr {
+    display: block;
+  }
+
+  #keepers-table td {
+    display: block;
+    width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    padding: 0.3rem 0.35rem;
+  }
+
+  #keepers-table td + td {
+    margin-top: 0.2rem;
+  }
+
+  #keepers-table td:first-child {
+    font-weight: 800;
+    color: var(--accent-2);
+    padding-bottom: 0.1rem;
+  }
+
+  #keepers-table {
+    min-width: 0;
+  }
+
   .admin-bar-row {
     grid-template-columns: 1fr;
   }
@@ -329,7 +464,7 @@ main {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 560px) {
   .site-footer p {
     white-space: normal;
   }

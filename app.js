@@ -1,5 +1,6 @@
 const state = {
   data: null,
+  keepers: null,
   sortKey: 'team',
   sortDir: 'asc',
   winsMetric: 'last3Total',
@@ -830,6 +831,33 @@ function renderTrophyTable() {
     .join('');
 }
 
+function renderKeepers() {
+  const data = state.keepers;
+  if (!data) return;
+
+  const table = document.getElementById('keepers-table');
+  const rows = [...(data.keepers || [])].sort((a, b) => String(a.owner || '').localeCompare(String(b.owner || '')));
+  const body = `<tbody>${rows
+    .map((row) => `<tr><td class="keepers-cell">${row.owner}</td>${(row.values || [])
+      .map((cell) => {
+        const cls = ['keepers-cell'];
+        if (String(cell?.fill) === '10') cls.push('keepers-yellow');
+        if (String(cell?.fill) === '7') cls.push('keepers-red');
+        return `<td class="${cls.join(' ')}">${cell?.value || '&nbsp;'}</td>`;
+      })
+      .join('')}</tr>`)
+    .join('')}</tbody>`;
+  table.innerHTML = body;
+
+  const key = document.getElementById('keepers-key');
+  if (key) {
+    key.innerHTML = `
+      <p><span class="keepers-swatch keepers-yellow-swatch"></span>Kept 2 consecutive years. Cannot be kept again by current team.</p>
+      <p><span class="keepers-swatch keepers-red-swatch"></span>Kept 3 consecutive years after being traded. Must be returned to the draft or released into free agency.</p>
+    `;
+  }
+}
+
 function renderAll() {
   const years = state.data.years || [];
   if (years.length) {
@@ -861,6 +889,7 @@ function renderAll() {
   renderPointsChart();
   renderTrophyChart();
   renderTrophyTable();
+  renderKeepers();
 }
 
 async function boot() {
@@ -869,6 +898,8 @@ async function boot() {
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   const res = await fetch('./data/league-data.json?v=20260228c', { cache: 'no-store' });
   state.data = await res.json();
+  const keepersRes = await fetch('./data/keepers.json?v=20260809b', { cache: 'no-store' });
+  state.keepers = await keepersRes.json();
 
   renderAll();
   initAllTimeEvents();
