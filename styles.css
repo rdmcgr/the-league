@@ -431,6 +431,13 @@ main {
   height: auto;
 }
 
+.team-highlight {
+  color: var(--accent-2);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .block-header {
   display: flex;
   align-items: center;
