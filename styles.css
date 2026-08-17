@@ -320,6 +320,15 @@ main {
   background: #111923;
 }
 
+.keepers-owner {
+  color: #ffd8ad;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 0 8px rgba(255, 122, 48, 0.18),
+    0 0 16px rgba(255, 122, 48, 0.08);
+}
+
 .keepers-yellow {
   background: #fff200;
   color: #10151c;
@@ -423,36 +432,65 @@ main {
 @media (max-width: 560px) {
   #keepers-table {
     display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    min-width: 0;
   }
 
-  #keepers-table tbody,
+  #keepers-table thead {
+    display: none;
+  }
+
+  #keepers-table tbody {
+    display: grid;
+    gap: 0.7rem;
+  }
+
   #keepers-table tr {
-    display: block;
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(10, 15, 22, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   }
 
   #keepers-table td {
-    display: block;
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    align-items: start;
     width: 100%;
+    padding: 0.1rem 0;
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
-    padding: 0.3rem 0.35rem;
+    text-align: left;
+    gap: 0.45rem;
   }
 
-  #keepers-table td + td {
-    margin-top: 0.2rem;
+  #keepers-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 0.12rem;
   }
 
   #keepers-table td:first-child {
-    font-weight: 800;
-    color: var(--accent-2);
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.2rem;
   }
 
-  #keepers-table {
-    min-width: 0;
+  #keepers-table td:first-child::before {
+    color: var(--accent-2);
+  }
+
+  #keepers-table td + td {
+    margin-top: 0;
+  }
+
+  .keepers-owner {
+    justify-self: start;
   }
 
   .admin-bar-row {

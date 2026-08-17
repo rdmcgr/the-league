@@ -838,12 +838,12 @@ function renderKeepers() {
   const table = document.getElementById('keepers-table');
   const rows = [...(data.keepers || [])].sort((a, b) => String(a.owner || '').localeCompare(String(b.owner || '')));
   const body = `<tbody>${rows
-    .map((row) => `<tr><td class="keepers-cell">${row.owner}</td>${(row.values || [])
-      .map((cell) => {
+    .map((row) => `<tr><td class="keepers-cell keepers-owner" data-label="Owner">${row.owner}</td>${(row.values || [])
+      .map((cell, idx) => {
         const cls = ['keepers-cell'];
         if (String(cell?.fill) === '10') cls.push('keepers-yellow');
         if (String(cell?.fill) === '7') cls.push('keepers-red');
-        return `<td class="${cls.join(' ')}">${cell?.value || '&nbsp;'}</td>`;
+        return `<td class="${cls.join(' ')}" data-label="Keeper ${idx + 1}">${cell?.value || '&nbsp;'}</td>`;
       })
       .join('')}</tr>`)
     .join('')}</tbody>`;
