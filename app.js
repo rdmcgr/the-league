@@ -925,7 +925,7 @@ function renderFutures(data, keeperTeams) {
   const ledgerBlock = document.getElementById('futures-ledger-block');
   const handleBlock = document.getElementById('futures-handle-block');
   ledgerBlock.hidden = !data.publicWagersVisible;
-  handleBlock.hidden = !data.publicWagersVisible;
+  if (handleBlock) handleBlock.hidden = !data.publicWagersVisible;
   if (data.publicWagersVisible) {
     document.getElementById('futures-ledger-title').textContent = data.marketStatus === 'locked' ? 'Futures Picks' : 'Locked Futures Ledger';
     document.querySelector('#futures-ledger-table tbody').innerHTML = (data.wagers || [])
@@ -940,9 +940,12 @@ function renderFutures(data, keeperTeams) {
       .map(([team, total]) => ({ team, total }))
       .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
     const maxTotal = Math.max(1, ...totals.map((row) => row.total));
-    document.getElementById('futures-handle-chart').innerHTML = totals
-      .map((row) => `<div class="futures-handle-row"><div class="futures-handle-label">${row.team} <span>${formatAmericanOdds(oddsByTeam.get(row.team)?.americanOdds)}</span></div><div class="futures-handle-track"><div class="futures-handle-bar" style="width:${(row.total / maxTotal) * 100}%"></div></div><div class="futures-handle-value">${row.total.toLocaleString()}</div></div>`)
-      .join('');
+    const handleChart = document.getElementById('futures-handle-chart');
+    if (handleChart) {
+      handleChart.innerHTML = totals
+        .map((row) => `<div class="futures-handle-row"><div class="futures-handle-label">${row.team} <span>${formatAmericanOdds(oddsByTeam.get(row.team)?.americanOdds)}</span></div><div class="futures-handle-track"><div class="futures-handle-bar" style="width:${(row.total / maxTotal) * 100}%"></div></div><div class="futures-handle-value">${row.total.toLocaleString()}</div></div>`)
+        .join('');
+    }
   }
 }
 
