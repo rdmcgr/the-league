@@ -128,6 +128,12 @@ h1 {
   color: #fff;
 }
 
+.tab-coming-soon {
+  font-size: 0.72em;
+  font-weight: 700;
+  opacity: 0.82;
+}
+
 .site-announcement {
   display: flex;
   align-items: center;

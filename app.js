@@ -877,7 +877,9 @@ function populateFuturesSelect(select, teams, optional = false, oddsByTeam = new
 
 function renderFutures(data, keeperTeams) {
   const comingSoon = Boolean(data.comingSoon);
-  document.querySelector('.tab[data-tab="futures"]').textContent = comingSoon ? 'Futures (Coming Soon)' : 'Futures';
+  document.querySelector('.tab[data-tab="futures"]').innerHTML = comingSoon
+    ? 'Sportsbook <span class="tab-coming-soon">(Coming Soon)</span>'
+    : 'Futures';
   document.getElementById('futures-coming-soon').hidden = !comingSoon;
   document.getElementById('futures-live-content').hidden = comingSoon;
   if (comingSoon) return;
