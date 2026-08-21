@@ -862,6 +862,12 @@ function formatAmericanOdds(value) {
   return value == null ? 'TBD' : `${value > 0 ? '+' : ''}${Number(value).toLocaleString('en-US')}`;
 }
 
+function impliedProbabilityFromAmericanOdds(odds) {
+  const value = Number(odds);
+  if (!Number.isFinite(value) || value === 0) return 0;
+  return value > 0 ? 100 / (value + 100) : Math.abs(value) / (Math.abs(value) + 100);
+}
+
 function populateFuturesSelect(select, teams, optional = false) {
   if (!select) return;
   select.innerHTML = `${optional ? '<option value="">No second pick</option>' : '<option value="">Select a team</option>'}${teams
@@ -870,6 +876,10 @@ function populateFuturesSelect(select, teams, optional = false) {
 }
 
 function renderFutures(data, keeperTeams) {
+  const comingSoon = Boolean(data.comingSoon);
+  document.getElementById('futures-coming-soon').hidden = !comingSoon;
+  document.getElementById('futures-live-content').hidden = comingSoon;
+  if (comingSoon) return;
   const odds = data.odds || [];
   const owners = data.owners || [];
   const isLocalPreview = window.location.protocol === 'file:';
@@ -889,8 +899,13 @@ function renderFutures(data, keeperTeams) {
     : data.marketStatus === 'open'
       ? 'Wagers are private until the commissioner locks and reveals the market.'
       : 'The market is locked.';
+  const sortedOdds = [...odds].sort(
+    (a, b) =>
+      impliedProbabilityFromAmericanOdds(b.americanOdds) - impliedProbabilityFromAmericanOdds(a.americanOdds) ||
+      a.team.localeCompare(b.team),
+  );
   tbody.innerHTML = odds.length
-    ? odds.map((row) => `<tr><td>${row.team}</td><td>${fmtPct(row.probability)}</td><td>${formatAmericanOdds(row.americanOdds)}</td></tr>`).join('')
+    ? sortedOdds.map((row) => `<tr><td>${row.team}</td><td>${fmtPct(row.probability)}</td><td>${formatAmericanOdds(row.americanOdds)}</td></tr>`).join('')
     : '<tr><td colspan="3" class="small">Preseason odds will be posted after the draft.</td></tr>';
 
   const ownerSelect = document.getElementById('futures-owner');

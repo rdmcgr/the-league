@@ -18,7 +18,7 @@ $runtimeDefaults = ['marketStatus' => $config['marketStatus'], 'publicWagersVisi
 $runtime = read_json_file($runtimeFile, $runtimeDefaults);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-  $response = ['marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'odds' => $config['odds']];
+  $response = ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'odds' => $config['odds']];
   if ($runtime['publicWagersVisible']) $response['wagers'] = $runtime['wagers'];
   echo json_encode($response, JSON_UNESCAPED_SLASHES);
   exit;
