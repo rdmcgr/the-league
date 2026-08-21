@@ -109,6 +109,28 @@ h1 {
   color: #fff;
 }
 
+.site-announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0.65rem 1.4rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, #241a11, #322516, #241a11);
+  color: #ffe8a3;
+  font-weight: 800;
+  text-align: center;
+}
+
+.site-announcement-label {
+  color: var(--accent-2);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
 main {
   padding: 1rem 1.4rem 2rem;
   max-width: var(--content-max);
@@ -915,6 +937,8 @@ svg {
   .hero-inner {
     align-items: flex-start;
   }
+
+  .site-announcement { flex-direction: column; gap: 0.2rem; padding: 0.55rem 1rem; }
 
   .champion-photo-wrap {
     max-width: 100%;
