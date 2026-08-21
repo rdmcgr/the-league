@@ -24,6 +24,7 @@
       <button class="tab" data-tab="trophies">Trophies</button>
       <button class="tab" data-tab="points">Points</button>
       <button class="tab" data-tab="wins">Wins</button>
+      <button class="tab" data-tab="futures">Futures</button>
     </nav>
 
     <main>
@@ -184,6 +185,45 @@
             <table id="keepers-table"></table>
           </div>
           <div id="keepers-key" class="keepers-key" aria-label="Keeper key"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="futures">
+        <article class="card block">
+          <div class="block-header">
+            <h2>2026 Championship Futures</h2>
+            <span id="futures-status" class="futures-status">Loading market…</span>
+          </div>
+          <p id="futures-description" class="small"></p>
+          <div class="table-wrap">
+            <table id="futures-odds-table">
+              <thead><tr><th>Team</th><th>Title Chance</th><th>American Odds</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card block futures-entry-block">
+          <div class="block-header"><h2>Place Your Futures</h2></div>
+          <p class="small">Each owner backs two teams using exactly 1,000 credits total. Re-submitting replaces your prior entry while the market is open.</p>
+          <form id="futures-form" class="poll-form">
+            <label class="poll-field"><span>Owner</span><select id="futures-owner" required></select></label>
+            <div class="futures-picks">
+              <label class="poll-field"><span>Pick 1</span><select id="futures-team-1" required></select></label>
+              <label class="poll-field"><span>Stake</span><input id="futures-stake-1" type="number" min="50" max="1000" step="50" required /></label>
+              <label class="poll-field"><span>Pick 2</span><select id="futures-team-2" required></select></label>
+              <label class="poll-field"><span>Stake</span><input id="futures-stake-2" type="number" min="50" max="950" step="50" required /></label>
+            </div>
+            <div id="futures-credit-meter" class="futures-credit-meter" aria-live="polite"><strong>Credits used: 0 / 1,000</strong><span>1,000 credits remaining</span></div>
+            <button id="futures-submit" type="submit" class="poll-submit">Submit Futures</button>
+          </form>
+          <div id="futures-message" class="small poll-message"></div>
+          <p class="small futures-admin-link"><a href="./futures-admin.php">Sportsbook admin</a></p>
+        </article>
+
+        <article id="futures-ledger-block" class="card block" hidden>
+          <div class="block-header"><h2>Locked Futures Ledger</h2></div>
+          <div class="table-wrap"><table id="futures-ledger-table"><thead><tr><th>Owner</th><th>Pick</th><th>Stake</th><th>Odds</th></tr></thead><tbody></tbody></table></div>
         </article>
       </section>
     </main>

@@ -39,5 +39,6 @@ jobs:
             --exclude='Season Win Tracker 02282026.xlsx' \
             --exclude='scripts/' \
             --exclude='data/poll-votes.json' \
+            --exclude='data/futures-runtime.json' \
             -e "ssh -i ~/.ssh/id_rsa -p $REMOTE_PORT" \
             ./ "$REMOTE_USER@$REMOTE_HOST:$TARGET_PATH"

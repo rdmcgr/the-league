@@ -858,6 +858,100 @@ function renderKeepers() {
   }
 }
 
+function formatAmericanOdds(value) {
+  return value == null ? 'TBD' : `${value > 0 ? '+' : ''}${Number(value).toLocaleString('en-US')}`;
+}
+
+function populateFuturesSelect(select, teams, optional = false) {
+  if (!select) return;
+  select.innerHTML = `${optional ? '<option value="">No second pick</option>' : '<option value="">Select a team</option>'}${teams
+    .map((team) => `<option value="${team}">${team}</option>`)
+    .join('')}`;
+}
+
+function renderFutures(data, keeperTeams) {
+  const odds = data.odds || [];
+  const owners = data.owners || [];
+  const isLocalPreview = window.location.protocol === 'file:';
+  const isReady = data.marketStatus === 'open' && odds.length > 0 && !isLocalPreview;
+  const status = document.getElementById('futures-status');
+  const description = document.getElementById('futures-description');
+  const tbody = document.querySelector('#futures-odds-table tbody');
+  const form = document.getElementById('futures-form');
+  const submit = document.getElementById('futures-submit');
+
+  status.textContent = data.marketStatus === 'open' ? (odds.length ? 'Market Open' : 'Odds Pending') : 'Market Locked';
+  status.className = `futures-status ${data.marketStatus === 'open' && odds.length ? 'open' : ''}`;
+  description.textContent = isLocalPreview
+    ? 'Local preview mode: odds are shown from the configuration file; submissions work on the hosted site.'
+    : data.marketStatus === 'open' && !odds.length
+    ? 'The market will open after the draft once preseason odds are posted.'
+    : data.marketStatus === 'open'
+      ? 'Wagers are private until the commissioner locks and reveals the market.'
+      : 'The market is locked.';
+  tbody.innerHTML = odds.length
+    ? odds.map((row) => `<tr><td>${row.team}</td><td>${fmtPct(row.probability)}</td><td>${formatAmericanOdds(row.americanOdds)}</td></tr>`).join('')
+    : '<tr><td colspan="3" class="small">Preseason odds will be posted after the draft.</td></tr>';
+
+  const ownerSelect = document.getElementById('futures-owner');
+  if (ownerSelect && ownerSelect.options.length === 0) {
+    ownerSelect.innerHTML = `<option value="">Select your name</option>${owners.map((owner) => `<option value="${owner}">${owner}</option>`).join('')}`;
+  }
+  const oddsByTeam = new Map(odds.map((row) => [row.team, row]));
+  const teams = keeperTeams.filter((team) => oddsByTeam.has(team));
+  populateFuturesSelect(document.getElementById('futures-team-1'), teams);
+  populateFuturesSelect(document.getElementById('futures-team-2'), teams);
+  const fieldsEnabled = data.marketStatus === 'open' && odds.length > 0;
+  form.querySelectorAll('select, input').forEach((field) => (field.disabled = !fieldsEnabled));
+  submit.disabled = !isReady;
+  submit.textContent = isReady ? 'Submit Futures' : isLocalPreview ? 'Hosted Site Required' : data.marketStatus === 'open' ? 'Odds Pending' : 'Market Locked';
+
+  const ledgerBlock = document.getElementById('futures-ledger-block');
+  ledgerBlock.hidden = !data.publicWagersVisible;
+  if (data.publicWagersVisible) {
+    document.querySelector('#futures-ledger-table tbody').innerHTML = (data.wagers || [])
+      .flatMap((wager) => (wager.picks || []).map((pick) => `<tr><td>${wager.owner}</td><td>${pick.team}</td><td>${pick.stake.toLocaleString()} credits</td><td>${formatAmericanOdds(pick.americanOdds)}</td></tr>`))
+      .join('') || '<tr><td colspan="4" class="small">No futures were submitted.</td></tr>';
+  }
+}
+
+function initFutures(data, keeperTeams) {
+  renderFutures(data, keeperTeams);
+  const form = document.getElementById('futures-form');
+  const updateCreditMeter = () => {
+    const firstStake = Number(document.getElementById('futures-stake-1').value || 0);
+    const secondStake = Number(document.getElementById('futures-stake-2').value || 0);
+    const used = firstStake + secondStake;
+    const remaining = 1000 - used;
+    const meter = document.getElementById('futures-credit-meter');
+    meter.classList.toggle('over', remaining < 0);
+    meter.classList.toggle('complete', remaining === 0);
+    meter.innerHTML = `<strong>Credits used: ${used.toLocaleString()} / 1,000</strong><span>${remaining < 0 ? `${Math.abs(remaining).toLocaleString()} credits over the limit` : `${remaining.toLocaleString()} credits remaining`}</span>`;
+  };
+  document.getElementById('futures-stake-1').addEventListener('input', updateCreditMeter);
+  document.getElementById('futures-stake-2').addEventListener('input', updateCreditMeter);
+  updateCreditMeter();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const owner = document.getElementById('futures-owner').value;
+    const firstTeam = document.getElementById('futures-team-1').value;
+    const firstStake = Number(document.getElementById('futures-stake-1').value);
+    const secondTeam = document.getElementById('futures-team-2').value;
+    const secondStake = Number(document.getElementById('futures-stake-2').value || 0);
+    const message = document.getElementById('futures-message');
+    if (!owner || !firstTeam || !firstStake) return;
+    if (!secondTeam || !secondStake) { message.textContent = 'Please select both picks and enter both stakes.'; return; }
+    if (firstTeam === secondTeam) { message.textContent = 'Your two picks must be different teams.'; return; }
+    if (firstStake + secondStake !== 1000) { message.textContent = 'Your two stakes must total exactly 1,000 credits.'; return; }
+    try {
+      const response = await fetch('./futures.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ owner, picks: [{ team: firstTeam, stake: firstStake }, { team: secondTeam, stake: secondStake }] }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Your futures could not be saved.');
+      message.textContent = 'Your futures are in. You can re-submit before the market locks to replace them.';
+    } catch (err) { message.textContent = err.message || 'Your futures could not be saved.'; }
+  });
+}
+
 function renderAll() {
   const years = state.data.years || [];
   if (years.length) {
@@ -900,12 +994,18 @@ async function boot() {
   state.data = await res.json();
   const keepersRes = await fetch('./data/keepers.json?v=20260809b', { cache: 'no-store' });
   state.keepers = await keepersRes.json();
+  const futuresSource = window.location.protocol === 'file:' ? './data/futures.json' : './futures.php';
+  const futuresRes = await fetch(futuresSource, { cache: 'no-store' });
+  const futures = await futuresRes.json();
 
   renderAll();
   initAllTimeEvents();
   initMetricToggle();
   initWinsToggle();
   initTrophyToggle();
+  const winOwners = state.data.yearlyWins.map((row) => row.team);
+  const keeperTeams = state.keepers.keepers.map((row) => row.owner);
+  initFutures({ ...futures, owners: winOwners }, keeperTeams);
 
   window.addEventListener('resize', () => {
     renderWinsBarChart();
