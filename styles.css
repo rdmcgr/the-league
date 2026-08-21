@@ -233,6 +233,20 @@ main {
 .futures-admin-link a { color: var(--muted); }
 .futures-admin-link a:hover { color: var(--accent-2); }
 
+.admin-remove {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #7e2a34;
+  border-radius: 6px;
+  background: transparent;
+  color: #ff9da4;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-remove:hover { background: #4a1820; }
+
 .futures-picks {
   display: grid;
   grid-template-columns: minmax(160px, 1.5fr) minmax(110px, 0.65fr);
@@ -254,6 +268,20 @@ main {
 .futures-credit-meter.complete span { color: var(--good); font-weight: 700; }
 .futures-credit-meter.over { border-color: var(--accent); }
 .futures-credit-meter.over span { color: #ff818a; font-weight: 700; }
+
+.futures-handle-chart { display: grid; gap: 0.55rem; }
+
+.futures-handle-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1.2fr) minmax(100px, 3fr) 58px;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.futures-handle-label { font-weight: 700; }
+.futures-handle-track { height: 16px; border-radius: 999px; background: #111923; overflow: hidden; }
+.futures-handle-bar { height: 100%; min-width: 2px; border-radius: inherit; background: var(--accent-2); }
+.futures-handle-value { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
 
 .poll-options {
   margin: 0;
@@ -928,4 +956,5 @@ svg {
 
   .futures-picks { grid-template-columns: 1fr; }
   .futures-credit-meter { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
+  .futures-handle-row { grid-template-columns: minmax(105px, 1fr) minmax(80px, 2fr) 48px; gap: 0.4rem; font-size: 0.78rem; }
 }

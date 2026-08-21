@@ -897,7 +897,7 @@ function renderFutures(data, keeperTeams) {
     : data.marketStatus === 'open' && !odds.length
     ? 'The market will open after the draft once preseason odds are posted.'
     : data.marketStatus === 'open'
-      ? 'Wagers are private until the commissioner locks and reveals the market.'
+      ? 'Wagers are private until the market locks on 9/13.'
       : 'The market is locked.';
   const sortedOdds = [...odds].sort(
     (a, b) =>
@@ -922,11 +922,26 @@ function renderFutures(data, keeperTeams) {
   submit.textContent = isReady ? 'Submit Futures' : isLocalPreview ? 'Hosted Site Required' : data.marketStatus === 'open' ? 'Odds Pending' : 'Market Locked';
 
   const ledgerBlock = document.getElementById('futures-ledger-block');
+  const handleBlock = document.getElementById('futures-handle-block');
   ledgerBlock.hidden = !data.publicWagersVisible;
+  handleBlock.hidden = !data.publicWagersVisible;
   if (data.publicWagersVisible) {
+    document.getElementById('futures-ledger-title').textContent = data.marketStatus === 'locked' ? 'Futures Picks' : 'Locked Futures Ledger';
     document.querySelector('#futures-ledger-table tbody').innerHTML = (data.wagers || [])
       .flatMap((wager) => (wager.picks || []).map((pick) => `<tr><td>${wager.owner}</td><td>${pick.team}</td><td>${pick.stake.toLocaleString()} credits</td><td>${formatAmericanOdds(pick.americanOdds)}</td></tr>`))
       .join('') || '<tr><td colspan="4" class="small">No futures were submitted.</td></tr>';
+
+    const totalByTeam = new Map(odds.map((row) => [row.team, 0]));
+    (data.wagers || []).forEach((wager) => {
+      (wager.picks || []).forEach((pick) => totalByTeam.set(pick.team, (totalByTeam.get(pick.team) || 0) + Number(pick.stake || 0)));
+    });
+    const totals = [...totalByTeam.entries()]
+      .map(([team, total]) => ({ team, total }))
+      .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
+    const maxTotal = Math.max(1, ...totals.map((row) => row.total));
+    document.getElementById('futures-handle-chart').innerHTML = totals
+      .map((row) => `<div class="futures-handle-row"><div class="futures-handle-label">${row.team}</div><div class="futures-handle-track"><div class="futures-handle-bar" style="width:${(row.total / maxTotal) * 100}%"></div></div><div class="futures-handle-value">${row.total.toLocaleString()}</div></div>`)
+      .join('');
   }
 }
 

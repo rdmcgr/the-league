@@ -41,8 +41,8 @@ foreach ($config['odds'] as $row) $oddsByTeam[$row['team'] ?? ''] = $row;
 $cleanPicks = []; $teams = []; $totalStake = 0;
 foreach ($picks as $pick) {
   $team = trim($pick['team'] ?? ''); $stake = $pick['stake'] ?? null;
-  if (!isset($oddsByTeam[$team]) || !is_numeric($stake) || (int) $stake < 50 || (int) $stake > 1000 || ((int) $stake % 50 !== 0) || in_array($team, $teams, true)) {
-    http_response_code(400); echo json_encode(['error' => 'Picks must be different listed teams with stakes in 50-credit increments.']); exit;
+  if (!isset($oddsByTeam[$team]) || !is_numeric($stake) || (int) $stake < 200 || (int) $stake > 800 || ((int) $stake % 50 !== 0) || in_array($team, $teams, true)) {
+    http_response_code(400); echo json_encode(['error' => 'Picks must be different listed teams with stakes from 200 to 800 credits, in 50-credit increments.']); exit;
   }
   $stake = (int) $stake; $teams[] = $team; $totalStake += $stake;
   // Store the odds at submission time so future board changes never alter this wager.
