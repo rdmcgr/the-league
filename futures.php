@@ -14,11 +14,11 @@ function write_json_file($file, $data) {
 }
 
 $config = read_json_file($configFile, ['marketStatus' => 'open', 'publicWagersVisible' => false, 'owners' => [], 'ownerTeams' => [], 'odds' => []]);
-$runtimeDefaults = ['marketStatus' => $config['marketStatus'], 'publicWagersVisible' => $config['publicWagersVisible'], 'wagers' => []];
+$runtimeDefaults = ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $config['marketStatus'], 'publicWagersVisible' => $config['publicWagersVisible'], 'wagers' => []];
 $runtime = read_json_file($runtimeFile, $runtimeDefaults);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-  $response = ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'ownerTeams' => $config['ownerTeams'], 'odds' => $config['odds']];
+  $response = ['comingSoon' => (bool) $runtime['comingSoon'], 'marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'ownerTeams' => $config['ownerTeams'], 'odds' => $config['odds']];
   if ($runtime['publicWagersVisible']) $response['wagers'] = $runtime['wagers'];
   echo json_encode($response, JSON_UNESCAPED_SLASHES);
   exit;

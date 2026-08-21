@@ -6,11 +6,12 @@ $runtimeFile = __DIR__ . '/data/futures-runtime.json';
 function read_admin_json($file, $fallback) { if (!file_exists($file)) return $fallback; $data = json_decode(file_get_contents($file), true); return is_array($data) ? array_merge($fallback, $data) : $fallback; }
 function esc($value) { return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8'); }
 $config = read_admin_json($configFile, ['marketStatus' => 'open', 'publicWagersVisible' => false, 'odds' => []]);
-$runtime = read_admin_json($runtimeFile, ['marketStatus' => $config['marketStatus'], 'publicWagersVisible' => $config['publicWagersVisible'], 'wagers' => []]);
+$runtime = read_admin_json($runtimeFile, ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $config['marketStatus'], 'publicWagersVisible' => $config['publicWagersVisible'], 'wagers' => []]);
 $error = '';
 if (isset($_GET['logout'])) { unset($_SESSION['futures_admin']); header('Location: futures-admin.php'); exit; }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) { if (password_verify((string) $_POST['password'], $passwordHash)) { $_SESSION['futures_admin'] = true; header('Location: futures-admin.php'); exit; } $error = 'Incorrect password.'; }
 if (!empty($_SESSION['futures_admin']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['market_status'])) {
+  $runtime['comingSoon'] = ($_POST['tab_mode'] ?? 'live') === 'coming-soon';
   $runtime['marketStatus'] = $_POST['market_status'] === 'locked' ? 'locked' : 'open';
   $runtime['publicWagersVisible'] = isset($_POST['public_wagers_visible']);
   file_put_contents($runtimeFile, json_encode($runtime, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
@@ -35,7 +36,7 @@ $loggedIn = !empty($_SESSION['futures_admin']);
 <?php if (!$loggedIn): ?>
 <section class="card block"><div class="block-header"><h2>Admin Login</h2></div><?php if ($error): ?><p class="small poll-message"><?= esc($error) ?></p><?php endif; ?><form method="post" class="poll-form poll-admin-login"><label class="poll-field"><span>Password</span><input type="password" name="password" autocomplete="current-password" required /></label><button type="submit" class="poll-submit">Enter</button></form></section>
 <?php else: ?>
-<section class="card block"><div class="block-header"><h2>Market Controls</h2><a class="admin-link" href="?logout=1">Logout</a></div><form method="post" class="poll-form"><label class="poll-field"><span>Market Status</span><select name="market_status"><option value="open" <?= $runtime['marketStatus'] === 'open' ? 'selected' : '' ?>>Open — accepts submissions</option><option value="locked" <?= $runtime['marketStatus'] === 'locked' ? 'selected' : '' ?>>Locked — no changes</option></select></label><label class="inline-choice"><input type="checkbox" name="public_wagers_visible" <?= $runtime['publicWagersVisible'] ? 'checked' : '' ?> /> Publicly display wagers on the Futures tab</label><button class="poll-submit" type="submit">Save Market Settings</button></form><p class="small">Keep wagers hidden while the market is open. Once locked, check the display option to reveal the ledger.</p></section>
+<section class="card block"><div class="block-header"><h2>Market Controls</h2><a class="admin-link" href="?logout=1">Logout</a></div><form method="post" class="poll-form"><label class="poll-field"><span>Live Site Tab</span><select name="tab_mode"><option value="live" <?= !$runtime['comingSoon'] ? 'selected' : '' ?>>Futures — live market</option><option value="coming-soon" <?= $runtime['comingSoon'] ? 'selected' : '' ?>>Futures (Coming Soon) — teaser</option></select></label><label class="poll-field"><span>Market Status</span><select name="market_status"><option value="open" <?= $runtime['marketStatus'] === 'open' ? 'selected' : '' ?>>Open — accepts submissions</option><option value="locked" <?= $runtime['marketStatus'] === 'locked' ? 'selected' : '' ?>>Locked — no changes</option></select></label><label class="inline-choice"><input type="checkbox" name="public_wagers_visible" <?= $runtime['publicWagersVisible'] ? 'checked' : '' ?> /> Publicly display wagers on the Futures tab</label><button class="poll-submit" type="submit">Save Market Settings</button></form><p class="small">Use the teaser while the market is private; switch back to the live tab whenever you are ready to accept wagers.</p></section>
 <?php
   $teamTotals = [];
   $teamOdds = [];
