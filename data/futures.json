@@ -3,6 +3,18 @@
   "marketStatus": "open",
   "publicWagersVisible": false,
   "owners": ["Rory M.", "Rich S.", "Kevin E.", "Dan F.", "Mike L.", "Kevin L.", "Nick P.", "Adam D.", "Paul L.", "Nikki T."],
+  "ownerTeams": {
+    "Rory M.": "He Hate Me",
+    "Kevin L.": "Rachel Niquols Espn",
+    "Kevin E.": "Veto My Trades",
+    "Paul L.": "The Herdsman",
+    "Rich S.": "You Just Got Stewed",
+    "Mike L.": "AngnesTing",
+    "Nikki T.": "About Damn Time",
+    "Adam D.": "Sunset Strips",
+    "Nick P.": "Team Winner",
+    "Dan F.": "Androgynous Danny"
+  },
   "odds": [
     { "team": "He Hate Me", "probability": 0.1667, "americanOdds": 500 },
     { "team": "Rachel Niquols Espn", "probability": 0.1667, "americanOdds": 500 },

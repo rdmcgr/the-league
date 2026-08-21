@@ -868,10 +868,10 @@ function impliedProbabilityFromAmericanOdds(odds) {
   return value > 0 ? 100 / (value + 100) : Math.abs(value) / (Math.abs(value) + 100);
 }
 
-function populateFuturesSelect(select, teams, optional = false) {
+function populateFuturesSelect(select, teams, optional = false, oddsByTeam = new Map()) {
   if (!select) return;
   select.innerHTML = `${optional ? '<option value="">No second pick</option>' : '<option value="">Select a team</option>'}${teams
-    .map((team) => `<option value="${team}">${team}</option>`)
+    .map((team) => `<option value="${team}">${team} (${formatAmericanOdds(oddsByTeam.get(team)?.americanOdds)})</option>`)
     .join('')}`;
 }
 
@@ -914,8 +914,8 @@ function renderFutures(data, keeperTeams) {
   }
   const oddsByTeam = new Map(odds.map((row) => [row.team, row]));
   const teams = keeperTeams.filter((team) => oddsByTeam.has(team));
-  populateFuturesSelect(document.getElementById('futures-team-1'), teams);
-  populateFuturesSelect(document.getElementById('futures-team-2'), teams);
+  populateFuturesSelect(document.getElementById('futures-team-1'), teams, false, oddsByTeam);
+  populateFuturesSelect(document.getElementById('futures-team-2'), teams, false, oddsByTeam);
   const fieldsEnabled = data.marketStatus === 'open' && odds.length > 0;
   form.querySelectorAll('select, input').forEach((field) => (field.disabled = !fieldsEnabled));
   submit.disabled = !isReady;
@@ -940,7 +940,7 @@ function renderFutures(data, keeperTeams) {
       .sort((a, b) => b.total - a.total || a.team.localeCompare(b.team));
     const maxTotal = Math.max(1, ...totals.map((row) => row.total));
     document.getElementById('futures-handle-chart').innerHTML = totals
-      .map((row) => `<div class="futures-handle-row"><div class="futures-handle-label">${row.team}</div><div class="futures-handle-track"><div class="futures-handle-bar" style="width:${(row.total / maxTotal) * 100}%"></div></div><div class="futures-handle-value">${row.total.toLocaleString()}</div></div>`)
+      .map((row) => `<div class="futures-handle-row"><div class="futures-handle-label">${row.team} <span>${formatAmericanOdds(oddsByTeam.get(row.team)?.americanOdds)}</span></div><div class="futures-handle-track"><div class="futures-handle-bar" style="width:${(row.total / maxTotal) * 100}%"></div></div><div class="futures-handle-value">${row.total.toLocaleString()}</div></div>`)
       .join('');
   }
 }
@@ -948,6 +948,15 @@ function renderFutures(data, keeperTeams) {
 function initFutures(data, keeperTeams) {
   renderFutures(data, keeperTeams);
   const form = document.getElementById('futures-form');
+  const refreshEligibleTeams = () => {
+    const owner = document.getElementById('futures-owner').value;
+    const ownTeam = data.ownerTeams?.[owner];
+    const eligibleTeams = keeperTeams.filter((team) => team !== ownTeam && (data.odds || []).some((odd) => odd.team === team));
+    const oddsByTeam = new Map((data.odds || []).map((row) => [row.team, row]));
+    populateFuturesSelect(document.getElementById('futures-team-1'), eligibleTeams, false, oddsByTeam);
+    populateFuturesSelect(document.getElementById('futures-team-2'), eligibleTeams, false, oddsByTeam);
+  };
+  document.getElementById('futures-owner').addEventListener('change', refreshEligibleTeams);
   const updateCreditMeter = () => {
     const firstStake = Number(document.getElementById('futures-stake-1').value || 0);
     const secondStake = Number(document.getElementById('futures-stake-2').value || 0);

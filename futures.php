@@ -13,12 +13,12 @@ function write_json_file($file, $data) {
   file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
 }
 
-$config = read_json_file($configFile, ['marketStatus' => 'open', 'publicWagersVisible' => false, 'owners' => [], 'odds' => []]);
+$config = read_json_file($configFile, ['marketStatus' => 'open', 'publicWagersVisible' => false, 'owners' => [], 'ownerTeams' => [], 'odds' => []]);
 $runtimeDefaults = ['marketStatus' => $config['marketStatus'], 'publicWagersVisible' => $config['publicWagersVisible'], 'wagers' => []];
 $runtime = read_json_file($runtimeFile, $runtimeDefaults);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-  $response = ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'odds' => $config['odds']];
+  $response = ['comingSoon' => (bool) ($config['comingSoon'] ?? false), 'marketStatus' => $runtime['marketStatus'], 'publicWagersVisible' => (bool) $runtime['publicWagersVisible'], 'owners' => $config['owners'], 'ownerTeams' => $config['ownerTeams'], 'odds' => $config['odds']];
   if ($runtime['publicWagersVisible']) $response['wagers'] = $runtime['wagers'];
   echo json_encode($response, JSON_UNESCAPED_SLASHES);
   exit;
@@ -41,6 +41,9 @@ foreach ($config['odds'] as $row) $oddsByTeam[$row['team'] ?? ''] = $row;
 $cleanPicks = []; $teams = []; $totalStake = 0;
 foreach ($picks as $pick) {
   $team = trim($pick['team'] ?? ''); $stake = $pick['stake'] ?? null;
+  if (($config['ownerTeams'][$owner] ?? null) === $team) {
+    http_response_code(400); echo json_encode(['error' => 'You cannot place a Futures wager on your own team.']); exit;
+  }
   if (!isset($oddsByTeam[$team]) || !is_numeric($stake) || (int) $stake < 200 || (int) $stake > 800 || ((int) $stake % 50 !== 0) || in_array($team, $teams, true)) {
     http_response_code(400); echo json_encode(['error' => 'Picks must be different listed teams with stakes from 200 to 800 credits, in 50-credit increments.']); exit;
   }
