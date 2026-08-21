@@ -39,26 +39,45 @@ body {
 
 .hero {
   position: relative;
+  min-height: 220px;
   padding: 2.2rem 1.4rem 1.2rem;
   border-bottom: 3px solid var(--accent);
-  background: linear-gradient(115deg, #0f141c 0%, #1a2330 60%, #10151c 100%);
+  overflow: hidden;
+  background: #0f141c;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 10, 14, 0.78), rgba(7, 10, 14, 0.42), rgba(7, 10, 14, 0.78));
+  content: '';
 }
 
 .hero-inner {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
   max-width: var(--content-max);
+  min-height: 174px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero-belt {
-  width: clamp(40px, 6vw, 64px);
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  flex-shrink: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.hero-inner > div {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 1.4rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.92);
 }
 
 .hero-topline {
@@ -935,7 +954,7 @@ svg {
   }
 
   .hero-inner {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .site-announcement { flex-direction: column; gap: 0.2rem; padding: 0.55rem 1rem; }
