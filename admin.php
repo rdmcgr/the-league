@@ -121,6 +121,7 @@ $availabilitySlots = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poll Admin | The League</title>
+    <link rel="icon" href="./images/2026-league-logo.png?v=2026" type="image/png" />
     <link rel="stylesheet" href="./styles.css?v=20260228h" />
   </head>
   <body>
