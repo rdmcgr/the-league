@@ -890,6 +890,7 @@ function renderFutures(data, keeperTeams) {
   const tbody = document.querySelector('#futures-odds-table tbody');
   const form = document.getElementById('futures-form');
   const submit = document.getElementById('futures-submit');
+  document.getElementById('futures-entry-block').hidden = data.marketStatus === 'locked';
 
   status.textContent = data.marketStatus === 'open' ? (odds.length ? 'Market Open' : 'Odds Pending') : 'Market Locked';
   status.className = `futures-status ${data.marketStatus === 'open' && odds.length ? 'open' : ''}`;

@@ -215,7 +215,7 @@
           </div>
         </article>
 
-        <article class="card block futures-entry-block">
+        <article id="futures-entry-block" class="card block futures-entry-block">
           <div class="block-header"><h2>Place Your Futures</h2></div>
           <p class="small">Each owner backs two teams using exactly 1,000 credits total. Re-submitting replaces your prior entry while the market is open. Oh, and you cannot select your own team!</p>
           <form id="futures-form" class="poll-form">
@@ -233,14 +233,14 @@
           <p class="small futures-admin-link"><a href="./futures-admin.php">Sportsbook admin</a></p>
         </article>
 
-        <article id="futures-ledger-block" class="card block futures-entry-block" hidden>
-          <div class="block-header"><h2 id="futures-ledger-title">Locked Futures Ledger</h2></div>
-          <div class="table-wrap"><table id="futures-ledger-table"><thead><tr><th>Owner</th><th>Pick</th><th>Stake</th><th>Odds</th></tr></thead><tbody></tbody></table></div>
-        </article>
-
         <article id="futures-handle-block" class="card block futures-entry-block" hidden>
           <div class="block-header"><h2>Wagers by Team</h2></div>
           <div id="futures-handle-chart" class="futures-handle-chart" role="img" aria-label="Total Futures Credits wagered on each team"></div>
+        </article>
+
+        <article id="futures-ledger-block" class="card block futures-entry-block" hidden>
+          <div class="block-header"><h2 id="futures-ledger-title">Locked Futures Ledger</h2></div>
+          <div class="table-wrap"><table id="futures-ledger-table"><thead><tr><th>Owner</th><th>Pick</th><th>Stake</th><th>Odds</th></tr></thead><tbody></tbody></table></div>
         </article>
         </div>
       </section>
