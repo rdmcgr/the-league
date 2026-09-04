@@ -25,12 +25,12 @@
       <button class="tab" data-tab="trophies">Trophies</button>
       <button class="tab" data-tab="points">Points</button>
       <button class="tab" data-tab="wins">Wins</button>
-      <button class="tab" data-tab="futures">Futures</button>
+      <button class="tab" data-tab="futures">Sportsbook</button>
     </nav>
 
     <aside class="site-announcement" aria-label="League announcement">
-      <span class="site-announcement-label">League Draft</span>
-      <span>Thursday, September 3 at 6:00 PM Eastern</span>
+      <span class="site-announcement-label">SHOCCA Sportsbook</span>
+      <span>is OPEN — place your championship picks by Sunday, 9/13.</span>
     </aside>
 
     <main>
@@ -210,7 +210,7 @@
           <p id="futures-description" class="small"></p>
           <div class="table-wrap">
             <table id="futures-odds-table">
-              <thead><tr><th>Team</th><th>Title Chance</th><th>American Odds</th></tr></thead>
+              <thead><tr><th>Team</th><th>YAHOO! TITLE CHANCE</th><th>SHOCCA TITLE CHANCE</th><th>SHOCCA Sportsbook Odds</th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
@@ -246,6 +246,14 @@
         </div>
       </section>
     </main>
+
+    <dialog id="starting-lineups-dialog" class="starting-lineups-dialog">
+      <div class="starting-lineups-dialog-header">
+        <div><h2 id="starting-lineups-title">Week 1 Starting Offenses</h2><p class="small">Offensive starters only.</p></div>
+        <button id="starting-lineups-close" class="starting-lineups-close" type="button" aria-label="Close starting offenses">×</button>
+      </div>
+      <div id="starting-lineups-list" class="starting-lineups-list"></div>
+    </dialog>
 
     <footer class="site-footer">
       <p>

@@ -266,6 +266,56 @@ main {
 
 .futures-entry-block { margin-top: 0.8rem; }
 
+.starting-lineups-link {
+  margin: 0.1rem 0 0.8rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-2);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.roster-team-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.roster-team-link:hover { color: var(--accent-2); }
+
+.starting-lineups-dialog {
+  width: min(920px, calc(100vw - 1.5rem));
+  max-height: min(820px, calc(100vh - 1.5rem));
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  color: var(--text);
+}
+
+.starting-lineups-dialog::backdrop { background: rgba(0, 0, 0, 0.72); }
+.starting-lineups-dialog-header { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; margin-bottom: 0.9rem; }
+.starting-lineups-dialog h2, .starting-lineups-dialog h3 { margin: 0; }
+.starting-lineups-dialog-header .small { margin: 0.3rem 0 0; }
+.starting-lineups-close { width: 2rem; height: 2rem; border: 1px solid var(--line); border-radius: 50%; background: #111923; color: var(--text); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.starting-lineups-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+.starting-lineup { padding: 0.75rem; border: 1px solid var(--line); border-radius: 10px; background: #111923; }
+.starting-lineup h3 { margin-bottom: 0.5rem; color: var(--accent-2); font-size: 0.95rem; }
+.starting-lineup-player { display: grid; grid-template-columns: 3.4rem 1fr; gap: 0.45rem; padding: 0.22rem 0; }
+.starting-lineup-player span { color: var(--muted); font-size: 0.78rem; font-weight: 800; }
+.starting-lineup-player strong { font-weight: 700; }
+
 .futures-coming-soon {
   max-width: 760px;
   margin: 0.8rem auto;
@@ -1005,6 +1055,8 @@ svg {
   }
 
   .futures-picks { grid-template-columns: 1fr; }
+  .starting-lineups-dialog { width: calc(100vw - 1rem); max-height: calc(100vh - 1rem); padding: 0.75rem; }
+  .starting-lineups-list { grid-template-columns: 1fr; }
   .futures-credit-meter { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
   .futures-handle-row { grid-template-columns: minmax(105px, 1fr) minmax(80px, 2fr) 48px; gap: 0.4rem; font-size: 0.78rem; }
 }

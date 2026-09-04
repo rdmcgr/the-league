@@ -7,6 +7,7 @@ const state = {
   pointsMetric: 'last3Avg',
   trophyMetric: 'weighted',
   selectedTeam: null,
+  startingLineups: null,
 };
 
 const TEAM_COLORS = {
@@ -862,10 +863,41 @@ function formatAmericanOdds(value) {
   return value == null ? 'TBD' : `${value > 0 ? '+' : ''}${Number(value).toLocaleString('en-US')}`;
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
+}
+
+function initStartingLineups() {
+  const openButton = document.getElementById('starting-lineups-open');
+  const dialog = document.getElementById('starting-lineups-dialog');
+  const list = document.getElementById('starting-lineups-list');
+  if (!state.startingLineups?.lineups?.length) return;
+  const renderLineups = (team = null) => {
+    const lineups = team ? state.startingLineups.lineups.filter((lineup) => lineup.team === team) : state.startingLineups.lineups;
+    document.getElementById('starting-lineups-title').textContent = team ? `${team} Starting Offense` : 'Week 1 Starting Offenses';
+    list.innerHTML = lineups
+      .map((lineup) => `<section class="starting-lineup"><h3>${escapeHtml(lineup.team)}</h3>${lineup.players.map((player) => `<div class="starting-lineup-player"><span>${escapeHtml(player.position)}</span><strong>${escapeHtml(player.name)}</strong></div>`).join('')}</section>`)
+      .join('');
+    dialog.showModal();
+  };
+  document.querySelectorAll('.roster-team-link').forEach((button) => button.addEventListener('click', () => renderLineups(button.dataset.team)));
+  document.getElementById('starting-lineups-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+}
+
 function impliedProbabilityFromAmericanOdds(odds) {
   const value = Number(odds);
   if (!Number.isFinite(value) || value === 0) return 0;
   return value > 0 ? 100 / (value + 100) : Math.abs(value) / (Math.abs(value) + 100);
+}
+
+function sortTeamsByOdds(teams, oddsByTeam) {
+  return [...teams].sort(
+    (a, b) =>
+      impliedProbabilityFromAmericanOdds(oddsByTeam.get(b)?.americanOdds) -
+        impliedProbabilityFromAmericanOdds(oddsByTeam.get(a)?.americanOdds) ||
+      a.localeCompare(b),
+  );
 }
 
 function populateFuturesSelect(select, teams, optional = false, oddsByTeam = new Map()) {
@@ -879,7 +911,7 @@ function renderFutures(data, keeperTeams) {
   const comingSoon = Boolean(data.comingSoon);
   document.querySelector('.tab[data-tab="futures"]').innerHTML = comingSoon
     ? 'Sportsbook <span class="tab-coming-soon">(Coming Soon)</span>'
-    : 'Futures';
+    : 'Sportsbook';
   document.getElementById('futures-coming-soon').hidden = !comingSoon;
   document.getElementById('futures-live-content').hidden = comingSoon;
   if (comingSoon) return;
@@ -901,7 +933,7 @@ function renderFutures(data, keeperTeams) {
     : data.marketStatus === 'open' && !odds.length
     ? 'The market will open after the draft once preseason odds are posted.'
     : data.marketStatus === 'open'
-      ? 'Wagers are private until the market locks on 9/13.'
+      ? 'Let’s see who we collectively think has the best team before the season starts. The table below has the Yahoo! championship odds based on its power rankings. Additionally, the team rosters and league schedule has been run through the SHOCCA NFL betting model to get a more accurate projection. Place your future bet below. Wagers are private until the market locks on 9/13.'
       : 'The market is locked.';
   const sortedOdds = [...odds].sort(
     (a, b) =>
@@ -909,15 +941,15 @@ function renderFutures(data, keeperTeams) {
       a.team.localeCompare(b.team),
   );
   tbody.innerHTML = odds.length
-    ? sortedOdds.map((row) => `<tr><td>${row.team}</td><td>${fmtPct(row.probability)}</td><td>${formatAmericanOdds(row.americanOdds)}</td></tr>`).join('')
-    : '<tr><td colspan="3" class="small">Preseason odds will be posted after the draft.</td></tr>';
+    ? sortedOdds.map((row) => `<tr><td><button class="roster-team-link" type="button" data-team="${escapeHtml(row.team)}">${escapeHtml(row.team)}</button></td><td>${fmtPct(row.yahooTitleChance)}</td><td>${fmtPct(row.probability)}</td><td>${formatAmericanOdds(row.americanOdds)}</td></tr>`).join('')
+    : '<tr><td colspan="4" class="small">Preseason odds will be posted after the draft.</td></tr>';
 
   const ownerSelect = document.getElementById('futures-owner');
   if (ownerSelect && ownerSelect.options.length === 0) {
     ownerSelect.innerHTML = `<option value="">Select your name</option>${owners.map((owner) => `<option value="${owner}">${owner}</option>`).join('')}`;
   }
   const oddsByTeam = new Map(odds.map((row) => [row.team, row]));
-  const teams = keeperTeams.filter((team) => oddsByTeam.has(team));
+  const teams = sortTeamsByOdds(keeperTeams.filter((team) => oddsByTeam.has(team)), oddsByTeam);
   populateFuturesSelect(document.getElementById('futures-team-1'), teams, false, oddsByTeam);
   populateFuturesSelect(document.getElementById('futures-team-2'), teams, false, oddsByTeam);
   const fieldsEnabled = data.marketStatus === 'open' && odds.length > 0;
@@ -960,8 +992,9 @@ function initFutures(data, keeperTeams) {
     const ownTeam = data.ownerTeams?.[owner];
     const eligibleTeams = keeperTeams.filter((team) => team !== ownTeam && (data.odds || []).some((odd) => odd.team === team));
     const oddsByTeam = new Map((data.odds || []).map((row) => [row.team, row]));
-    populateFuturesSelect(document.getElementById('futures-team-1'), eligibleTeams, false, oddsByTeam);
-    populateFuturesSelect(document.getElementById('futures-team-2'), eligibleTeams, false, oddsByTeam);
+    const sortedTeams = sortTeamsByOdds(eligibleTeams, oddsByTeam);
+    populateFuturesSelect(document.getElementById('futures-team-1'), sortedTeams, false, oddsByTeam);
+    populateFuturesSelect(document.getElementById('futures-team-2'), sortedTeams, false, oddsByTeam);
   };
   document.getElementById('futures-owner').addEventListener('change', refreshEligibleTeams);
   const updateCreditMeter = () => {
@@ -1044,6 +1077,8 @@ async function boot() {
   state.data = await res.json();
   const keepersRes = await fetch('./data/keepers.json?v=20260809b', { cache: 'no-store' });
   state.keepers = await keepersRes.json();
+  const lineupsRes = await fetch('./data/starting-lineups.json?v=20260904a', { cache: 'no-store' });
+  state.startingLineups = await lineupsRes.json();
   const futuresSource = window.location.protocol === 'file:' ? './data/futures.json' : './futures.php';
   const futuresRes = await fetch(futuresSource, { cache: 'no-store' });
   const futures = await futuresRes.json();
@@ -1056,6 +1091,7 @@ async function boot() {
   const winOwners = state.data.yearlyWins.map((row) => row.team);
   const keeperTeams = state.keepers.keepers.map((row) => row.owner);
   initFutures({ ...futures, owners: winOwners }, keeperTeams);
+  initStartingLineups();
 
   window.addEventListener('resize', () => {
     renderWinsBarChart();
