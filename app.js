@@ -874,7 +874,7 @@ function initStartingLineups() {
   if (!state.startingLineups?.lineups?.length) return;
   const renderLineups = (team = null) => {
     const lineups = team ? state.startingLineups.lineups.filter((lineup) => lineup.team === team) : state.startingLineups.lineups;
-    document.getElementById('starting-lineups-title').textContent = team ? `${team} Starting Offense` : 'Week 1 Starting Offenses';
+    document.getElementById('starting-lineups-title').textContent = team || 'Week 1 Starting Offenses';
     list.innerHTML = lineups
       .map((lineup) => `<section class="starting-lineup"><h3>${escapeHtml(lineup.team)}</h3>${lineup.players.map((player) => `<div class="starting-lineup-player"><span>${escapeHtml(player.position)}</span><strong>${escapeHtml(player.name)}</strong></div>`).join('')}</section>`)
       .join('');
