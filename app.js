@@ -1018,10 +1018,14 @@ function initFutures(data, keeperTeams) {
     const secondTeam = document.getElementById('futures-team-2').value;
     const secondStake = Number(document.getElementById('futures-stake-2').value || 0);
     const message = document.getElementById('futures-message');
+    const setMessage = (text, type = 'error') => {
+      message.textContent = text;
+      message.className = `futures-message ${type}`;
+    };
     if (!owner || !firstTeam || !firstStake) return;
-    if (!secondTeam || !secondStake) { message.textContent = 'Please select both picks and enter both stakes.'; return; }
-    if (firstTeam === secondTeam) { message.textContent = 'Your two picks must be different teams.'; return; }
-    if (firstStake + secondStake !== 1000) { message.textContent = 'Your two stakes must total exactly 1,000 credits.'; return; }
+    if (!secondTeam || !secondStake) { setMessage('Please select both picks and enter both stakes.'); return; }
+    if (firstTeam === secondTeam) { setMessage('Your two picks must be different teams.'); return; }
+    if (firstStake + secondStake !== 1000) { setMessage('Your two stakes must total exactly 1,000 credits.'); return; }
     const confirmed = window.confirm(
       `Submit futures picks for ${owner}?\n\n${firstTeam}: ${firstStake.toLocaleString()} credits\n${secondTeam}: ${secondStake.toLocaleString()} credits`,
     );
@@ -1030,8 +1034,8 @@ function initFutures(data, keeperTeams) {
       const response = await fetch('./futures.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ owner, picks: [{ team: firstTeam, stake: firstStake }, { team: secondTeam, stake: secondStake }] }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'Your futures could not be saved.');
-      message.textContent = 'Your futures are in. You can re-submit before the market locks to replace them.';
-    } catch (err) { message.textContent = err.message || 'Your futures could not be saved.'; }
+      setMessage(`✓ Picks saved for ${owner}. You can re-submit before the market locks to replace them.`, 'success');
+    } catch (err) { setMessage(err.message || 'Your futures could not be saved.'); }
   });
 }
 
