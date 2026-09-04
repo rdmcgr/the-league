@@ -1023,7 +1023,7 @@ function initFutures(data, keeperTeams) {
     if (firstTeam === secondTeam) { message.textContent = 'Your two picks must be different teams.'; return; }
     if (firstStake + secondStake !== 1000) { message.textContent = 'Your two stakes must total exactly 1,000 credits.'; return; }
     const confirmed = window.confirm(
-      `Submit Futures picks for ${owner}?\n\n${firstTeam}: ${firstStake.toLocaleString()} credits\n${secondTeam}: ${secondStake.toLocaleString()} credits`,
+      `Submit futures picks for ${owner}?\n\n${firstTeam}: ${firstStake.toLocaleString()} credits\n${secondTeam}: ${secondStake.toLocaleString()} credits`,
     );
     if (!confirmed) return;
     try {
