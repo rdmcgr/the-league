@@ -294,6 +294,10 @@ main {
 
 .roster-team-link:hover { color: var(--accent-2); }
 
+.futures-table-scroll-hint {
+  display: none;
+}
+
 .starting-lineups-dialog {
   width: min(920px, calc(100vw - 1.5rem));
   max-height: min(820px, calc(100vh - 1.5rem));
@@ -1048,6 +1052,56 @@ svg {
     padding: 0.3rem 0.35rem;
     font-size: 0.74rem;
     line-height: 1.15;
+  }
+
+  /* Keep the championship market readable without making its four columns feel hidden on phones. */
+  #futures-odds-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  #futures-odds-table th,
+  #futures-odds-table td {
+    padding: 0.38rem 0.22rem;
+    font-size: 0.68rem;
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  #futures-odds-table th {
+    font-size: 0.57rem;
+    letter-spacing: 0.025rem;
+  }
+
+  #futures-odds-table th:first-child,
+  #futures-odds-table td:first-child {
+    width: 35%;
+  }
+
+  #futures-odds-table th:not(:first-child),
+  #futures-odds-table td:not(:first-child) {
+    text-align: center;
+  }
+
+  #futures-odds-table .roster-team-link {
+    font-size: 0.71rem;
+    line-height: 1.12;
+  }
+
+  .futures-table-scroll-hint {
+    display: block;
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: 0.69rem;
+    font-style: italic;
+    text-align: right;
+  }
+
+  .futures-table-scroll-hint span {
+    color: var(--accent-2);
+    font-size: 1rem;
+    font-style: normal;
+    vertical-align: -0.05em;
   }
 
   #dashboard .block {
