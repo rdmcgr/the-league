@@ -981,7 +981,7 @@ function renderFutures(data, keeperTeams) {
   const fieldsEnabled = data.marketStatus === 'open' && odds.length > 0;
   form.querySelectorAll('select, input').forEach((field) => (field.disabled = !fieldsEnabled));
   submit.disabled = !isReady;
-  submit.textContent = isReady ? 'Submit Futures' : isLocalPreview ? 'Hosted Site Required' : data.marketStatus === 'open' ? 'Odds Pending' : 'Market Locked';
+  submit.textContent = isReady ? 'Submit Picks' : isLocalPreview ? 'Hosted Site Required' : data.marketStatus === 'open' ? 'Odds Pending' : 'Market Locked';
 
   const ledgerBlock = document.getElementById('futures-ledger-block');
   const handleBlock = document.getElementById('futures-handle-block');
@@ -1060,7 +1060,7 @@ function initFutures(data, keeperTeams) {
       const response = await fetch('./futures.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ owner, picks: [{ team: firstTeam, stake: firstStake }, { team: secondTeam, stake: secondStake }] }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'Your futures could not be saved.');
-      setMessage(`✓ Picks saved for ${owner}. You can re-submit before the market locks to replace them.`, 'success');
+      setMessage(`✓ Picks saved for ${owner}.`, 'success');
     } catch (err) { setMessage(err.message || 'Your futures could not be saved.'); }
   });
 }

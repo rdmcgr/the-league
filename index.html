@@ -219,7 +219,7 @@
 
         <article id="futures-entry-block" class="card block futures-entry-block">
           <div class="block-header"><h2>Place Your Bet</h2></div>
-          <p class="small">Each owner backs two teams using exactly 1,000 credits total. Re-submitting replaces your prior entry. Oh, and you cannot select your own team!</p>
+          <p class="small">Pick the two teams you think will win the championship using exactly 1,000 credits total. Oh, and you cannot select your own team!</p>
           <form id="futures-form" class="poll-form">
             <label class="poll-field"><span>Owner (Who are you?)</span><select id="futures-owner" required></select></label>
             <div class="futures-picks">
@@ -229,7 +229,8 @@
               <label class="poll-field"><span>Stake</span><input id="futures-stake-2" type="number" min="200" max="800" step="50" required /></label>
             </div>
             <div id="futures-credit-meter" class="futures-credit-meter" aria-live="polite"><strong>Credits used: 0 / 1,000</strong><span>1,000 credits remaining</span></div>
-            <button id="futures-submit" type="submit" class="poll-submit">Submit Futures</button>
+            <button id="futures-submit" type="submit" class="poll-submit">Submit Picks</button>
+            <p class="small futures-resubmit-note">Re-submitting replaces your prior entry.</p>
           </form>
           <div id="futures-message" class="futures-message" role="status" aria-live="polite"></div>
           <p class="small futures-admin-link"><a href="./futures-admin.php">Sportsbook admin</a></p>
