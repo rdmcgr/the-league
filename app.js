@@ -31,14 +31,24 @@ const fmtNum = (n, d = 0) => (n == null ? '-' : Number(n).toFixed(d));
 function initTabs() {
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.panel');
+  const selectTab = (tabName, updateUrl = false) => {
+    const tab = [...tabs].find((candidate) => candidate.dataset.tab === tabName);
+    const panel = document.getElementById(tabName);
+    if (!tab || !panel) return;
+    tabs.forEach((item) => item.classList.remove('active'));
+    panels.forEach((item) => item.classList.remove('active'));
+    tab.classList.add('active');
+    panel.classList.add('active');
+    if (updateUrl) history.replaceState(null, '', `#${tabName === 'futures' ? 'sportsbook' : tabName}`);
+  };
+
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      tabs.forEach((t) => t.classList.remove('active'));
-      panels.forEach((p) => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('active');
-    });
+    tab.addEventListener('click', () => selectTab(tab.dataset.tab, true));
   });
+
+  const tabFromHash = () => window.location.hash.slice(1) === 'sportsbook' ? 'futures' : window.location.hash.slice(1) || 'dashboard';
+  selectTab(tabFromHash());
+  window.addEventListener('hashchange', () => selectTab(tabFromHash()));
 }
 
 function sortedAllTime() {
