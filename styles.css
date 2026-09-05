@@ -157,6 +157,10 @@ h1 {
   font-size: 0.78rem;
 }
 
+.site-announcement-open {
+  color: var(--good);
+}
+
 main {
   padding: 1rem 1.4rem 2rem;
   max-width: var(--content-max);
