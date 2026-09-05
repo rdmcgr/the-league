@@ -725,6 +725,10 @@ main {
 }
 
 @media (max-width: 560px) {
+  #futures-status {
+    display: none;
+  }
+
   .site-footer p {
     white-space: normal;
   }
