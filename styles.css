@@ -161,6 +161,76 @@ h1 {
   color: var(--good);
 }
 
+.sportsbook-odds-explainer-open {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.sportsbook-odds-dialog {
+  width: min(540px, calc(100vw - 1.5rem));
+  margin: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #111923;
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.sportsbook-odds-dialog::backdrop { background: rgba(0, 0, 0, 0.72); }
+
+.sportsbook-odds-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sportsbook-odds-dialog h2,
+.sportsbook-odds-dialog p { margin: 0; }
+
+.sportsbook-odds-dialog p {
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* Visually group the two SHOCCA projections as the featured sportsbook view. */
+#futures-odds-table th:nth-child(3),
+#futures-odds-table th:nth-child(4),
+#futures-odds-table td:nth-child(3),
+#futures-odds-table td:nth-child(4) {
+  background: rgba(56, 193, 114, 0.08);
+}
+
+#futures-odds-table th:nth-child(3),
+#futures-odds-table td:nth-child(3) {
+  border-left: 2px solid var(--good);
+}
+
+#futures-odds-table th:nth-child(4),
+#futures-odds-table td:nth-child(4) {
+  border-right: 2px solid var(--good);
+}
+
+#futures-odds-table thead th:nth-child(3),
+#futures-odds-table thead th:nth-child(4) {
+  border-top: 2px solid var(--good);
+}
+
+#futures-odds-table tbody tr:last-child td:nth-child(3),
+#futures-odds-table tbody tr:last-child td:nth-child(4) {
+  border-bottom: 2px solid var(--good);
+}
+
 main {
   padding: 1rem 1.4rem 2rem;
   max-width: var(--content-max);

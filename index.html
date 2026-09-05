@@ -210,7 +210,7 @@
           <p id="futures-description" class="small"></p>
           <div class="table-wrap futures-odds-wrap">
             <table id="futures-odds-table">
-              <thead><tr><th>Team</th><th>YAHOO! TITLE CHANCE</th><th>SHOCCA TITLE CHANCE</th><th>SHOCCA Sportsbook Odds</th></tr></thead>
+              <thead><tr><th>Team</th><th><button class="sportsbook-odds-explainer-open" type="button" data-explainer-title="Yahoo! Title Chance" data-explainer-text="The percentage chance of a championship title based on Yahoo! draft grade and projections.">YAHOO! TITLE CHANCE</button></th><th><button class="sportsbook-odds-explainer-open" type="button" data-explainer-title="SHOCCA Title Chance" data-explainer-text="The percentage chance of a championship title based on the SHOCCA NFL betting model, projected player points, and each team's actual schedule.">SHOCCA TITLE CHANCE</button></th><th><button class="sportsbook-odds-explainer-open" type="button" data-explainer-title="SHOCCA Sportsbook Odds" data-explainer-text="Sportsbook odds examples: +400 means if you wager 100 credits you get 400 credits back on a winning wager. +1,500 would mean if you wager 100 credits you get 1,500 credits back, etc. The higher the + number, the bigger the underdog and the longer the odds.">SHOCCA Sportsbook Odds</button></th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
@@ -256,12 +256,20 @@
       <div id="starting-lineups-list" class="starting-lineups-list"></div>
     </dialog>
 
+    <dialog id="sportsbook-odds-dialog" class="sportsbook-odds-dialog">
+      <div class="sportsbook-odds-dialog-header">
+        <h2 id="sportsbook-odds-dialog-title">SHOCCA Sportsbook Odds</h2>
+        <button id="sportsbook-odds-dialog-close" class="starting-lineups-close" type="button" aria-label="Close odds explainer">×</button>
+      </div>
+      <p id="sportsbook-odds-dialog-text">Sportsbook odds examples: +400 means if you wager 100 credits you get 400 credits back on a winning wager. +1,500 would mean if you wager 100 credits you get 1,500 credits back, etc. The higher the + number, the bigger the underdog and the longer the odds.</p>
+    </dialog>
+
     <footer class="site-footer">
       <p>
         &copy;2005 - <span id="current-year"></span> Shockafella LLC. <span class="footer-joint">AN <img src="./images/ows-nwo-logo.png" alt="OWS" class="footer-logo" /> JOINT.</span> Made with ❤️ in PDX. Hosted live and free in New Hampshire.
       </p>
     </footer>
 
-    <script src="./app.js?v=20260905a"></script>
+    <script src="./app.js?v=20260905b"></script>
   </body>
 </html>

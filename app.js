@@ -51,6 +51,22 @@ function initTabs() {
   window.addEventListener('hashchange', () => selectTab(tabFromHash()));
 }
 
+function initSportsbookOddsExplainer() {
+  const openButtons = document.querySelectorAll('.sportsbook-odds-explainer-open');
+  const dialog = document.getElementById('sportsbook-odds-dialog');
+  const closeButton = document.getElementById('sportsbook-odds-dialog-close');
+  const title = document.getElementById('sportsbook-odds-dialog-title');
+  const text = document.getElementById('sportsbook-odds-dialog-text');
+  if (!openButtons.length || !dialog || !closeButton || !title || !text) return;
+  openButtons.forEach((button) => button.addEventListener('click', () => {
+    title.textContent = button.dataset.explainerTitle;
+    text.textContent = button.dataset.explainerText;
+    dialog.showModal();
+  }));
+  closeButton.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+}
+
 function sortedAllTime() {
   const items = [...state.data.allTime];
   const dir = state.sortDir === 'asc' ? 1 : -1;
@@ -943,7 +959,7 @@ function renderFutures(data, keeperTeams) {
     : data.marketStatus === 'open' && !odds.length
     ? 'The market will open after the draft once preseason odds are posted.'
     : data.marketStatus === 'open'
-      ? 'Let’s see who we collectively think has the best team before the season starts. The table below has the Yahoo! championship odds based on its power rankings. Additionally, the team rosters and league schedule has been run through the SHOCCA NFL betting model to get a more accurate projection. Place your future bet below. Wagers are private until the market locks on 9/13.'
+      ? 'Let’s see who we collectively think has the best team before the season starts. The table below has the Yahoo! championship odds based on its draft grade-based power rankings. Additionally, the team rosters and league schedule has been run through the SHOCCA NFL betting model to get a more accurate projection. Scroll down to place your bet! Wagers are private until the market closes on Sunday, 9/13.'
       : 'The market is locked.';
   const sortedOdds = [...odds].sort(
     (a, b) =>
@@ -1085,6 +1101,7 @@ function renderAll() {
 
 async function boot() {
   initTabs();
+  initSportsbookOddsExplainer();
   const yearEl = document.getElementById('current-year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   const res = await fetch('./data/league-data.json?v=20260228c', { cache: 'no-store' });
