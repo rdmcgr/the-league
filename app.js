@@ -959,7 +959,7 @@ function renderFutures(data, keeperTeams) {
     : data.marketStatus === 'open' && !odds.length
     ? 'The market will open after the draft once preseason odds are posted.'
     : data.marketStatus === 'open'
-      ? 'Let’s see who we collectively think has the best team before the season starts. The table below has the Yahoo! championship odds based on its draft grade-based power rankings. Additionally, the team rosters and league schedule has been run through the SHOCCA NFL betting model to get a more accurate projection. Scroll down to place your bet! Wagers are private until the market closes on Sunday, 9/13.'
+      ? 'Let’s see who we collectively think has the best team before the season starts. Check out the market data below (click the header for more info) then scroll down to place your bet! Wagers are private until the market closes on Sunday, 9/13.'
       : 'The market is locked.';
   const sortedOdds = [...odds].sort(
     (a, b) =>
