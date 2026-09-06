@@ -960,7 +960,7 @@ function renderFutures(data, keeperTeams) {
     ? 'The market will open after the draft once preseason odds are posted.'
     : data.marketStatus === 'open'
       ? 'Let’s see who we collectively think has the best team before the season starts. Check out the market data below (click the header for more info) then scroll down to place your bet! Wagers are private until the market closes on Sunday, 9/13.'
-      : 'The market is locked.';
+      : 'The market is locked. Click a team name to see their roster. Check back soon to use your 1,000 credits!';
   const sortedOdds = [...odds].sort(
     (a, b) =>
       impliedProbabilityFromAmericanOdds(b.americanOdds) - impliedProbabilityFromAmericanOdds(a.americanOdds) ||
