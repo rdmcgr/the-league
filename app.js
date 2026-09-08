@@ -114,6 +114,22 @@ function initAllTimeEvents() {
   });
 }
 
+function initRegularSeasonRecords() {
+  [
+    ['regular-season-records-open', 'regular-season-records-dialog', 'regular-season-records-close'],
+    ['regular-season-ppg-records-open', 'regular-season-ppg-records-dialog', 'regular-season-ppg-records-close'],
+  ].forEach(([openId, dialogId, closeId]) => {
+    const openButton = document.getElementById(openId);
+    const dialog = document.getElementById(dialogId);
+    const closeButton = document.getElementById(closeId);
+    if (!openButton || !dialog || !closeButton) return;
+
+    openButton.addEventListener('click', () => dialog.showModal());
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  });
+}
+
 function renderTrophyMini() {
   const list = [...state.data.trophies]
     .filter((t) => t.weighted >= 10)
@@ -1129,6 +1145,7 @@ async function boot() {
 
   renderAll();
   initAllTimeEvents();
+  initRegularSeasonRecords();
   initMetricToggle();
   initWinsToggle();
   initTrophyToggle();

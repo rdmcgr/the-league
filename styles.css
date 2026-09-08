@@ -203,6 +203,49 @@ h1 {
   line-height: 1.55;
 }
 
+.league-record {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.league-record-list {
+  gap: 0.45rem;
+}
+
+.league-record strong { color: #fff; }
+
+.league-record-label {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04rem;
+}
+
+.league-records-open {
+  padding: 0 0.1rem;
+  border: 0;
+  background: transparent;
+  color: var(--accent-2);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  vertical-align: super;
+}
+
+.league-records-open:hover { color: #fff200; }
+
+.league-records-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
 /* Visually group the two SHOCCA projections as the featured sportsbook view. */
 #futures-odds-table th:nth-child(3),
 #futures-odds-table th:nth-child(4),

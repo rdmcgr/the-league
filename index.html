@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The League | Shockafella Fantasy Football</title>
     <link rel="icon" href="./images/2026-league-logo.png?v=2026" type="image/png" />
-    <link rel="stylesheet" href="./styles.css?v=20260904d" />
+    <link rel="stylesheet" href="./styles.css?v=20260908a" />
   </head>
   <body>
     <div class="bg-noise" aria-hidden="true"></div>
@@ -48,6 +48,16 @@
               <h2>Most Championships</h2>
             </div>
             <div id="championship-mini" class="mini-list"></div>
+          </article>
+
+          <article class="card block league-record-card">
+            <div class="block-header">
+              <h2>Regular Seasons League Records</h2>
+            </div>
+            <div class="mini-list league-record-list">
+              <div class="mini-row league-record"><span class="league-record-label">MOST WINS:</span><span><strong>Rich S.</strong> &mdash; 13 wins in 2022 <button id="regular-season-records-open" class="league-records-open" type="button" aria-label="View other notable regular-season win seasons">*</button></span></div>
+              <div class="mini-row league-record"><span class="league-record-label">HIGHEST PPG:</span><span><strong>Rory M.</strong> &mdash; 121 points per game in 2023 <button id="regular-season-ppg-records-open" class="league-records-open" type="button" aria-label="View next-highest regular-season points-per-game seasons">*</button></span></div>
+            </div>
           </article>
 
           <article class="card block">
@@ -265,12 +275,36 @@
       <p id="sportsbook-odds-dialog-text">Sportsbook odds examples: +400 means if you wager 100 credits you get 400 credits back on a winning wager. +1,500 would mean if you wager 100 credits you get 1,500 credits back, etc. The higher the + number, the bigger the underdog and the longer the odds.</p>
     </dialog>
 
+    <dialog id="regular-season-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
+      <div class="sportsbook-odds-dialog-header">
+        <h2>Other notable seasons</h2>
+        <button id="regular-season-records-close" class="starting-lineups-close" type="button" aria-label="Close regular-season records">×</button>
+      </div>
+      <ul class="league-records-list">
+        <li>Kevin L. &mdash; 12 wins in 2014</li>
+        <li>Rory M. &mdash; 11 wins in 2006 and 2023</li>
+        <li>Rich S. &mdash; 11 wins in 2021</li>
+        <li>Mike L. &mdash; 11 wins in 2018</li>
+      </ul>
+    </dialog>
+
+    <dialog id="regular-season-ppg-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
+      <div class="sportsbook-odds-dialog-header">
+        <h2>Next-highest PPG seasons</h2>
+        <button id="regular-season-ppg-records-close" class="starting-lineups-close" type="button" aria-label="Close points-per-game records">×</button>
+      </div>
+      <ul class="league-records-list">
+        <li>Adam D. &mdash; 116 PPG in 2018</li>
+        <li>Rich S. &mdash; 112 PPG in 2021</li>
+      </ul>
+    </dialog>
+
     <footer class="site-footer">
       <p>
         &copy;2005 - <span id="current-year"></span> Shockafella LLC. <span class="footer-joint">AN <img src="./images/ows-nwo-logo.png" alt="OWS" class="footer-logo" /> JOINT.</span> Made with ❤️ in PDX. Hosted live and free in New Hampshire.
       </p>
     </footer>
 
-    <script src="./app.js?v=20260906a"></script>
+    <script src="./app.js?v=20260908b"></script>
   </body>
 </html>
