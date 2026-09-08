@@ -23,6 +23,19 @@ const TEAM_COLORS = {
   'Nikki T.': '#c0cad8',
 };
 
+const KEEPER_OWNER_NAMES = {
+  'He Hate Me': 'Rory M.',
+  'Rachel Niquols Espn': 'Kevin L.',
+  'Veto My Trades': 'Kevin E.',
+  'The Herdsman': 'Paul L.',
+  'You Just Got Stewed': 'Rich S.',
+  'AngnesTing': 'Mike L.',
+  'About Damn Time': 'Nikki T.',
+  'Sunset Strips': 'Adam D.',
+  'Team Winner': 'Nick P.',
+  'Androgynous Danny': 'Dan F.',
+};
+
 const teamColor = (name) => TEAM_COLORS[name] || '#dbe5f2';
 
 const fmtPct = (n) => (n == null ? '-' : (n * 100).toFixed(1) + '%');
@@ -865,7 +878,7 @@ function renderKeepers() {
   const table = document.getElementById('keepers-table');
   const rows = [...(data.keepers || [])].sort((a, b) => String(a.owner || '').localeCompare(String(b.owner || '')));
   const body = `<tbody>${rows
-    .map((row) => `<tr><td class="keepers-cell keepers-owner" data-label="Owner">${row.owner}</td>${(row.values || [])
+    .map((row) => `<tr><td class="keepers-cell keepers-owner" data-label="Owner">${KEEPER_OWNER_NAMES[row.owner] || row.owner}</td>${(row.values || [])
       .map((cell, idx) => {
         const cls = ['keepers-cell'];
         if (String(cell?.fill) === '10') cls.push('keepers-yellow');
@@ -1106,7 +1119,7 @@ async function boot() {
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   const res = await fetch('./data/league-data.json?v=20260228c', { cache: 'no-store' });
   state.data = await res.json();
-  const keepersRes = await fetch('./data/keepers.json?v=20260809b', { cache: 'no-store' });
+  const keepersRes = await fetch('./data/keepers.json?v=20260908a', { cache: 'no-store' });
   state.keepers = await keepersRes.json();
   const lineupsRes = await fetch('./data/starting-lineups.json?v=20260904a', { cache: 'no-store' });
   state.startingLineups = await lineupsRes.json();
