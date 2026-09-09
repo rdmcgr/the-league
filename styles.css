@@ -246,6 +246,10 @@ h1 {
   line-height: 1.65;
 }
 
+.league-records-note {
+  margin: 0.75rem 0 0 !important;
+}
+
 /* Visually group the two SHOCCA projections as the featured sportsbook view. */
 #futures-odds-table th:nth-child(3),
 #futures-odds-table th:nth-child(4),
@@ -840,6 +844,11 @@ main {
 @media (max-width: 560px) {
   #futures-status {
     display: none;
+  }
+
+  .league-record {
+    grid-template-columns: 1fr;
+    gap: 0.14rem;
   }
 
   .site-footer p {

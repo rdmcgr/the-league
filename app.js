@@ -118,6 +118,8 @@ function initRegularSeasonRecords() {
   [
     ['regular-season-records-open', 'regular-season-records-dialog', 'regular-season-records-close'],
     ['regular-season-ppg-records-open', 'regular-season-ppg-records-dialog', 'regular-season-ppg-records-close'],
+    ['regular-season-moves-records-open', 'regular-season-moves-records-dialog', 'regular-season-moves-records-close'],
+    ['weekly-score-records-open', 'weekly-score-records-dialog', 'weekly-score-records-close'],
   ].forEach(([openId, dialogId, closeId]) => {
     const openButton = document.getElementById(openId);
     const dialog = document.getElementById(dialogId);

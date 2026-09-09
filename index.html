@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The League | Shockafella Fantasy Football</title>
     <link rel="icon" href="./images/2026-league-logo.png?v=2026" type="image/png" />
-    <link rel="stylesheet" href="./styles.css?v=20260908a" />
+    <link rel="stylesheet" href="./styles.css?v=20260908b" />
   </head>
   <body>
     <div class="bg-noise" aria-hidden="true"></div>
@@ -50,21 +50,23 @@
             <div id="championship-mini" class="mini-list"></div>
           </article>
 
-          <article class="card block league-record-card">
-            <div class="block-header">
-              <h2>Regular Seasons League Records</h2>
-            </div>
-            <div class="mini-list league-record-list">
-              <div class="mini-row league-record"><span class="league-record-label">MOST WINS:</span><span><strong>Rich S.</strong> &mdash; 13 wins in 2022 <button id="regular-season-records-open" class="league-records-open" type="button" aria-label="View other notable regular-season win seasons">*</button></span></div>
-              <div class="mini-row league-record"><span class="league-record-label">HIGHEST PPG:</span><span><strong>Rory M.</strong> &mdash; 121 points per game in 2023 <button id="regular-season-ppg-records-open" class="league-records-open" type="button" aria-label="View next-highest regular-season points-per-game seasons">*</button></span></div>
-            </div>
-          </article>
-
           <article class="card block">
             <div class="block-header">
               <h2>Weighted Trophy Standings</h2>
             </div>
             <div id="trophy-mini" class="mini-list"></div>
+          </article>
+
+          <article class="card block league-record-card">
+            <div class="block-header">
+              <h2>Other League Records</h2>
+            </div>
+            <div class="mini-list league-record-list">
+              <div class="mini-row league-record"><span class="league-record-label">MOST WINS:</span><span><strong>Rich S.</strong> &mdash; 13 wins in 2022 <button id="regular-season-records-open" class="league-records-open" type="button" aria-label="View other notable regular-season win seasons">*</button></span></div>
+              <div class="mini-row league-record"><span class="league-record-label">HIGHEST PPG:</span><span><strong>Rory M.</strong> &mdash; 121 points per game in 2023 <button id="regular-season-ppg-records-open" class="league-records-open" type="button" aria-label="View next-highest regular-season points-per-game seasons">*</button></span></div>
+              <div class="mini-row league-record"><span class="league-record-label">HIGHEST WEEKLY SCORE:</span><span><strong>Kevin E.</strong> &mdash; 171 points (Week 2, 2025) &amp; <strong>Dan F.</strong> &mdash; 171 points (Week 13, 2013) <button id="weekly-score-records-open" class="league-records-open" type="button" aria-label="View next-highest weekly scores">*</button></span></div>
+              <div class="mini-row league-record"><span class="league-record-label">MOST ROSTER MOVES:</span><span><strong>Rich S.</strong> &mdash; 57 moves in 2015 <button id="regular-season-moves-records-open" class="league-records-open" type="button" aria-label="View the most roster-move seasons">*</button></span></div>
+            </div>
           </article>
 
           <article class="card block">
@@ -277,7 +279,7 @@
 
     <dialog id="regular-season-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
       <div class="sportsbook-odds-dialog-header">
-        <h2>Other notable seasons</h2>
+        <h2>Next-Highest Win Totals</h2>
         <button id="regular-season-records-close" class="starting-lineups-close" type="button" aria-label="Close regular-season records">×</button>
       </div>
       <ul class="league-records-list">
@@ -286,6 +288,7 @@
         <li>Rich S. &mdash; 11 wins in 2021</li>
         <li>Mike L. &mdash; 11 wins in 2018</li>
       </ul>
+      <p class="small league-records-note">Includes regular-season wins only.</p>
     </dialog>
 
     <dialog id="regular-season-ppg-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
@@ -299,12 +302,34 @@
       </ul>
     </dialog>
 
+    <dialog id="regular-season-moves-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
+      <div class="sportsbook-odds-dialog-header">
+        <h2>Next-Highest Roster-Move Totals</h2>
+        <button id="regular-season-moves-records-close" class="starting-lineups-close" type="button" aria-label="Close roster-moves records">×</button>
+      </div>
+      <ul class="league-records-list">
+        <li>Rich S. &mdash; 54 moves in 2025</li>
+        <li>Rich S. &mdash; 53 moves in 2019</li>
+      </ul>
+    </dialog>
+
+    <dialog id="weekly-score-records-dialog" class="sportsbook-odds-dialog league-records-dialog">
+      <div class="sportsbook-odds-dialog-header">
+        <h2>Next-Highest Weekly Scores</h2>
+        <button id="weekly-score-records-close" class="starting-lineups-close" type="button" aria-label="Close weekly-score records">×</button>
+      </div>
+      <ul class="league-records-list">
+        <li>Kevin L. &mdash; 169 points (Week 12, 2020)</li>
+        <li>Rory M. &mdash; 168 points (Week 3, 2023)</li>
+      </ul>
+    </dialog>
+
     <footer class="site-footer">
       <p>
         &copy;2005 - <span id="current-year"></span> Shockafella LLC. <span class="footer-joint">AN <img src="./images/ows-nwo-logo.png" alt="OWS" class="footer-logo" /> JOINT.</span> Made with ❤️ in PDX. Hosted live and free in New Hampshire.
       </p>
     </footer>
 
-    <script src="./app.js?v=20260908b"></script>
+    <script src="./app.js?v=20260908d"></script>
   </body>
 </html>
