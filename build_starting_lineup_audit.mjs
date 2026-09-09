@@ -5,6 +5,7 @@ const outputPath = "/Users/rory/Documents/The League/History/Yahoo Starting Line
 const workbook = Workbook.create();
 const summary = workbook.worksheets.add("Records");
 const log = workbook.worksheets.add("Collection log");
+const candidates = workbook.worksheets.add("Weekly candidates");
 
 summary.showGridLines = false;
 summary.getRange("A1").values = [["Yahoo Starting Lineup Records Audit"]];
@@ -50,6 +51,7 @@ log.getRange("A1:H1").format = {
 const weeksByYear = year => year === 2020 ? 13 : (year >= 2021 ? 14 : 13);
 const collectedWeeks = new Map([
   ["2020-1", ["Collected", 5, "Russell Wilson — 31.78", "Josh Jacobs — 31.90", "Davante Adams — 27.60", "Mark Andrews — 17.80"]],
+  ["2020-2", ["Collected", 5, "Dak Prescott — 39.80", "Aaron Jones Sr. — 41.60", "Calvin Ridley — 22.90", "Darren Waller — 16.50"]],
 ]);
 const logRows = [];
 for (let year = 2006; year <= 2025; year++) {
@@ -69,6 +71,52 @@ log.getRange("C:C").format.columnWidth = 16;
 log.getRange("D:D").format.columnWidth = 18;
 log.getRange("E:H").format.columnWidth = 25;
 log.freezePanes.freezeRows(1);
+
+candidates.showGridLines = false;
+candidates.getRange("A1:G1").values = [["Season", "Week", "Position", "Weekly rank", "Player", "Points", "Lineup slot"]];
+candidates.getRange("A1:G1").format = {
+  fill: "#1F4E78",
+  font: { name: "Arial", size: 10, bold: true, color: "#FFFFFF" },
+  horizontalAlignment: "center",
+  verticalAlignment: "center",
+};
+const weeklyCandidates = [
+  [2020, 1, "QB", 1, "Russell Wilson", 31.78, "QB"],
+  [2020, 1, "QB", 2, "Lamar Jackson", 27.50, "QB"],
+  [2020, 1, "QB", 3, "Kyler Murray", 26.30, "QB"],
+  [2020, 1, "RB", 1, "Josh Jacobs", 31.90, "RB"],
+  [2020, 1, "RB", 2, "Christian McCaffrey", 25.50, "RB"],
+  [2020, 1, "RB", 3, "Ezekiel Elliott", 24.70, "RB"],
+  [2020, 1, "WR", 1, "Davante Adams", 27.60, "WR"],
+  [2020, 1, "WR", 2, "Adam Thielen", 25.00, "WR"],
+  [2020, 1, "WR", 3, "Calvin Ridley", 24.90, "WR"],
+  [2020, 1, "TE", 1, "Mark Andrews", 17.80, "TE"],
+  [2020, 1, "TE", 2, "T.J. Hockenson", 11.60, "TE"],
+  [2020, 1, "TE", 3, "Travis Kelce", 11.00, "TE"],
+  [2020, 2, "QB", 1, "Dak Prescott", 39.80, "QB"],
+  [2020, 2, "QB", 2, "Cam Newton", 34.58, "QB"],
+  [2020, 2, "QB", 3, "Josh Allen", 34.50, "QB"],
+  [2020, 2, "RB", 1, "Aaron Jones Sr.", 41.60, "W/R/T"],
+  [2020, 2, "RB", 2, "Alvin Kamara", 29.40, "RB"],
+  [2020, 2, "RB", 3, "Nick Chubb", 25.30, "RB"],
+  [2020, 2, "WR", 1, "Calvin Ridley", 22.90, "WR"],
+  [2020, 2, "WR", 2, "Stefon Diggs", 21.30, "WR"],
+  [2020, 2, "WR", 3, "Terry McLaurin", 18.50, "WR"],
+  [2020, 2, "TE", 1, "Darren Waller", 16.50, "TE"],
+  [2020, 2, "TE", 2, "Travis Kelce", 15.00, "TE"],
+  [2020, 2, "TE", 3, "Noah Fant", 13.70, "TE"],
+];
+candidates.getRange(`A2:G${weeklyCandidates.length + 1}`).values = weeklyCandidates;
+candidates.getRange(`A2:D${weeklyCandidates.length + 1}`).format.numberFormat = "0";
+candidates.getRange(`F2:F${weeklyCandidates.length + 1}`).format.numberFormat = "0.00";
+candidates.getRange(`A1:G${weeklyCandidates.length + 1}`).format.borders = { preset: "all", style: "thin", color: "#E6E6E6" };
+candidates.getRange("A:G").format.autofitColumns();
+candidates.getRange("A:A").format.columnWidth = 11;
+candidates.getRange("B:D").format.columnWidth = 12;
+candidates.getRange("E:E").format.columnWidth = 24;
+candidates.getRange("F:F").format.columnWidth = 12;
+candidates.getRange("G:G").format.columnWidth = 14;
+candidates.freezePanes.freezeRows(1);
 
 workbook.recalculate();
 const output = await SpreadsheetFile.exportXlsx(workbook);

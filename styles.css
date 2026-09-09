@@ -1203,14 +1203,14 @@ svg {
     padding: 0.2rem;
   }
 
-  #dashboard #all-time-table {
+  #all-time-table {
     min-width: 0;
     table-layout: fixed;
     width: 100%;
   }
 
-  #dashboard #all-time-table th,
-  #dashboard #all-time-table td {
+  #all-time-table th,
+  #all-time-table td {
     padding: 0.26rem 0.2rem;
     font-size: 0.72rem;
     white-space: normal;
@@ -1218,8 +1218,8 @@ svg {
     line-height: 1.15;
   }
 
-  #dashboard #all-time-table th:first-child,
-  #dashboard #all-time-table td:first-child {
+  #all-time-table th:first-child,
+  #all-time-table td:first-child {
     width: 34%;
   }
 
