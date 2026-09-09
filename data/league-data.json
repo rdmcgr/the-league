@@ -28,82 +28,82 @@
   "allTime": [
     {
       "team": "Rich S.",
-      "wins": 84,
+      "wins": 90,
       "losses": 70,
-      "games": 154,
-      "winPct": 0.5454545454545454,
+      "games": 160,
+      "winPct": 0.5625,
       "active": true
     },
     {
       "team": "Kevin E.",
-      "wins": 83,
+      "wins": 92,
       "losses": 68,
-      "games": 151,
-      "winPct": 0.5496688741721855,
+      "games": 160,
+      "winPct": 0.575,
       "active": true
     },
     {
       "team": "Dan F.",
-      "wins": 109,
+      "wins": 116,
       "losses": 96,
-      "games": 205,
-      "winPct": 0.5317073170731708,
+      "games": 212,
+      "winPct": 0.5471698113207547,
       "active": true
     },
     {
       "team": "Rory M.",
-      "wins": 131,
+      "wins": 140,
       "losses": 123,
-      "games": 254,
-      "winPct": 0.515748031496063,
+      "games": 263,
+      "winPct": 0.532319391634981,
       "active": true
     },
     {
       "team": "Mike L.",
-      "wins": 125,
+      "wins": 129,
       "losses": 135,
-      "games": 260,
-      "winPct": 0.4807692307692308,
+      "games": 264,
+      "winPct": 0.48863636363636365,
       "active": true
     },
     {
       "team": "Kevin L.",
-      "wins": 85,
+      "wins": 90,
       "losses": 97,
-      "games": 182,
-      "winPct": 0.46703296703296704,
+      "games": 187,
+      "winPct": 0.48128342245989303,
       "active": true
     },
     {
       "team": "Nick P.",
-      "wins": 119,
+      "wins": 129,
       "losses": 132,
-      "games": 251,
-      "winPct": 0.47410358565737054,
+      "games": 261,
+      "winPct": 0.4942528735632184,
       "active": true
     },
     {
       "team": "Adam D.",
-      "wins": 110,
+      "wins": 117,
       "losses": 133,
-      "games": 243,
-      "winPct": 0.45267489711934156,
+      "games": 250,
+      "winPct": 0.468,
       "active": true
     },
     {
       "team": "Paul L.",
-      "wins": 113,
+      "wins": 118,
       "losses": 144,
-      "games": 257,
-      "winPct": 0.4396887159533074,
+      "games": 262,
+      "winPct": 0.45038167938931295,
       "active": true
     },
     {
       "team": "Nikki T.",
-      "wins": 31,
+      "wins": 39,
       "losses": 44,
-      "games": 75,
-      "winPct": 0.41333333333333333,
+      "games": 83,
+      "winPct": 0.46987951807228917,
       "active": true
     }
   ],
