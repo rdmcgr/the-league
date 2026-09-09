@@ -239,6 +239,8 @@ h1 {
 
 .league-records-open:hover { color: #fff200; }
 
+.weekly-score-break { display: none; }
+
 .league-records-list {
   margin: 0;
   padding-left: 1.25rem;
@@ -848,8 +850,21 @@ main {
 
   .league-record {
     grid-template-columns: 1fr;
-    gap: 0.14rem;
+    gap: 0.22rem;
+    align-items: start;
   }
+
+  .league-record-label {
+    display: block;
+    line-height: 1.15;
+  }
+
+  .league-record > span:last-child {
+    display: block;
+    line-height: 1.35;
+  }
+
+  .weekly-score-break { display: block; }
 
   .site-footer p {
     white-space: normal;
