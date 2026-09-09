@@ -849,19 +849,20 @@ main {
   }
 
   .league-record {
-    grid-template-columns: 36% minmax(0, 1fr);
-    gap: 0.22rem;
-    align-items: start;
+    display: block;
+    padding: 0.55rem 0.6rem;
   }
 
   .league-record-label {
     display: block;
     line-height: 1.15;
+    margin-bottom: 0.22rem;
   }
 
   .league-record > span:last-child {
     display: block;
     line-height: 1.35;
+    overflow-wrap: normal;
   }
 
   .weekly-score-break { display: block; }
