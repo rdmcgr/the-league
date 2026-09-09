@@ -205,7 +205,7 @@ h1 {
 
 .league-record {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(11rem, 13rem) minmax(0, 1fr);
   align-items: center;
   gap: 0.55rem;
   color: var(--text);
@@ -849,7 +849,7 @@ main {
   }
 
   .league-record {
-    grid-template-columns: 1fr;
+    grid-template-columns: 36% minmax(0, 1fr);
     gap: 0.22rem;
     align-items: start;
   }
