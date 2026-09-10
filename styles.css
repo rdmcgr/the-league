@@ -984,6 +984,10 @@ main {
   outline: none;
 }
 
+.team-directory-card.team-directory-champion {
+  border: 2px solid var(--accent-2);
+}
+
 .team-directory-logo {
   width: 52px;
   height: 52px;
