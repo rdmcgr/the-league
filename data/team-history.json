@@ -1,0 +1,3269 @@
+{
+  "meta": {
+    "league": "Shockafella",
+    "seasons": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "scoring": "Standard",
+    "key_player_rule": "Three roster players with the best (lowest) final positional rank from FantasyPros standard-scoring season tables; kicker/defense omitted",
+    "ranking_source": "FantasyPros NFL Stats (standard scoring)",
+    "generated_from": [
+      "data/yahoo-rosters-raw.xlsx"
+    ]
+  },
+  "owners": [
+    {
+      "owner": "Rich S.",
+      "slug": "rich-s",
+      "current_team": "You Just Got Stewed",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Rafi Bomb's",
+          "team_id": 4,
+          "record": {
+            "wins": 3,
+            "losses": 10
+          },
+          "points_for": 1205.64,
+          "points_rank": 8,
+          "points_per_game": 92.74,
+          "points_per_game_rank": 8,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "David Montgomery",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 31905,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31905",
+              "source_name": "David Montgomery",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 210.8,
+              "fantasy_points_per_game": 14.1
+            },
+            {
+              "name": "Justin Herbert",
+              "position": "QB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 32676,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32676",
+              "source_name": "Justin Herbert",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 342.8,
+              "fantasy_points_per_game": 22.9
+            },
+            {
+              "name": "A.J. Brown",
+              "position": "WR",
+              "final_position_rank": 9,
+              "yahoo_player_id": 31883,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31883",
+              "source_name": "A.J. Brown",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 177.5,
+              "fantasy_points_per_game": 12.7
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Stew stoppers",
+          "team_id": 4,
+          "record": {
+            "wins": 11,
+            "losses": 3
+          },
+          "points_for": 1563.5,
+          "points_rank": 1,
+          "points_per_game": 111.68,
+          "points_per_game_rank": 1,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "Cooper Kupp",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30182,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30182",
+              "source_name": "Cooper Kupp",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 294.5,
+              "fantasy_points_per_game": 17.3
+            },
+            {
+              "name": "Justin Herbert",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 32676,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32676",
+              "source_name": "Justin Herbert",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 395.6,
+              "fantasy_points_per_game": 23.3
+            },
+            {
+              "name": "George Kittle",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30259,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30259",
+              "source_name": "George Kittle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 127.0,
+              "fantasy_points_per_game": 9.1
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "You just got stewed",
+          "team_id": 4,
+          "record": {
+            "wins": 13,
+            "losses": 1
+          },
+          "points_for": 1521.78,
+          "points_rank": 1,
+          "points_per_game": 108.7,
+          "points_per_game_rank": 1,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 206.3,
+              "fantasy_points_per_game": 12.1
+            },
+            {
+              "name": "Davante Adams",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 27581,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27581",
+              "source_name": "Davante Adams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 235.5,
+              "fantasy_points_per_game": 13.9
+            },
+            {
+              "name": "Justin Fields",
+              "position": "QB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 33399,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33399",
+              "source_name": "Justin Fields",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 307.0,
+              "fantasy_points_per_game": 20.5
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "You just got stewed",
+          "team_id": 10,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1376.12,
+          "points_rank": 3,
+          "points_per_game": 98.29,
+          "points_per_game_rank": 3,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "CeeDee Lamb",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 32687,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32687",
+              "source_name": "CeeDee Lamb",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 268.2,
+              "fantasy_points_per_game": 15.8
+            },
+            {
+              "name": "Trey McBride",
+              "position": "TE",
+              "final_position_rank": 10,
+              "yahoo_player_id": 34010,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34010",
+              "source_name": "Trey McBride",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 100.5,
+              "fantasy_points_per_game": 5.9
+            },
+            {
+              "name": "Brandon Aiyuk",
+              "position": "WR",
+              "final_position_rank": 10,
+              "yahoo_player_id": 32695,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32695",
+              "source_name": "Brandon Aiyuk",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 174.2,
+              "fantasy_points_per_game": 10.9
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "You just got stewed",
+          "team_id": 10,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1453.1,
+          "points_rank": 4,
+          "points_per_game": 103.79,
+          "points_per_game_rank": 4,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "Brock Bowers",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 40878,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40878",
+              "source_name": "Brock Bowers",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 150.7,
+              "fantasy_points_per_game": 8.9
+            },
+            {
+              "name": "Jayden Daniels",
+              "position": "QB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 40896,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40896",
+              "source_name": "Jayden Daniels",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 364.7,
+              "fantasy_points_per_game": 21.5
+            },
+            {
+              "name": "Sam Darnold",
+              "position": "QB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 30973,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30973",
+              "source_name": "Sam Darnold",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 319.8,
+              "fantasy_points_per_game": 18.8
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "You just got stewed",
+          "team_id": 10,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1368.1,
+          "points_rank": 4,
+          "points_per_game": 97.72,
+          "points_per_game_rank": 4,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Jaxon Smith-Njigba",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 40041,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40041",
+              "source_name": "Jaxon Smith-Njigba",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 240.9,
+              "fantasy_points_per_game": 14.2
+            },
+            {
+              "name": "Trevor Lawrence",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 33389,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33389",
+              "source_name": "Trevor Lawrence",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 350.1,
+              "fantasy_points_per_game": 20.6
+            },
+            {
+              "name": "Brock Bowers",
+              "position": "TE",
+              "final_position_rank": 8,
+              "yahoo_player_id": 40878,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40878",
+              "source_name": "Brock Bowers",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 112.2,
+              "fantasy_points_per_game": 9.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Kevin E.",
+      "slug": "kevin-e",
+      "current_team": "Veto My Trades",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Veto My Trades",
+          "team_id": 5,
+          "record": {
+            "wins": 7,
+            "losses": 6
+          },
+          "points_for": 1249.78,
+          "points_rank": 6,
+          "points_per_game": 96.14,
+          "points_per_game_rank": 6,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 207.8,
+              "fantasy_points_per_game": 13.9
+            },
+            {
+              "name": "Kyler Murray",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 31833,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31833",
+              "source_name": "Kyler Murray",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 390.7,
+              "fantasy_points_per_game": 24.4
+            },
+            {
+              "name": "James Robinson",
+              "position": "RB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 33138,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33138",
+              "source_name": "James Robinson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 201.4,
+              "fantasy_points_per_game": 14.4
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Veto My Trades",
+          "team_id": 5,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1307.94,
+          "points_rank": 8,
+          "points_per_game": 93.42,
+          "points_per_game_rank": 8,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Joe Mixon",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 30161,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30161",
+              "source_name": "Joe Mixon",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 245.9,
+              "fantasy_points_per_game": 15.4
+            },
+            {
+              "name": "Kyler Murray",
+              "position": "QB",
+              "final_position_rank": 10,
+              "yahoo_player_id": 31833,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31833",
+              "source_name": "Kyler Murray",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 309.8,
+              "fantasy_points_per_game": 22.1
+            },
+            {
+              "name": "Kyle Pitts Sr.",
+              "position": "TE",
+              "final_position_rank": 10,
+              "yahoo_player_id": 33392,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33392",
+              "source_name": "Kyle Pitts",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 108.6,
+              "fantasy_points_per_game": 6.4
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "VETO AUSTIN EKELER",
+          "team_id": 5,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1295.14,
+          "points_rank": 7,
+          "points_per_game": 92.51,
+          "points_per_game_rank": 7,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Taysom Hill",
+              "position": "TE",
+              "final_position_rank": 3,
+              "yahoo_player_id": 30614,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30614",
+              "source_name": "Taysom Hill",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 136.8,
+              "fantasy_points_per_game": 8.5
+            },
+            {
+              "name": "A.J. Brown",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 31883,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31883",
+              "source_name": "A.J. Brown",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 211.6,
+              "fantasy_points_per_game": 12.4
+            },
+            {
+              "name": "CeeDee Lamb",
+              "position": "WR",
+              "final_position_rank": 6,
+              "yahoo_player_id": 32687,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32687",
+              "source_name": "CeeDee Lamb",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 194.6,
+              "fantasy_points_per_game": 11.4
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "Veto My Trades",
+          "team_id": 9,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1441.28,
+          "points_rank": 2,
+          "points_per_game": 102.95,
+          "points_per_game_rank": 2,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Tyreek Hill",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 29399,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29399",
+              "source_name": "Tyreek Hill",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 257.4,
+              "fantasy_points_per_game": 16.1
+            },
+            {
+              "name": "Puka Nacua",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 40168,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40168",
+              "source_name": "Puka Nacua",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 193.5,
+              "fantasy_points_per_game": 11.4
+            },
+            {
+              "name": "Deebo Samuel Sr.",
+              "position": "WR",
+              "final_position_rank": 7,
+              "yahoo_player_id": 31868,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31868",
+              "source_name": "Deebo Samuel",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 183.7,
+              "fantasy_points_per_game": 12.2
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "Veto My Trades",
+          "team_id": 9,
+          "record": {
+            "wins": 10,
+            "losses": 4
+          },
+          "points_for": 1460.74,
+          "points_rank": 2,
+          "points_per_game": 104.34,
+          "points_per_game_rank": 2,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Lamar Jackson",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 31002,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31002",
+              "source_name": "Lamar Jackson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 434.4,
+              "fantasy_points_per_game": 25.6
+            },
+            {
+              "name": "Justin Jefferson",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 32692,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32692",
+              "source_name": "Justin Jefferson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 214.5,
+              "fantasy_points_per_game": 12.6
+            },
+            {
+              "name": "Joe Burrow",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 32671,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32671",
+              "source_name": "Joe Burrow",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 381.9,
+              "fantasy_points_per_game": 22.5
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "Veto My Votes",
+          "team_id": 9,
+          "record": {
+            "wins": 9,
+            "losses": 5
+          },
+          "points_for": 1456.26,
+          "points_rank": 2,
+          "points_per_game": 104.02,
+          "points_per_game_rank": 2,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "Jonathan Taylor",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 32711,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32711",
+              "source_name": "Jonathan Taylor",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 316.3,
+              "fantasy_points_per_game": 18.6
+            },
+            {
+              "name": "Puka Nacua",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 40168,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40168",
+              "source_name": "Puka Nacua",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 246.0,
+              "fantasy_points_per_game": 15.4
+            },
+            {
+              "name": "Drake Maye",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 40881,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40881",
+              "source_name": "Drake Maye",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 358.9,
+              "fantasy_points_per_game": 21.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Dan F.",
+      "slug": "dan-f",
+      "current_team": "Androgynous Danny",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Gay Danny",
+          "team_id": 8,
+          "record": {
+            "wins": 10,
+            "losses": 3
+          },
+          "points_for": 1295.96,
+          "points_rank": 4,
+          "points_per_game": 99.69,
+          "points_per_game_rank": 4,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "Darren Waller",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 28592,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28592",
+              "source_name": "Darren Waller",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 171.6,
+              "fantasy_points_per_game": 10.7
+            },
+            {
+              "name": "Patrick Mahomes",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30123,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30123",
+              "source_name": "Patrick Mahomes",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 380.3,
+              "fantasy_points_per_game": 25.4
+            },
+            {
+              "name": "DK Metcalf",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 31896,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31896",
+              "source_name": "DK Metcalf",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 188.3,
+              "fantasy_points_per_game": 11.8
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Desirable Danny",
+          "team_id": 8,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1364.08,
+          "points_rank": 6,
+          "points_per_game": 97.43,
+          "points_per_game_rank": 6,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Ja'Marr Chase",
+              "position": "WR",
+              "final_position_rank": 3,
+              "yahoo_player_id": 33393,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33393",
+              "source_name": "Ja'Marr Chase",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 223.6,
+              "fantasy_points_per_game": 13.2
+            },
+            {
+              "name": "Patrick Mahomes",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30123,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30123",
+              "source_name": "Patrick Mahomes",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 374.6,
+              "fantasy_points_per_game": 22.0
+            },
+            {
+              "name": "Damien Harris",
+              "position": "RB",
+              "final_position_rank": 8,
+              "yahoo_player_id": 31919,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31919",
+              "source_name": "Damien Harris",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 192.1,
+              "fantasy_points_per_game": 12.8
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "Delightful Danny",
+          "team_id": 8,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1315.64,
+          "points_rank": 5,
+          "points_per_game": 93.97,
+          "points_per_game_rank": 5,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Patrick Mahomes",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30123,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30123",
+              "source_name": "Patrick Mahomes",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 428.4,
+              "fantasy_points_per_game": 25.2
+            },
+            {
+              "name": "Austin Ekeler",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30423,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30423",
+              "source_name": "Austin Ekeler",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 265.7,
+              "fantasy_points_per_game": 15.6
+            },
+            {
+              "name": "Evan Engram",
+              "position": "TE",
+              "final_position_rank": 6,
+              "yahoo_player_id": 30136,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30136",
+              "source_name": "Evan Engram",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 103.9,
+              "fantasy_points_per_game": 6.1
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "Delightful Danny",
+          "team_id": 4,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1188.68,
+          "points_rank": 8,
+          "points_per_game": 84.91,
+          "points_per_game_rank": 8,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "T.J. Hockenson",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 31840,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31840",
+              "source_name": "T.J. Hockenson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 124.0,
+              "fantasy_points_per_game": 8.3
+            },
+            {
+              "name": "Jared Goff",
+              "position": "QB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 29235,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29235",
+              "source_name": "Jared Goff",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 300.9,
+              "fantasy_points_per_game": 17.7
+            },
+            {
+              "name": "Breece Hall",
+              "position": "RB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 33991,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33991",
+              "source_name": "Breece Hall",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 214.5,
+              "fantasy_points_per_game": 12.6
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "NOW THAT\u2019S \u201cDAN AWESOME!\u201d",
+          "team_id": 4,
+          "record": {
+            "wins": 9,
+            "losses": 5
+          },
+          "points_for": 1377.46,
+          "points_rank": 5,
+          "points_per_game": 98.39,
+          "points_per_game_rank": 5,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Saquon Barkley",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30972,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30972",
+              "source_name": "Saquon Barkley",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 322.3,
+              "fantasy_points_per_game": 20.1
+            },
+            {
+              "name": "Brian Thomas Jr.",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 40883,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40883",
+              "source_name": "Brian Thomas",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 197.0,
+              "fantasy_points_per_game": 11.6
+            },
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 10,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 98.4,
+              "fantasy_points_per_game": 6.1
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "ANDROGYNOUS DANNY",
+          "team_id": 4,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1111.04,
+          "points_rank": 10,
+          "points_per_game": 79.36,
+          "points_per_game_rank": 10,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Kyle Pitts Sr.",
+              "position": "TE",
+              "final_position_rank": 3,
+              "yahoo_player_id": 33392,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33392",
+              "source_name": "Kyle Pitts",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 122.8,
+              "fantasy_points_per_game": 7.2
+            },
+            {
+              "name": "Chris Olave",
+              "position": "WR",
+              "final_position_rank": 6,
+              "yahoo_player_id": 33966,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33966",
+              "source_name": "Chris Olave",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 169.0,
+              "fantasy_points_per_game": 10.6
+            },
+            {
+              "name": "Saquon Barkley",
+              "position": "RB",
+              "final_position_rank": 13,
+              "yahoo_player_id": 30972,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30972",
+              "source_name": "Saquon Barkley",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 195.3,
+              "fantasy_points_per_game": 12.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Rory M.",
+      "slug": "rory-m",
+      "current_team": "He Hate Me",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "He Hate Me",
+          "team_id": 1,
+          "record": {
+            "wins": 7,
+            "losses": 6
+          },
+          "points_for": 1314.54,
+          "points_rank": 3,
+          "points_per_game": 101.12,
+          "points_per_game_rank": 3,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "Robert Tonyan",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30777,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30777",
+              "source_name": "Robert Tonyan",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 124.6,
+              "fantasy_points_per_game": 7.8
+            },
+            {
+              "name": "Deshaun Watson",
+              "position": "QB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 30125,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30125",
+              "source_name": "Deshaun Watson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 376.4,
+              "fantasy_points_per_game": 23.5
+            },
+            {
+              "name": "Logan Thomas",
+              "position": "TE",
+              "final_position_rank": 8,
+              "yahoo_player_id": 27648,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27648",
+              "source_name": "Logan Thomas",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 104.6,
+              "fantasy_points_per_game": 6.5
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "HE HATE ME",
+          "team_id": 1,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1406.98,
+          "points_rank": 4,
+          "points_per_game": 100.5,
+          "points_per_game_rank": 4,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Tom Brady",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 5228,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/5228",
+              "source_name": "Tom Brady",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 386.7,
+              "fantasy_points_per_game": 22.7
+            },
+            {
+              "name": "Dalton Schultz",
+              "position": "TE",
+              "final_position_rank": 3,
+              "yahoo_player_id": 31107,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31107",
+              "source_name": "Dalton Schultz",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 130.8,
+              "fantasy_points_per_game": 7.7
+            },
+            {
+              "name": "Najee Harris",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 33412,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33412",
+              "source_name": "Najee Harris",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 226.7,
+              "fantasy_points_per_game": 13.3
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "He Hate Me",
+          "team_id": 1,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1396.8,
+          "points_rank": 3,
+          "points_per_game": 99.77,
+          "points_per_game_rank": 3,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Jalen Hurts",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 32723,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32723",
+              "source_name": "Jalen Hurts",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 384.1,
+              "fantasy_points_per_game": 25.6
+            },
+            {
+              "name": "Nick Chubb",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 31005,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31005",
+              "source_name": "Nick Chubb",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 254.4,
+              "fantasy_points_per_game": 15.0
+            },
+            {
+              "name": "Dawson Knox",
+              "position": "TE",
+              "final_position_rank": 9,
+              "yahoo_player_id": 31928,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31928",
+              "source_name": "Dawson Knox",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 87.7,
+              "fantasy_points_per_game": 5.8
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "He Hate Me",
+          "team_id": 1,
+          "record": {
+            "wins": 11,
+            "losses": 3
+          },
+          "points_for": 1687.48,
+          "points_rank": 1,
+          "points_per_game": 120.53,
+          "points_per_game_rank": 1,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Christian McCaffrey",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30121,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30121",
+              "source_name": "Christian McCaffrey",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 324.3,
+              "fantasy_points_per_game": 20.3
+            },
+            {
+              "name": "Sam LaPorta",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 40064,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40064",
+              "source_name": "Sam LaPorta",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 153.3,
+              "fantasy_points_per_game": 9.0
+            },
+            {
+              "name": "Jalen Hurts",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 32723,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32723",
+              "source_name": "Jalen Hurts",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 371.9,
+              "fantasy_points_per_game": 21.9
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "He Hate Me",
+          "team_id": 1,
+          "record": {
+            "wins": 5,
+            "losses": 9
+          },
+          "points_for": 1226.54,
+          "points_rank": 10,
+          "points_per_game": 87.61,
+          "points_per_game_rank": 10,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Jahmyr Gibbs",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 40059,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40059",
+              "source_name": "Jahmyr Gibbs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 310.9,
+              "fantasy_points_per_game": 18.3
+            },
+            {
+              "name": "Jared Goff",
+              "position": "QB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 29235,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29235",
+              "source_name": "Jared Goff",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 335.5,
+              "fantasy_points_per_game": 19.7
+            },
+            {
+              "name": "Sam LaPorta",
+              "position": "TE",
+              "final_position_rank": 6,
+              "yahoo_player_id": 40064,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40064",
+              "source_name": "Sam LaPorta",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 114.6,
+              "fantasy_points_per_game": 7.2
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "He Hate Me",
+          "team_id": 1,
+          "record": {
+            "wins": 9,
+            "losses": 5
+          },
+          "points_for": 1459.52,
+          "points_rank": 1,
+          "points_per_game": 104.25,
+          "points_per_game_rank": 1,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Bijan Robinson",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 40055,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40055",
+              "source_name": "Bijan Robinson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 291.8,
+              "fantasy_points_per_game": 17.2
+            },
+            {
+              "name": "Jahmyr Gibbs",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 40059,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40059",
+              "source_name": "Jahmyr Gibbs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 289.9,
+              "fantasy_points_per_game": 17.1
+            },
+            {
+              "name": "Jared Goff",
+              "position": "QB",
+              "final_position_rank": 8,
+              "yahoo_player_id": 29235,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29235",
+              "source_name": "Jared Goff",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 305.1,
+              "fantasy_points_per_game": 17.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Mike L.",
+      "slug": "mike-l",
+      "current_team": "AgnesTing",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "AgnesTing",
+          "team_id": 2,
+          "record": {
+            "wins": 4,
+            "losses": 9
+          },
+          "points_for": 1130.76,
+          "points_rank": 10,
+          "points_per_game": 86.98,
+          "points_per_game_rank": 10,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 405.2,
+              "fantasy_points_per_game": 25.3
+            },
+            {
+              "name": "Rob Gronkowski",
+              "position": "TE",
+              "final_position_rank": 9,
+              "yahoo_player_id": 24017,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/24017",
+              "source_name": "Rob Gronkowski",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 104.3,
+              "fantasy_points_per_game": 6.5
+            },
+            {
+              "name": "Mike Davis",
+              "position": "RB",
+              "final_position_rank": 18,
+              "yahoo_player_id": 28514,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28514",
+              "source_name": "Mike Davis",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 147.5,
+              "fantasy_points_per_game": 9.8
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "AgnesTing",
+          "team_id": 2,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1406.06,
+          "points_rank": 5,
+          "points_per_game": 100.43,
+          "points_per_game_rank": 5,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 417.7,
+              "fantasy_points_per_game": 24.6
+            },
+            {
+              "name": "Ezekiel Elliott",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 29238,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29238",
+              "source_name": "Ezekiel Elliott",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 205.1,
+              "fantasy_points_per_game": 12.1
+            },
+            {
+              "name": "Joe Burrow",
+              "position": "QB",
+              "final_position_rank": 8,
+              "yahoo_player_id": 32671,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32671",
+              "source_name": "Joe Burrow",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 328.1,
+              "fantasy_points_per_game": 20.5
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "AgnesTing",
+          "team_id": 2,
+          "record": {
+            "wins": 9,
+            "losses": 5
+          },
+          "points_for": 1316.38,
+          "points_rank": 4,
+          "points_per_game": 94.03,
+          "points_per_game_rank": 4,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Joe Burrow",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 32671,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32671",
+              "source_name": "Joe Burrow",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 369.0,
+              "fantasy_points_per_game": 21.7
+            },
+            {
+              "name": "Saquon Barkley",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 30972,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30972",
+              "source_name": "Saquon Barkley",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 227.0,
+              "fantasy_points_per_game": 14.2
+            },
+            {
+              "name": "Dallas Goedert",
+              "position": "TE",
+              "final_position_rank": 10,
+              "yahoo_player_id": 31019,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31019",
+              "source_name": "Dallas Goedert",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 86.2,
+              "fantasy_points_per_game": 7.2
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "AgnesTing",
+          "team_id": 3,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1235.14,
+          "points_rank": 6,
+          "points_per_game": 88.22,
+          "points_per_game_rank": 6,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 3,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 126.4,
+              "fantasy_points_per_game": 8.4
+            },
+            {
+              "name": "Lamar Jackson",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 31002,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31002",
+              "source_name": "Lamar Jackson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 338.2,
+              "fantasy_points_per_game": 21.1
+            },
+            {
+              "name": "Jordan Addison",
+              "position": "WR",
+              "final_position_rank": 19,
+              "yahoo_player_id": 40042,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40042",
+              "source_name": "Jordan Addison",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 151.3,
+              "fantasy_points_per_game": 8.9
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "AgnesTing",
+          "team_id": 3,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1510.84,
+          "points_rank": 1,
+          "points_per_game": 107.92,
+          "points_per_game_rank": 1,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Ja'Marr Chase",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 33393,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33393",
+              "source_name": "Ja'Marr Chase",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 276.0,
+              "fantasy_points_per_game": 16.2
+            },
+            {
+              "name": "Jonnu Smith",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30213,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30213",
+              "source_name": "Jonnu Smith",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 134.3,
+              "fantasy_points_per_game": 7.9
+            },
+            {
+              "name": "James Cook III",
+              "position": "RB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 34019,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34019",
+              "source_name": "James Cook",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 234.7,
+              "fantasy_points_per_game": 14.7
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "AgnesTing",
+          "team_id": 3,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1293.96,
+          "points_rank": 7,
+          "points_per_game": 92.43,
+          "points_per_game_rank": 7,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Matthew Stafford",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 9265,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/9265",
+              "source_name": "Matthew Stafford",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 358.3,
+              "fantasy_points_per_game": 21.1
+            },
+            {
+              "name": "James Cook III",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 34019,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34019",
+              "source_name": "James Cook",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 269.2,
+              "fantasy_points_per_game": 15.8
+            },
+            {
+              "name": "Ja'Marr Chase",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 33393,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33393",
+              "source_name": "Ja'Marr Chase",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 188.6,
+              "fantasy_points_per_game": 11.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Kevin L.",
+      "slug": "kevin-l",
+      "current_team": "Rachel Niquols Espn",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 3,
+          "record": {
+            "wins": 7,
+            "losses": 6
+          },
+          "points_for": 1417.4,
+          "points_rank": 1,
+          "points_per_game": 109.03,
+          "points_per_game_rank": 1,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Derrick Henry",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 29279,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29279",
+              "source_name": "Derrick Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 314.1,
+              "fantasy_points_per_game": 19.6
+            },
+            {
+              "name": "Tyreek Hill",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 29399,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29399",
+              "source_name": "Tyreek Hill",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 241.9,
+              "fantasy_points_per_game": 16.1
+            },
+            {
+              "name": "Aaron Rodgers",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 7200,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/7200",
+              "source_name": "Aaron Rodgers",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 387.1,
+              "fantasy_points_per_game": 24.2
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 3,
+          "record": {
+            "wins": 5,
+            "losses": 9
+          },
+          "points_for": 1346.0,
+          "points_rank": 7,
+          "points_per_game": 96.14,
+          "points_per_game_rank": 7,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 170.8,
+              "fantasy_points_per_game": 10.7
+            },
+            {
+              "name": "Aaron Rodgers",
+              "position": "QB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 7200,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/7200",
+              "source_name": "Aaron Rodgers",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 336.3,
+              "fantasy_points_per_game": 21.0
+            },
+            {
+              "name": "Stefon Diggs",
+              "position": "WR",
+              "final_position_rank": 8,
+              "yahoo_player_id": 28534,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28534",
+              "source_name": "Stefon Diggs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 182.5,
+              "fantasy_points_per_game": 10.7
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 3,
+          "record": {
+            "wins": 5,
+            "losses": 9
+          },
+          "points_for": 1269.16,
+          "points_rank": 8,
+          "points_per_game": 90.65,
+          "points_per_game_rank": 8,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Christian McCaffrey",
+              "position": "RB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30121,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30121",
+              "source_name": "Christian McCaffrey",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 271.4,
+              "fantasy_points_per_game": 16.0
+            },
+            {
+              "name": "Jaylen Waddle",
+              "position": "WR",
+              "final_position_rank": 7,
+              "yahoo_player_id": 33394,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33394",
+              "source_name": "Jaylen Waddle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 184.2,
+              "fantasy_points_per_game": 10.8
+            },
+            {
+              "name": "Amari Cooper",
+              "position": "WR",
+              "final_position_rank": 8,
+              "yahoo_player_id": 28392,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28392",
+              "source_name": "Amari Cooper",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 169.0,
+              "fantasy_points_per_game": 9.9
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 5,
+          "record": {
+            "wins": 2,
+            "losses": 12
+          },
+          "points_for": 1142.68,
+          "points_rank": 9,
+          "points_per_game": 81.62,
+          "points_per_game_rank": 9,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "final_position_rank": 3,
+              "yahoo_player_id": 33500,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33500",
+              "source_name": "Amon-Ra St. Brown",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 211.9,
+              "fantasy_points_per_game": 13.2
+            },
+            {
+              "name": "Jordan Love",
+              "position": "QB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 32696,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32696",
+              "source_name": "Jordan Love",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 330.1,
+              "fantasy_points_per_game": 19.4
+            },
+            {
+              "name": "Brock Purdy",
+              "position": "QB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 34218,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34218",
+              "source_name": "Brock Purdy",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 306.6,
+              "fantasy_points_per_game": 19.2
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 5,
+          "record": {
+            "wins": 3,
+            "losses": 11
+          },
+          "points_for": 1264.24,
+          "points_rank": 9,
+          "points_per_game": 90.3,
+          "points_per_game_rank": 9,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "final_position_rank": 3,
+              "yahoo_player_id": 33500,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33500",
+              "source_name": "Amon-Ra St. Brown",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 201.2,
+              "fantasy_points_per_game": 11.8
+            },
+            {
+              "name": "Terry McLaurin",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 31908,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31908",
+              "source_name": "Terry McLaurin",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 185.8,
+              "fantasy_points_per_game": 10.9
+            },
+            {
+              "name": "Tucker Kraft",
+              "position": "TE",
+              "final_position_rank": 7,
+              "yahoo_player_id": 40102,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40102",
+              "source_name": "Tucker Kraft",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 113.3,
+              "fantasy_points_per_game": 6.7
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "Rachel Niquols Espn",
+          "team_id": 5,
+          "record": {
+            "wins": 5,
+            "losses": 9
+          },
+          "points_for": 1338.06,
+          "points_rank": 5,
+          "points_per_game": 95.58,
+          "points_per_game_rank": 5,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Travis Kelce",
+              "position": "TE",
+              "final_position_rank": 5,
+              "yahoo_player_id": 26686,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26686",
+              "source_name": "Travis Kelce",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 117.2,
+              "fantasy_points_per_game": 6.9
+            },
+            {
+              "name": "Derrick Henry",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 29279,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29279",
+              "source_name": "Derrick Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 264.5,
+              "fantasy_points_per_game": 15.6
+            },
+            {
+              "name": "Davante Adams",
+              "position": "WR",
+              "final_position_rank": 7,
+              "yahoo_player_id": 27581,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27581",
+              "source_name": "Davante Adams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 162.9,
+              "fantasy_points_per_game": 11.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Nick P.",
+      "slug": "nick-p",
+      "current_team": "Team Winner",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 5,
+            "losses": 8
+          },
+          "points_for": 1196.36,
+          "points_rank": 9,
+          "points_per_game": 92.03,
+          "points_per_game_rank": 9,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Aaron Jones Sr.",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 30295,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30295",
+              "source_name": "Aaron Jones",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 211.9,
+              "fantasy_points_per_game": 15.1
+            },
+            {
+              "name": "T.J. Hockenson",
+              "position": "TE",
+              "final_position_rank": 6,
+              "yahoo_player_id": 31840,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31840",
+              "source_name": "T.J. Hockenson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2020",
+              "fantasy_points": 108.3,
+              "fantasy_points_per_game": 6.8
+            },
+            {
+              "name": "Justin Jefferson",
+              "position": "WR",
+              "final_position_rank": 6,
+              "yahoo_player_id": 32692,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32692",
+              "source_name": "Justin Jefferson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 186.2,
+              "fantasy_points_per_game": 11.6
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 9,
+            "losses": 5
+          },
+          "points_for": 1430.3,
+          "points_rank": 3,
+          "points_per_game": 102.16,
+          "points_per_game_rank": 3,
+          "playoff_finish": "Runner-up",
+          "key_players": [
+            {
+              "name": "Mark Andrews",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 31056,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31056",
+              "source_name": "Mark Andrews",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 194.1,
+              "fantasy_points_per_game": 11.4
+            },
+            {
+              "name": "Austin Ekeler",
+              "position": "RB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30423,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30423",
+              "source_name": "Austin Ekeler",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 273.8,
+              "fantasy_points_per_game": 17.1
+            },
+            {
+              "name": "Justin Jefferson",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 32692,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32692",
+              "source_name": "Justin Jefferson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 222.4,
+              "fantasy_points_per_game": 13.1
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1486.44,
+          "points_rank": 2,
+          "points_per_game": 106.17,
+          "points_per_game_rank": 2,
+          "playoff_finish": "5th place",
+          "key_players": [
+            {
+              "name": "Justin Jefferson",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 32692,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32692",
+              "source_name": "Justin Jefferson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 240.6,
+              "fantasy_points_per_game": 14.2
+            },
+            {
+              "name": "Mark Andrews",
+              "position": "TE",
+              "final_position_rank": 5,
+              "yahoo_player_id": 31056,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31056",
+              "source_name": "Mark Andrews",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 117.5,
+              "fantasy_points_per_game": 7.8
+            },
+            {
+              "name": "Stefon Diggs",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 28534,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28534",
+              "source_name": "Stefon Diggs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 211.2,
+              "fantasy_points_per_game": 12.4
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1215.88,
+          "points_rank": 7,
+          "points_per_game": 86.85,
+          "points_per_game_rank": 7,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "Travis Etienne Jr.",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 33413,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33413",
+              "source_name": "Travis Etienne",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 224.4,
+              "fantasy_points_per_game": 13.2
+            },
+            {
+              "name": "Kyren Williams",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 34120,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34120",
+              "source_name": "Kyren Williams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 223.0,
+              "fantasy_points_per_game": 18.6
+            },
+            {
+              "name": "Evan Engram",
+              "position": "TE",
+              "final_position_rank": 6,
+              "yahoo_player_id": 30136,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30136",
+              "source_name": "Evan Engram",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 116.3,
+              "fantasy_points_per_game": 6.8
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1359.18,
+          "points_rank": 6,
+          "points_per_game": 97.08,
+          "points_per_game_rank": 6,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Bijan Robinson",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 40055,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40055",
+              "source_name": "Bijan Robinson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 280.7,
+              "fantasy_points_per_game": 16.5
+            },
+            {
+              "name": "Kyren Williams",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 34120,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34120",
+              "source_name": "Kyren Williams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 238.1,
+              "fantasy_points_per_game": 14.9
+            },
+            {
+              "name": "Drake London",
+              "position": "WR",
+              "final_position_rank": 6,
+              "yahoo_player_id": 33963,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33963",
+              "source_name": "Drake London",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 180.8,
+              "fantasy_points_per_game": 10.6
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "Team Winner",
+          "team_id": 7,
+          "record": {
+            "wins": 10,
+            "losses": 4
+          },
+          "points_for": 1435.92,
+          "points_rank": 3,
+          "points_per_game": 102.57,
+          "points_per_game_rank": 3,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "Trey McBride",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 34010,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34010",
+              "source_name": "Trey McBride",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 189.9,
+              "fantasy_points_per_game": 11.2
+            },
+            {
+              "name": "George Pickens",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 34007,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34007",
+              "source_name": "George Pickens",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2025",
+              "fantasy_points": 198.9,
+              "fantasy_points_per_game": 11.7
+            },
+            {
+              "name": "Dak Prescott",
+              "position": "QB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 29369,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29369",
+              "source_name": "Dak Prescott",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 323.8,
+              "fantasy_points_per_game": 19.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Adam D.",
+      "slug": "adam-d",
+      "current_team": "Sunset Strips",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "Sunset Strips",
+          "team_id": 6,
+          "record": {
+            "wins": 7,
+            "losses": 6
+          },
+          "points_for": 1286.64,
+          "points_rank": 5,
+          "points_per_game": 98.97,
+          "points_per_game_rank": 5,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Dalvin Cook",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 30154,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30154",
+              "source_name": "Dalvin Cook",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 293.8,
+              "fantasy_points_per_game": 21.0
+            },
+            {
+              "name": "Stefon Diggs",
+              "position": "WR",
+              "final_position_rank": 3,
+              "yahoo_player_id": 28534,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/28534",
+              "source_name": "Stefon Diggs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 201.6,
+              "fantasy_points_per_game": 12.6
+            },
+            {
+              "name": "Jonathan Taylor",
+              "position": "RB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 32711,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32711",
+              "source_name": "Jonathan Taylor",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 216.8,
+              "fantasy_points_per_game": 14.5
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "Sunset Strips",
+          "team_id": 6,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1462.3,
+          "points_rank": 2,
+          "points_per_game": 104.45,
+          "points_per_game_rank": 2,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Jonathan Taylor",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 32711,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32711",
+              "source_name": "Jonathan Taylor",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 333.1,
+              "fantasy_points_per_game": 19.6
+            },
+            {
+              "name": "Deebo Samuel Sr.",
+              "position": "WR",
+              "final_position_rank": 2,
+              "yahoo_player_id": 31868,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31868",
+              "source_name": "Deebo Samuel",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 262.0,
+              "fantasy_points_per_game": 16.4
+            },
+            {
+              "name": "James Conner",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 30218,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30218",
+              "source_name": "James Conner",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 220.7,
+              "fantasy_points_per_game": 14.7
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "Sunset Strips",
+          "team_id": 6,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1253.64,
+          "points_rank": 9,
+          "points_per_game": 89.55,
+          "points_per_game_rank": 9,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Tyreek Hill",
+              "position": "WR",
+              "final_position_rank": 3,
+              "yahoo_player_id": 29399,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29399",
+              "source_name": "Tyreek Hill",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2022",
+              "fantasy_points": 228.2,
+              "fantasy_points_per_game": 13.4
+            },
+            {
+              "name": "Geno Smith",
+              "position": "QB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 26662,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/26662",
+              "source_name": "Geno Smith",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 314.9,
+              "fantasy_points_per_game": 18.5
+            },
+            {
+              "name": "Kirk Cousins",
+              "position": "QB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 25812,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/25812",
+              "source_name": "Kirk Cousins",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 305.6,
+              "fantasy_points_per_game": 18.0
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "SUNSET STRIPS",
+          "team_id": 6,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1359.58,
+          "points_rank": 4,
+          "points_per_game": 97.11,
+          "points_per_game_rank": 4,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Dak Prescott",
+              "position": "QB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 29369,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29369",
+              "source_name": "Dak Prescott",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 352.0,
+              "fantasy_points_per_game": 20.7
+            },
+            {
+              "name": "Mike Evans",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 27535,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27535",
+              "source_name": "Mike Evans",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2023",
+              "fantasy_points": 203.5,
+              "fantasy_points_per_game": 12.0
+            },
+            {
+              "name": "Joe Mixon",
+              "position": "RB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 30161,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30161",
+              "source_name": "Joe Mixon",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 215.0,
+              "fantasy_points_per_game": 12.6
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "Sunset Strips",
+          "team_id": 6,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1272.58,
+          "points_rank": 8,
+          "points_per_game": 90.9,
+          "points_per_game_rank": 8,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Trey McBride",
+              "position": "TE",
+              "final_position_rank": 3,
+              "yahoo_player_id": 34010,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/34010",
+              "source_name": "Trey McBride",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 138.8,
+              "fantasy_points_per_game": 8.7
+            },
+            {
+              "name": "Mike Evans",
+              "position": "WR",
+              "final_position_rank": 7,
+              "yahoo_player_id": 27535,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27535",
+              "source_name": "Mike Evans",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2024",
+              "fantasy_points": 166.4,
+              "fantasy_points_per_game": 11.9
+            },
+            {
+              "name": "Joe Mixon",
+              "position": "RB",
+              "final_position_rank": 11,
+              "yahoo_player_id": 30161,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30161",
+              "source_name": "Joe Mixon",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 204.5,
+              "fantasy_points_per_game": 14.6
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "Sunset Strips",
+          "team_id": 6,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1247.06,
+          "points_rank": 8,
+          "points_per_game": 89.08,
+          "points_per_game_rank": 8,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Dallas Goedert",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 31019,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31019",
+              "source_name": "Dallas Goedert",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 125.1,
+              "fantasy_points_per_game": 8.3
+            },
+            {
+              "name": "Caleb Williams",
+              "position": "QB",
+              "final_position_rank": 6,
+              "yahoo_player_id": 40900,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40900",
+              "source_name": "Caleb Williams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 323.3,
+              "fantasy_points_per_game": 19.0
+            },
+            {
+              "name": "De'Von Achane",
+              "position": "RB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 40118,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/40118",
+              "source_name": "De'Von Achane",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 255.8,
+              "fantasy_points_per_game": 16.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Paul L.",
+      "slug": "paul-l",
+      "current_team": "The Herdsman",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "THE HERDSMAN",
+          "team_id": 9,
+          "record": {
+            "wins": 7,
+            "losses": 6
+          },
+          "points_for": 1337.68,
+          "points_rank": 2,
+          "points_per_game": 102.9,
+          "points_per_game_rank": 2,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Alvin Kamara",
+              "position": "RB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30180,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30180",
+              "source_name": "Alvin Kamara",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2020",
+              "fantasy_points": 294.8,
+              "fantasy_points_per_game": 19.7
+            },
+            {
+              "name": "Calvin Ridley",
+              "position": "WR",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30996,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30996",
+              "source_name": "Calvin Ridley",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 191.5,
+              "fantasy_points_per_game": 12.8
+            },
+            {
+              "name": "Adam Thielen",
+              "position": "WR",
+              "final_position_rank": 7,
+              "yahoo_player_id": 27277,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27277",
+              "source_name": "Adam Thielen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 180.0,
+              "fantasy_points_per_game": 12.0
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "The Herdsman",
+          "team_id": 9,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1246.12,
+          "points_rank": 10,
+          "points_per_game": 89.01,
+          "points_per_game_rank": 10,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Alvin Kamara",
+              "position": "RB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 30180,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30180",
+              "source_name": "Alvin Kamara",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2021",
+              "fantasy_points": 187.7,
+              "fantasy_points_per_game": 14.4
+            },
+            {
+              "name": "Pat Freiermuth",
+              "position": "TE",
+              "final_position_rank": 13,
+              "yahoo_player_id": 33443,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33443",
+              "source_name": "Pat Freiermuth",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 91.7,
+              "fantasy_points_per_game": 5.7
+            },
+            {
+              "name": "Noah Fant",
+              "position": "TE",
+              "final_position_rank": 14,
+              "yahoo_player_id": 31852,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31852",
+              "source_name": "Noah Fant",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2021",
+              "fantasy_points": 91.0,
+              "fantasy_points_per_game": 5.7
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "The Herdsman",
+          "team_id": 9,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1304.88,
+          "points_rank": 6,
+          "points_per_game": 93.21,
+          "points_per_game_rank": 6,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Josh Jacobs",
+              "position": "RB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 31856,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31856",
+              "source_name": "Josh Jacobs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 275.3,
+              "fantasy_points_per_game": 16.2
+            },
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 412.4,
+              "fantasy_points_per_game": 24.3
+            },
+            {
+              "name": "George Kittle",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30259,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30259",
+              "source_name": "George Kittle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 140.5,
+              "fantasy_points_per_game": 9.4
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "The Herdsman",
+          "team_id": 8,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1341.12,
+          "points_rank": 5,
+          "points_per_game": 95.79,
+          "points_per_game_rank": 5,
+          "playoff_finish": "6th place",
+          "key_players": [
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 410.9,
+              "fantasy_points_per_game": 24.2
+            },
+            {
+              "name": "George Kittle",
+              "position": "TE",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30259,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30259",
+              "source_name": "George Kittle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 138.2,
+              "fantasy_points_per_game": 8.6
+            },
+            {
+              "name": "David Njoku",
+              "position": "TE",
+              "final_position_rank": 5,
+              "yahoo_player_id": 30142,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30142",
+              "source_name": "David Njoku",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2023",
+              "fantasy_points": 120.2,
+              "fantasy_points_per_game": 7.5
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "The Herdsman",
+          "team_id": 8,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1460.74,
+          "points_rank": 2,
+          "points_per_game": 104.34,
+          "points_per_game_rank": 2,
+          "playoff_finish": "3rd place",
+          "key_players": [
+            {
+              "name": "George Kittle",
+              "position": "TE",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30259,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30259",
+              "source_name": "George Kittle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 158.6,
+              "fantasy_points_per_game": 10.6
+            },
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 385.1,
+              "fantasy_points_per_game": 22.7
+            },
+            {
+              "name": "Josh Jacobs",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 31856,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31856",
+              "source_name": "Josh Jacobs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 257.1,
+              "fantasy_points_per_game": 15.1
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "The Herdsman",
+          "team_id": 8,
+          "record": {
+            "wins": 5,
+            "losses": 9
+          },
+          "points_for": 1197.46,
+          "points_rank": 9,
+          "points_per_game": 85.53,
+          "points_per_game_rank": 9,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Josh Allen",
+              "position": "QB",
+              "final_position_rank": 1,
+              "yahoo_player_id": 30977,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30977",
+              "source_name": "Josh Allen",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2025",
+              "fantasy_points": 374.5,
+              "fantasy_points_per_game": 22.0
+            },
+            {
+              "name": "Harold Fannin Jr.",
+              "position": "TE",
+              "final_position_rank": 6,
+              "yahoo_player_id": 41877,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/41877",
+              "source_name": "Harold Fannin",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 114.4,
+              "fantasy_points_per_game": 7.2
+            },
+            {
+              "name": "George Kittle",
+              "position": "TE",
+              "final_position_rank": 11,
+              "yahoo_player_id": 30259,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30259",
+              "source_name": "George Kittle",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 104.5,
+              "fantasy_points_per_game": 9.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "Nikki T.",
+      "slug": "nikki-t",
+      "current_team": "About Damn Time",
+      "seasons": [
+        {
+          "year": 2020,
+          "team_name": "About Damn Time",
+          "team_id": 10,
+          "record": {
+            "wins": 8,
+            "losses": 5
+          },
+          "points_for": 1228.36,
+          "points_rank": 7,
+          "points_per_game": 94.49,
+          "points_per_game_rank": 7,
+          "playoff_finish": "4th place",
+          "key_players": [
+            {
+              "name": "Davante Adams",
+              "position": "WR",
+              "final_position_rank": 1,
+              "yahoo_player_id": 27581,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27581",
+              "source_name": "Davante Adams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2020",
+              "fantasy_points": 243.4,
+              "fantasy_points_per_game": 17.4
+            },
+            {
+              "name": "Ryan Tannehill",
+              "position": "QB",
+              "final_position_rank": 7,
+              "yahoo_player_id": 25718,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/25718",
+              "source_name": "Ryan Tannehill",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 350.3,
+              "fantasy_points_per_game": 21.9
+            },
+            {
+              "name": "Tom Brady",
+              "position": "QB",
+              "final_position_rank": 8,
+              "yahoo_player_id": 5228,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/5228",
+              "source_name": "Tom Brady",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2020",
+              "fantasy_points": 350.0,
+              "fantasy_points_per_game": 21.9
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "team_name": "About Damn Time",
+          "team_id": 10,
+          "record": {
+            "wins": 4,
+            "losses": 10
+          },
+          "points_for": 1258.48,
+          "points_rank": 9,
+          "points_per_game": 89.89,
+          "points_per_game_rank": 9,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Davante Adams",
+              "position": "WR",
+              "final_position_rank": 5,
+              "yahoo_player_id": 27581,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27581",
+              "source_name": "Davante Adams",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 221.3,
+              "fantasy_points_per_game": 13.8
+            },
+            {
+              "name": "Mike Evans",
+              "position": "WR",
+              "final_position_rank": 6,
+              "yahoo_player_id": 27535,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/27535",
+              "source_name": "Mike Evans",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/wr.php?year=2021",
+              "fantasy_points": 188.5,
+              "fantasy_points_per_game": 11.8
+            },
+            {
+              "name": "Jalen Hurts",
+              "position": "QB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 32723,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32723",
+              "source_name": "Jalen Hurts",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2021",
+              "fantasy_points": 321.2,
+              "fantasy_points_per_game": 21.4
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "team_name": "About Damn Time",
+          "team_id": 10,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1241.3,
+          "points_rank": 10,
+          "points_per_game": 88.66,
+          "points_per_game_rank": 10,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Derrick Henry",
+              "position": "RB",
+              "final_position_rank": 3,
+              "yahoo_player_id": 29279,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29279",
+              "source_name": "Derrick Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2022",
+              "fantasy_points": 269.8,
+              "fantasy_points_per_game": 16.9
+            },
+            {
+              "name": "T.J. Hockenson",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 31840,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31840",
+              "source_name": "T.J. Hockenson",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2022",
+              "fantasy_points": 129.4,
+              "fantasy_points_per_game": 7.6
+            },
+            {
+              "name": "Trevor Lawrence",
+              "position": "QB",
+              "final_position_rank": 8,
+              "yahoo_player_id": 33389,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33389",
+              "source_name": "Trevor Lawrence",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2022",
+              "fantasy_points": 303.7,
+              "fantasy_points_per_game": 17.9
+            }
+          ]
+        },
+        {
+          "year": 2023,
+          "team_name": "About Damn Time",
+          "team_id": 2,
+          "record": {
+            "wins": 6,
+            "losses": 8
+          },
+          "points_for": 1140.18,
+          "points_rank": 10,
+          "points_per_game": 81.44,
+          "points_per_game_rank": 10,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Derrick Henry",
+              "position": "RB",
+              "final_position_rank": 5,
+              "yahoo_player_id": 29279,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29279",
+              "source_name": "Derrick Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 218.7,
+              "fantasy_points_per_game": 12.9
+            },
+            {
+              "name": "Tua Tagovailoa",
+              "position": "QB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 32675,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/32675",
+              "source_name": "Tua Tagovailoa",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2023",
+              "fantasy_points": 284.4,
+              "fantasy_points_per_game": 16.7
+            },
+            {
+              "name": "David Montgomery",
+              "position": "RB",
+              "final_position_rank": 9,
+              "yahoo_player_id": 31905,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31905",
+              "source_name": "David Montgomery",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2023",
+              "fantasy_points": 191.2,
+              "fantasy_points_per_game": 13.7
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "team_name": "About Damn Time",
+          "team_id": 2,
+          "record": {
+            "wins": 7,
+            "losses": 7
+          },
+          "points_for": 1328.64,
+          "points_rank": 7,
+          "points_per_game": 94.9,
+          "points_per_game_rank": 7,
+          "playoff_finish": "Missed playoffs",
+          "key_players": [
+            {
+              "name": "Derrick Henry",
+              "position": "RB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 29279,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29279",
+              "source_name": "Derrick Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2024",
+              "fantasy_points": 317.4,
+              "fantasy_points_per_game": 18.7
+            },
+            {
+              "name": "Baker Mayfield",
+              "position": "QB",
+              "final_position_rank": 4,
+              "yahoo_player_id": 30971,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30971",
+              "source_name": "Baker Mayfield",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/qb.php?year=2024",
+              "fantasy_points": 381.8,
+              "fantasy_points_per_game": 22.5
+            },
+            {
+              "name": "Pat Freiermuth",
+              "position": "TE",
+              "final_position_rank": 9,
+              "yahoo_player_id": 33443,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/33443",
+              "source_name": "Pat Freiermuth",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2024",
+              "fantasy_points": 103.3,
+              "fantasy_points_per_game": 6.1
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "team_name": "ABOUT DAMN TIME",
+          "team_id": 2,
+          "record": {
+            "wins": 8,
+            "losses": 6
+          },
+          "points_for": 1323.4,
+          "points_rank": 6,
+          "points_per_game": 94.53,
+          "points_per_game_rank": 6,
+          "playoff_finish": "Champion",
+          "key_players": [
+            {
+              "name": "Christian McCaffrey",
+              "position": "RB",
+              "final_position_rank": 2,
+              "yahoo_player_id": 30121,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/30121",
+              "source_name": "Christian McCaffrey",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 314.6,
+              "fantasy_points_per_game": 18.5
+            },
+            {
+              "name": "Hunter Henry",
+              "position": "TE",
+              "final_position_rank": 4,
+              "yahoo_player_id": 29269,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/29269",
+              "source_name": "Hunter Henry",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/te.php?year=2025",
+              "fantasy_points": 118.8,
+              "fantasy_points_per_game": 7.0
+            },
+            {
+              "name": "Josh Jacobs",
+              "position": "RB",
+              "final_position_rank": 12,
+              "yahoo_player_id": 31856,
+              "yahoo_player_url": "https://sports.yahoo.com/nfl/players/31856",
+              "source_name": "Josh Jacobs",
+              "source": "FantasyPros standard scoring",
+              "source_url": "https://www.fantasypros.com/nfl/stats/rb.php?year=2025",
+              "fantasy_points": 201.1,
+              "fantasy_points_per_game": 13.4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unmatched_roster_players": [
+    {
+      "year": 2020,
+      "owner": "Rory M.",
+      "team_name": "He Hate Me",
+      "player_name": "Will Fuller V",
+      "slot": "BN"
+    },
+    {
+      "year": 2021,
+      "owner": "Adam D.",
+      "team_name": "Sunset Strips",
+      "player_name": "Harrison Butker",
+      "slot": "BN"
+    },
+    {
+      "year": 2021,
+      "owner": "Dan F.",
+      "team_name": "Desirable Danny",
+      "player_name": "Michael Thomas",
+      "slot": "IR"
+    },
+    {
+      "year": 2022,
+      "owner": "Nikki T.",
+      "team_name": "About Damn Time",
+      "player_name": "Rondale Moore",
+      "slot": "BN"
+    },
+    {
+      "year": 2023,
+      "owner": "Rory M.",
+      "team_name": "He Hate Me",
+      "player_name": "Younghoe Koo",
+      "slot": "BN"
+    },
+    {
+      "year": 2024,
+      "owner": "Nikki T.",
+      "team_name": "About Damn Time",
+      "player_name": "Younghoe Koo",
+      "slot": "BN"
+    },
+    {
+      "year": 2025,
+      "owner": "Dan F.",
+      "team_name": "ANDROGYNOUS DANNY",
+      "player_name": "Joe Mixon",
+      "slot": "IR"
+    },
+    {
+      "year": 2025,
+      "owner": "Paul L.",
+      "team_name": "The Herdsman",
+      "player_name": "Cam Little",
+      "slot": "BN"
+    }
+  ]
+}

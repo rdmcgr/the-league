@@ -52,6 +52,7 @@ const weeksByYear = year => year === 2020 ? 13 : (year >= 2021 ? 14 : 13);
 const collectedWeeks = new Map([
   ["2020-1", ["Collected", 5, "Russell Wilson — 31.78", "Josh Jacobs — 31.90", "Davante Adams — 27.60", "Mark Andrews — 17.80"]],
   ["2020-2", ["Collected", 5, "Dak Prescott — 39.80", "Aaron Jones Sr. — 41.60", "Calvin Ridley — 22.90", "Darren Waller — 16.50"]],
+  ["2020-3", ["Collected", 5, "Patrick Mahomes — 40.00", "Alvin Kamara — 31.70", "Tyler Lockett — 28.00", "Travis Kelce — 8.70"]],
 ]);
 const logRows = [];
 for (let year = 2006; year <= 2025; year++) {
@@ -105,6 +106,18 @@ const weeklyCandidates = [
   [2020, 2, "TE", 1, "Darren Waller", 16.50, "TE"],
   [2020, 2, "TE", 2, "Travis Kelce", 15.00, "TE"],
   [2020, 2, "TE", 3, "Noah Fant", 13.70, "TE"],
+  [2020, 3, "QB", 1, "Patrick Mahomes", 40.00, "QB"],
+  [2020, 3, "QB", 2, "Russell Wilson", 36.80, "QB"],
+  [2020, 3, "QB", 3, "Josh Allen", 31.24, "QB"],
+  [2020, 3, "RB", 1, "Alvin Kamara", 31.70, "RB"],
+  [2020, 3, "RB", 2, "Derrick Henry", 25.00, "RB"],
+  [2020, 3, "RB", 3, "Dalvin Cook", 23.90, "RB"],
+  [2020, 3, "WR", 1, "Tyler Lockett", 28.00, "WR"],
+  [2020, 3, "WR", 2, "Michael Gallup", 19.80, "WR"],
+  [2020, 3, "WR", 3, "Keenan Allen", 17.20, "WR"],
+  [2020, 3, "TE", 1, "Travis Kelce", 8.70, "TE"],
+  [2020, 3, "TE", 2, "Mike Gesicki", 7.50, "TE"],
+  [2020, 3, "TE", 3, "Zach Ertz", 7.00, "TE"],
 ];
 candidates.getRange(`A2:G${weeklyCandidates.length + 1}`).values = weeklyCandidates;
 candidates.getRange(`A2:D${weeklyCandidates.length + 1}`).format.numberFormat = "0";

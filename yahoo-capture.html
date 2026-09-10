@@ -1,0 +1,12 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Yahoo roster capture</title>
+<textarea id="data" style="width:90vw;height:80vh"></textarea>
+<a id="download" download="yahoo-rosters-raw.json" href="#">Download JSON</a>
+<script>
+const data = document.getElementById('data');
+const download = document.getElementById('download');
+data.addEventListener('input', () => {
+  download.href = URL.createObjectURL(new Blob([data.value], {type:'application/json'}));
+});
+</script>
