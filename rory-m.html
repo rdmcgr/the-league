@@ -90,29 +90,29 @@
 /* Mobile season table: keep every desktop column visible with tighter spacing. */
 @media(max-width:680px) {
   #hhm-page .hhm-table-wrap {overflow:visible}
-  #hhm-page table {table-layout:fixed;font-size:11px}
+  #hhm-page table {table-layout:fixed;width:100%;font-size:9px}
   #hhm-page thead {display:table-header-group}
   #hhm-page tbody {display:table-row-group}
   #hhm-page tbody > tr {display:table-row}
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) {padding:0;border:0;border-radius:0;background:transparent}
   #hhm-page tbody > tr:not([id^="hhm-detail-"]).hhm-selected {border:0;border-radius:0;background:color-mix(in srgb,var(--hhm-accent) 7%,var(--hhm-panel))}
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) td,
-  #hhm-page tbody > tr[id^="hhm-detail-"] td {display:table-cell;padding:8px 2px;border-bottom:1px solid var(--hhm-line);width:auto;vertical-align:middle}
-  #hhm-page th {font-size:9px;line-height:1.15;padding:7px 2px;white-space:normal}
-  #hhm-page th:first-child {width:14%}
-  #hhm-page th:nth-child(2) {width:12%}
-  #hhm-page th:nth-child(3) {width:14%}
-  #hhm-page th:nth-child(4) {width:26%}
-  #hhm-page th:last-child {width:34%}
+  #hhm-page tbody > tr[id^="hhm-detail-"] td {display:table-cell;padding:6px 1px;border-bottom:1px solid var(--hhm-line);width:auto;min-width:0;vertical-align:middle;overflow-wrap:anywhere}
+  #hhm-page th {font-size:8px;line-height:1.1;padding:6px 1px;white-space:normal;overflow-wrap:anywhere}
+  #hhm-page th:first-child {width:13%}
+  #hhm-page th:nth-child(2) {width:11%}
+  #hhm-page th:nth-child(3) {width:13%}
+  #hhm-page th:nth-child(4) {width:23%}
+  #hhm-page th:last-child {width:40%}
   #hhm-page th:nth-child(2),
   #hhm-page th:nth-child(3),
   #hhm-page th:nth-child(4),
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(2),
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(3),
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(4) {text-align:left}
-  #hhm-page .hhm-year {gap:3px;font-size:11px}
-  #hhm-page .hhm-year .hhm-caret {font-size:13px}
-  #hhm-page .hhm-finish {font-size:10px;line-height:1.2}
+  #hhm-page .hhm-year {gap:1px;font-size:10px}
+  #hhm-page .hhm-year .hhm-caret {font-size:12px}
+  #hhm-page .hhm-finish {font-size:9px;line-height:1.15;overflow-wrap:anywhere}
   #hhm-page tbody > tr[id^="hhm-detail-"] td {padding:0;border-bottom:1px solid var(--hhm-line)}
   #hhm-page tbody > tr[id^="hhm-detail-"] .hhm-detail {margin-top:0;border:0;border-left:3px solid var(--hhm-accent);border-radius:0}
 }
