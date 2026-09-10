@@ -1008,6 +1008,15 @@ main {
   color: var(--muted);
 }
 
+.team-directory-belt {
+  width: 56px;
+  height: 36px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 4px rgb(0 0 0 / 24%));
+}
+
 .champion-card {
   border: 2px solid var(--accent-2);
 }
@@ -1294,6 +1303,11 @@ svg {
   .current-champion-belt {
     width: 58px;
     height: 37px;
+  }
+
+  .team-directory-belt {
+    width: 46px;
+    height: 30px;
   }
 
   .champion-photo-wrap {
