@@ -113,11 +113,12 @@
   #hhm-page .hhm-year {gap:1px;font-size:10px}
   #hhm-page .hhm-year .hhm-caret {font-size:12px}
   #hhm-page .hhm-finish {font-size:9px;line-height:1.15;overflow-wrap:anywhere}
-  #hhm-page .hhm-detail strong {font-size:13px}
-  #hhm-page .hhm-detail small {font-size:11px}
-  #hhm-page .hhm-players h3 {font-size:14px}
-  #hhm-page .hhm-player strong {font-size:13px}
-  #hhm-page .hhm-player-meta {font-size:11px}
+  #hhm-page .hhm-detail strong {font-size:12px}
+  #hhm-page .hhm-detail small {font-size:10px}
+  #hhm-page .hhm-players h3 {font-size:12px}
+  #hhm-page .hhm-player {padding:10px;gap:8px}
+  #hhm-page .hhm-player strong {font-size:11px}
+  #hhm-page .hhm-player-meta {font-size:10px;gap:2px 8px}
   #hhm-page tbody > tr[id^="hhm-detail-"] td {padding:0;border-bottom:1px solid var(--hhm-line)}
   #hhm-page tbody > tr[id^="hhm-detail-"] .hhm-detail {margin-top:0;border:0;border-left:3px solid var(--hhm-accent);border-radius:0}
 }
@@ -222,7 +223,7 @@
     return `<section class="hhm-players" aria-labelledby="hhm-players-title-${year}">
       <div class="hhm-players-head"><h3 id="hhm-players-title-${year}">${year} key players</h3></div>
       <ol class="hhm-players-list" aria-label="Three key players by final position rank">
-        ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Final position rank: ${rank}</span></div></div></li>`).join('')}
+        ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Pos. rank: ${rank}</span></div></div></li>`).join('')}
       </ol>
       <p class="hhm-note">Position rank uses Pro Football Reference’s standard fantasy scoring and regular-season PosRank.</p>
     </section>`;
