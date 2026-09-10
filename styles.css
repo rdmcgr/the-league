@@ -922,6 +922,53 @@ main {
   align-items: start;
 }
 
+.teams-intro {
+  margin: 0 0 0.8rem;
+}
+
+.teams-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.team-directory-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1a2330 0%, var(--panel) 100%);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.team-directory-card:hover,
+.team-directory-card:focus-visible {
+  border-color: var(--accent-2);
+  outline: none;
+}
+
+.team-directory-logo {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--bg-soft);
+}
+
+.team-directory-card span {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.team-directory-card small {
+  color: var(--muted);
+}
+
 .champion-card {
   border: 2px solid var(--accent-2);
 }
