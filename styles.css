@@ -1015,9 +1015,20 @@ main {
 }
 
 .champion-name {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: 0.02rem;
+}
+
+.current-champion-belt {
+  width: 72px;
+  height: 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 4px rgb(0 0 0 / 24%));
 }
 
 .champion-photo-wrap {
@@ -1275,6 +1286,11 @@ svg {
   }
 
   .site-announcement { flex-direction: column; gap: 0.2rem; padding: 0.55rem 1rem; }
+
+  .current-champion-belt {
+    width: 58px;
+    height: 37px;
+  }
 
   .champion-photo-wrap {
     max-width: 100%;

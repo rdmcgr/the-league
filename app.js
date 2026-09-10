@@ -179,12 +179,12 @@ function renderCurrentChampion() {
 
   const latestYear = Math.max(...seasons.map((s) => s.year));
   const champs = seasons.filter((s) => s.year === latestYear).map((s) => s.team);
-  const displayChamps = champs.map((name) => (name === 'Nikki T.' ? `${name} 🏆` : name));
+  const championBelt = '<img class="current-champion-belt" src="./images/the-league-belt.png" alt="The League championship belt" />';
   const championPhoto =
     latestYear === 2025
       ? '<figure class="champion-photo-wrap"><img class="champion-photo" src="./images/nikki-2025-champion.JPG" alt="2025 Champion" loading="lazy" /></figure>'
       : '';
-  holder.innerHTML = `<div class="champion-name">${displayChamps.join(', ')}</div><div class="small">Champion${champs.length > 1 ? 's' : ''} of the ${latestYear} season</div>${championPhoto}`;
+  holder.innerHTML = `<div class="champion-name"><span>${champs.join(', ')}</span>${championBelt}</div><div class="small">Champion${champs.length > 1 ? 's' : ''} of the ${latestYear} season</div>${championPhoto}`;
 }
 
 function renderWinsTable() {
