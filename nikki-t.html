@@ -277,8 +277,8 @@
   const bursts = [];
   const beltImage = new Image();
   beltImage.src = './images/the-league-belt.png';
-  const started = performance.now();
   const duration = 7600;
+  let started = 0;
   let width = 0;
   let height = 0;
   let last = started;
@@ -413,7 +413,18 @@
     }
   }
 
-  window.requestAnimationFrame(draw);
+  function startAnimation() {
+    started = performance.now();
+    last = started;
+    window.requestAnimationFrame(draw);
+  }
+
+  if (beltImage.complete && beltImage.naturalWidth) {
+    startAnimation();
+  } else {
+    beltImage.addEventListener('load', startAnimation, {once: true});
+    beltImage.addEventListener('error', startAnimation, {once: true});
+  }
 })();
 
     </script>
