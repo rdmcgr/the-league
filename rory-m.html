@@ -99,12 +99,18 @@
   #hhm-page tbody > tr:not([id^="hhm-detail-"]) td,
   #hhm-page tbody > tr[id^="hhm-detail-"] td {display:table-cell;padding:9px 3px;border-bottom:1px solid var(--hhm-line);width:auto;vertical-align:middle}
   #hhm-page th {font-size:9px;line-height:1.15;padding:8px 3px;white-space:normal}
-  #hhm-page th:first-child {width:16%}
-  #hhm-page th:nth-child(2) {width:14%}
-  #hhm-page th:nth-child(3) {width:14%}
-  #hhm-page th:nth-child(4) {width:25%}
-  #hhm-page th:last-child {width:31%}
-  #hhm-page .hhm-year {gap:4px;font-size:11px}
+  #hhm-page th:first-child {width:15%}
+  #hhm-page th:nth-child(2) {width:13%}
+  #hhm-page th:nth-child(3) {width:15%}
+  #hhm-page th:nth-child(4) {width:27%}
+  #hhm-page th:last-child {width:30%}
+  #hhm-page th:nth-child(2),
+  #hhm-page th:nth-child(3),
+  #hhm-page th:nth-child(4),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(2),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(3),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(4) {text-align:left}
+  #hhm-page .hhm-year {gap:3px;font-size:11px}
   #hhm-page .hhm-year .hhm-caret {font-size:13px}
   #hhm-page .hhm-finish {font-size:10px;line-height:1.2}
   #hhm-page tbody > tr[id^="hhm-detail-"] td {padding:0;border-bottom:1px solid var(--hhm-line)}
@@ -159,7 +165,7 @@
     <section aria-label="Season history, 2020 through 2025">
       <div class="hhm-section-head"><h2>Season by season</h2><span>2020–2025 · Record and points are regular season</span></div>
       <div class="hhm-table-wrap">
-        <table aria-label="Rory M. yearly records, points and playoff finishes"><thead><tr><th scope="col">Season</th><th scope="col" class="hhm-num">W–L</th><th scope="col" class="hhm-num hhm-pct">Win %</th><th scope="col" class="hhm-num">Points for</th><th scope="col">Playoff finish</th></tr></thead><tbody id="hhm-seasons"></tbody></table>
+        <table aria-label="Rory M. yearly records, points and playoff finishes"><thead><tr><th scope="col">Season</th><th scope="col" class="hhm-num">W–L</th><th scope="col" class="hhm-num hhm-pct">Win %</th><th scope="col" class="hhm-num">Points</th><th scope="col">Playoff finish</th></tr></thead><tbody id="hhm-seasons"></tbody></table>
       </div>
       <p class="hhm-note">Playoff finish reflects the final Yahoo bracket; records and points are regular season.</p>
     </section>
