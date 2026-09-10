@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam D. | The League</title>
+    <link rel="icon" href="./images/2026-league-logo.png?v=2026" type="image/png" />
+    <link rel="stylesheet" href="./styles.css?v=20260910c" />
+    <style>
+      main.profile-main { padding: 0; max-width: none; }
+      .tabs .tab[hidden] { display: none !important; }
+      
+#hhm-page { --hhm-bg:light-dark(#f2f4f7,#0c0f14); --hhm-panel:light-dark(#ffffff,#161d27); --hhm-ink:light-dark(#18202c,#f4f7fb); --hhm-muted:light-dark(#576477,#9aa8bb); --hhm-line:light-dark(#d7dde5,#2a3443); --hhm-accent:#d61f2c; --hhm-gold:light-dark(#825f10,#f2c14e); color:var(--hhm-ink); background:var(--hhm-bg); font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-size:14px; line-height:1.5; overflow:hidden; }
+#hhm-page * {box-sizing:border-box}
+#hhm-page h1,#hhm-page h2,#hhm-page p {margin:0}
+#hhm-page button {font:inherit;cursor:pointer}
+#hhm-page .hhm-chrome {background:#0f141c;color:#f4f7fb;padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:3px solid #d61f2c}
+#hhm-page .hhm-brand {font-size:22px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
+#hhm-page .hhm-kicker {font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hhm-muted)}
+#hhm-page .hhm-chrome .hhm-kicker {color:#f2c14e}
+#hhm-page .hhm-concept {color:#acb8c9;border:1px solid #394555;padding:4px 10px;border-radius:4px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+#hhm-page .hhm-body {padding:24px 30px 28px}
+#hhm-page .hhm-breadcrumb {color:var(--hhm-muted);font-size:12px;margin-bottom:20px}
+#hhm-page .hhm-hero {display:flex;gap:24px;align-items:center;padding:4px 0 28px;border-bottom:1px solid var(--hhm-line)}
+#hhm-page .hhm-monogram {width:104px;height:104px;flex-shrink:0;display:grid;place-items:center;background:var(--hhm-accent);color:#fff;font-size:28px;font-weight:800;letter-spacing:-.05em;border-radius:12px}
+#hhm-page .hhm-identity {flex:1;min-width:0}
+#hhm-page h1 {font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.035em;text-transform:uppercase;margin:4px 0 10px}
+#hhm-page .hhm-subtitle {color:var(--hhm-muted);font-size:13px}
+#hhm-page .hhm-logo-image {object-fit:cover;padding:0;border:1px solid var(--hhm-line);background:var(--hhm-panel)}
+
+#hhm-page .hhm-titles {display:flex;gap:10px}
+#hhm-page .hhm-banner {border-top:2px solid var(--hhm-gold);background:var(--hhm-panel);text-align:center;padding:13px 15px;color:var(--hhm-gold)}
+#hhm-page .hhm-banner strong {display:block;font-size:25px}
+#hhm-page .hhm-banner span {display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+#hhm-page .hhm-career {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin:24px 0 30px;gap:16px}
+@media(min-width:681px) and (max-width:880px) {#hhm-page .hhm-career {grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}}
+#hhm-page .hhm-stat {border-left:2px solid var(--hhm-line);padding-left:15px}
+#hhm-page .hhm-stat:first-child {border-color:var(--hhm-accent)}
+#hhm-page .hhm-stat strong {display:block;font-size:28px;line-height:1.2;font-weight:700;font-variant-numeric:tabular-nums;margin:5px 0}
+#hhm-page .hhm-stat small {font-size:11px;color:var(--hhm-muted)}
+#hhm-page .hhm-section-head {display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+#hhm-page h2 {font-size:21px;font-weight:700;letter-spacing:-.025em}
+#hhm-page .hhm-section-head span {color:var(--hhm-muted);font-size:12px}
+#hhm-page .hhm-table-wrap {overflow-x:auto;border:1px solid var(--hhm-line);border-radius:8px;background:var(--hhm-panel)}
+#hhm-page table {border-collapse:collapse;width:100%;text-align:left;table-layout:fixed;font-size:13px}
+#hhm-page th {font-size:11px;text-transform:uppercase;letter-spacing:.055em;color:var(--hhm-muted);font-weight:500;padding:13px 16px;border-bottom:1px solid var(--hhm-line)}
+#hhm-page td {padding:14px 16px;border-bottom:1px solid var(--hhm-line);font-variant-numeric:tabular-nums}
+#hhm-page th:first-child {width:17%}
+#hhm-page th:nth-child(2) {width:17%}
+#hhm-page th:nth-child(3) {width:16%}
+#hhm-page th:nth-child(4) {width:22%}
+#hhm-page th:last-child {width:28%}
+#hhm-page .hhm-num {text-align:right}
+#hhm-page .hhm-year {border:0;background:none;color:var(--hhm-ink);padding:2px 0;font-weight:700;display:flex;gap:9px;align-items:center}
+#hhm-page .hhm-year .hhm-caret {color:var(--hhm-muted);font-size:16px;font-weight:400}
+#hhm-page .hhm-finish {font-size:12px;color:var(--hhm-muted)}
+#hhm-page .hhm-champion {color:var(--hhm-gold);font-weight:700}
+#hhm-page .hhm-finalist {color:var(--hhm-ink)}
+#hhm-page .hhm-selected {background:color-mix(in srgb,var(--hhm-accent) 7%,var(--hhm-panel))}
+#hhm-page .hhm-detail-cell {padding:0;border-bottom:1px solid var(--hhm-line)}
+#hhm-page .hhm-detail {display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;padding:18px 24px;background:var(--hhm-bg);border-left:3px solid var(--hhm-accent)}
+#hhm-page .hhm-detail strong {display:block;font-weight:500;font-size:15px;margin:5px 0 3px}
+#hhm-page .hhm-detail small {font-size:12px;color:var(--hhm-muted)}
+#hhm-page .hhm-players {grid-column:1/-1;border-top:1px solid var(--hhm-line);padding-top:18px;min-width:0}
+#hhm-page .hhm-players-head {display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;margin-bottom:12px}
+#hhm-page .hhm-players h3 {margin:0;font-size:16px;font-weight:500;color:var(--hhm-ink)}
+#hhm-page .hhm-players-list {list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#hhm-page .hhm-player {display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--hhm-panel);border-radius:6px;min-width:0}
+#hhm-page .hhm-player-rank {color:var(--hhm-muted);font-size:12px;padding-top:4px}
+#hhm-page .hhm-player-body {flex:1;min-width:0}
+#hhm-page .hhm-player strong {margin:0 0 3px;font-size:15px}
+#hhm-page .hhm-player-meta {display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 14px;color:var(--hhm-muted);font-size:12px}
+#hhm-page .hhm-player-score {margin-top:12px;color:var(--hhm-ink);font-size:14px;font-variant-numeric:tabular-nums}
+#hhm-page .hhm-players .hhm-note {margin:10px 0 0}
+@media(max-width:680px) {#hhm-page .hhm-players-list {grid-template-columns:1fr} #hhm-page .hhm-player-body {display:grid;grid-template-columns:1fr auto;column-gap:12px} #hhm-page .hhm-player-meta {grid-column:1;grid-row:2} #hhm-page .hhm-player-score {grid-column:2;grid-row:1/3;margin:0;align-self:center}}
+#hhm-page .hhm-note {font-size:11px;color:var(--hhm-muted);margin:13px 0 0}
+#hhm-page .hhm-footer {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px;padding-top:16px;border-top:1px solid var(--hhm-line);color:var(--hhm-muted);font-size:11px}
+#hhm-page[data-density="Compact"] .hhm-hero {padding-bottom:20px}
+#hhm-page[data-density="Compact"] h1 {font-size:34px}
+#hhm-page[data-density="Compact"] .hhm-monogram {height:80px;width:80px;font-size:24px}
+#hhm-page[data-density="Compact"] td {padding-top:9px;padding-bottom:9px}
+#hhm-page [hidden] {display:none!important}
+#hhm-page .hhm-mobile-break {display:none}
+@media(max-width:680px) {#hhm-page .hhm-titles {width:100%} #hhm-page .hhm-banner {display:flex;align-items:center;gap:12px;padding:8px 15px;flex:1} #hhm-page .hhm-banner strong {font-size:21px} #hhm-page .hhm-hero {flex-wrap:wrap;gap:16px} #hhm-page .hhm-monogram {width:72px;height:72px;font-size:22px} #hhm-page .hhm-career {grid-template-columns:1fr 1fr;row-gap:20px} #hhm-page .hhm-body {padding:20px} #hhm-page .hhm-chrome {padding:14px 20px} #hhm-page th,#hhm-page td {padding-left:10px;padding-right:10px} #hhm-page th:first-child {width:21%} #hhm-page th:nth-child(2) {width:18%} #hhm-page th:nth-child(4) {width:27%} #hhm-page th:last-child {width:34%} #hhm-page .hhm-detail {grid-template-columns:1fr 1fr;padding:15px;gap:15px} #hhm-page .hhm-detail > div:first-child {grid-column:1/-1}}
+@media(max-width:400px) {#hhm-page .hhm-body {padding:16px 12px} #hhm-page .hhm-chrome {padding:12px} #hhm-page .hhm-brand {font-size:19px} #hhm-page .hhm-chrome .hhm-kicker {font-size:9px} #hhm-page .hhm-concept {font-size:10px;padding:3px 6px} #hhm-page .hhm-monogram {width:54px;height:64px;font-size:17px} #hhm-page .hhm-hero {gap:12px} #hhm-page h1 {font-size:29px} #hhm-page .hhm-subtitle {font-size:12px} #hhm-page th,#hhm-page td {padding-left:7px;padding-right:7px} #hhm-page table {font-size:12px} #hhm-page .hhm-finish {font-size:11px}}
+
+      #hhm-page .hhm-breadcrumb a { color: inherit; text-decoration: none; }
+      #hhm-page .hhm-breadcrumb a:hover, #hhm-page .hhm-breadcrumb a:focus-visible { color: var(--hhm-ink); text-decoration: underline; }
+
+/* Mobile season table: keep every desktop column visible with tighter spacing. */
+@media(max-width:680px) {
+  #hhm-page .hhm-table-wrap {overflow:visible}
+  #hhm-page table {table-layout:fixed;width:100%;font-size:9px}
+  #hhm-page thead {display:table-header-group}
+  #hhm-page tbody {display:table-row-group}
+  #hhm-page tbody > tr {display:table-row}
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) {padding:0;border:0;border-radius:0;background:transparent}
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]).hhm-selected {border:0;border-radius:0;background:color-mix(in srgb,var(--hhm-accent) 7%,var(--hhm-panel))}
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td,
+  #hhm-page tbody > tr[id^="hhm-detail-"] td {display:table-cell;padding:6px 1px;border-bottom:1px solid var(--hhm-line);width:auto;min-width:0;vertical-align:middle;overflow-wrap:anywhere}
+  #hhm-page th {font-size:8px;line-height:1.1;padding:6px 1px;white-space:normal;overflow-wrap:anywhere}
+  #hhm-page th:first-child {width:13%}
+  #hhm-page th:nth-child(2) {width:11%}
+  #hhm-page th:nth-child(3) {width:13%}
+  #hhm-page th:nth-child(4) {width:18%}
+  #hhm-page th:last-child {width:45%}
+  #hhm-page th:nth-child(2),
+  #hhm-page th:nth-child(3),
+  #hhm-page th:nth-child(4),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(2),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(3),
+  #hhm-page tbody > tr:not([id^="hhm-detail-"]) td:nth-child(4) {text-align:left}
+  #hhm-page .hhm-year {gap:1px;font-size:10px}
+  #hhm-page .hhm-year .hhm-caret {font-size:12px}
+  #hhm-page .hhm-finish {font-size:9px;line-height:1.15;overflow-wrap:anywhere}
+  #hhm-page .hhm-mobile-break {display:inline}
+  #hhm-page .hhm-missed-playoffs {display:inline-block;max-width:46px}
+  #hhm-page .hhm-quarterfinal-exit {display:inline-block;max-width:62px}
+  #hhm-page .hhm-detail {padding:10px;gap:10px}
+  #hhm-page .hhm-detail .hhm-kicker {font-size:9px}
+  #hhm-page .hhm-detail strong {font-size:10px}
+  #hhm-page .hhm-detail small {font-size:9px}
+  #hhm-page .hhm-players {padding-top:10px}
+  #hhm-page .hhm-players h3 {font-size:10px}
+  #hhm-page .hhm-players-list {gap:6px}
+  #hhm-page .hhm-player {padding:8px;gap:6px}
+  #hhm-page .hhm-player-rank {font-size:9px;padding-top:1px}
+  #hhm-page .hhm-player-body {display:block}
+  #hhm-page .hhm-player strong {font-size:10px!important;line-height:1.1}
+  #hhm-page .hhm-player-meta {display:flex;justify-content:flex-start;font-size:9px!important;gap:2px 6px;margin-top:2px;white-space:nowrap}
+  #hhm-page .hhm-player-meta span:last-child {white-space:nowrap}
+  #hhm-page tbody > tr[id^="hhm-detail-"] td {padding:0;border-bottom:1px solid var(--hhm-line)}
+  #hhm-page tbody > tr[id^="hhm-detail-"] .hhm-detail {margin-top:0;border:0;border-left:3px solid var(--hhm-accent);border-radius:0}
+}
+@media(max-width:520px) {
+  #hhm-page .hhm-detail {grid-template-columns:1fr}
+}
+    </style>
+  </head>
+  <body>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <header class="hero">
+      <div class="hero-inner">
+        <img class="hero-belt" src="./images/the-league-belt.png" alt="The League Championship Belt" />
+        <div>
+          <div class="hero-topline">Shockafella Fantasy Football</div>
+          <h1>The League</h1>
+        </div>
+      </div>
+    </header>
+    <nav class="tabs" aria-label="Views">
+      <button class="tab" type="button" data-nav-href="./index.html#dashboard">Dashboard</button>
+      <button class="tab" type="button" data-nav-href="./index.html#teams" hidden>Teams</button>
+      <button class="tab" type="button" data-nav-href="./index.html#keepers">Keepers</button>
+      <button class="tab" type="button" data-nav-href="./index.html#trophies">Trophies</button>
+      <button class="tab" type="button" data-nav-href="./index.html#points">Points</button>
+      <button class="tab" type="button" data-nav-href="./index.html#wins">Wins</button>
+      <button class="tab" type="button" data-nav-href="./index.html#sportsbook">Sportsbook</button>
+    </nav>
+    <aside class="site-announcement" aria-label="League announcement">
+      <span class="site-announcement-label">SHOCCA Sportsbook</span>
+      <span>Championship futures market <span class="site-announcement-open">OPEN</span> — place your championship picks by Sunday, 9/13.</span>
+    </aside>
+    <main class="profile-main">
+      <div id="hhm-page" aria-label="Adam D. owner page" data-owner-id="adam-d" data-profile-path="/teams/adam-d">
+<div class="hhm-body">
+    <div class="hhm-breadcrumb"><a href="./index.html#dashboard">The League</a> &nbsp; / &nbsp; <a href="./index.html#teams">Teams</a> &nbsp; / &nbsp; <span aria-current="page">Adam D.</span></div>
+    <section class="hhm-hero" aria-label="Owner identity">
+      <div class="hhm-monogram" aria-label="Sunset Strips team logo">SS</div>
+      <div class="hhm-identity"><div class="hhm-kicker">Owner history · Since 2006</div><h1><span class="hhm-champion-name">Adam D.</span></h1><p class="hhm-subtitle">Current team: Sunset Strips</p></div>
+      <div class="hhm-titles" aria-label="Championship seasons"><div class="hhm-banner"><strong>2011 · 2023</strong><span>League<br>championships</span></div></div>
+    </section>
+    <section class="hhm-career" aria-label="Adam D. career statistics through 2025">
+      <div class="hhm-stat"><div class="hhm-kicker">Career record</div><strong>117–133</strong><small>Rank 5 of 10 · 250 games</small></div>
+      <div class="hhm-stat"><div class="hhm-kicker">Win percentage</div><strong>46.8%</strong><small>Rank 9 of 10 · 250 regular-season games</small></div>
+      <div class="hhm-stat"><div class="hhm-kicker">Championships</div><strong>2</strong><small>Rank 2 of 10 · 2 appearances</small></div>
+      <div class="hhm-stat"><div class="hhm-kicker">Weighted trophy count</div><strong>9</strong><small>Rank 5 of 10 · 3 pts for 1st · 2 for 2nd · 1 for 3rd</small></div>
+      <div class="hhm-stat"><div class="hhm-kicker">Podium finishes</div><strong>5</strong><small>Rank 5 of 10</small></div>
+      <div class="hhm-stat"><div class="hhm-kicker">Points Per Game</div><strong id="hhm-career-ppg">94.96</strong><small>Rank 7 of 10 · 2020–2025 regular season</small></div>
+    </section>
+    <section aria-label="Season history, 2020 through 2025">
+      <div class="hhm-section-head"><h2>Season by season</h2></div>
+      <div class="hhm-table-wrap">
+        <table aria-label="Adam D. yearly records, points and playoff finishes"><thead><tr><th scope="col">Season</th><th scope="col" class="hhm-num">W–L</th><th scope="col" class="hhm-num hhm-pct">Win %</th><th scope="col" class="hhm-num">Points</th><th scope="col">Finish</th></tr></thead><tbody id="hhm-seasons"></tbody></table>
+      </div>
+      <p class="hhm-note">Record and points are regular season.</p>
+    </section>
+  </div>
+</div>
+
+    </main>
+    <footer class="site-footer">
+      <p>
+        &copy;2005 - <span id="current-year"></span> Shockafella LLC. <span class="footer-joint">AN <img src="./images/ows-nwo-logo.png" alt="OWS" class="footer-logo" /> JOINT.</span> Made with ❤️ in PDX. Hosted live and free in New Hampshire.
+      </p>
+    </footer>
+    <script>
+
+(() => {
+  const root=document.getElementById('hhm-page');
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.tabs .tab[data-nav-href]').forEach((button)=>button.addEventListener('click',()=>{window.location.href=button.dataset.navHref;}));
+  // Permanent profile identity: adam-d. Team names belong to individual seasons.
+  // Sunset Strips is the team name across the displayed seasons.
+  // W–L: workbook's labeled year columns in All Time Wins - Regular Season.
+  // Points and placements: data/league-data.json. Career is summed from year rows.
+  // The workbook's summary wins omit 2025; its rolling-window year labels are stale.
+  const seasons=[
+    [2025,7,7,1247.06,"6th place"],
+    [2024,4,10,1272.58,"Missed playoffs"],
+    [2023,8,6,1359.58,"Champion"],
+    [2022,6,8,1253.64,"6th place"],
+    [2021,8,6,1462.30,"4th place"],
+    [2020,7,6,1286.64,"6th place"]
+  ];
+  const displayedSeasons=seasons.filter(([year])=>year>=2020 && year<=2025);
+  const pointsRanks={"2020":5,"2021":2,"2022":9,"2023":4,"2024":8,"2025":8};
+  const ppgRanks={"2020":5,"2021":2,"2022":9,"2023":4,"2024":8,"2025":8};
+  const scoringSeasons=seasons.filter(([,w,l,points])=>points!==null && w+l>0);
+  const scoringPoints=scoringSeasons.reduce((sum,[,,,points])=>sum+points,0);
+  const scoringGames=scoringSeasons.reduce((sum,[,w,l])=>sum+w+l,0);
+  root.querySelector('#hhm-career-ppg').textContent=scoringGames?(scoringPoints/scoringGames).toFixed(2):'—';
+  let selected=2025;
+  const state={density:'Editorial',accent:'#d61f2c',banners:true};
+  const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const ordinal=n=>{const mod100=n%100;const suffix=mod100>=11&&mod100<=13?'th':({1:'st',2:'nd',3:'rd'}[n%10]||'th');return `${n}${suffix}`;};
+  const tbody=root.querySelector('#hhm-seasons');
+  // End-of-season roster and final position ranks.
+  // The small ordinal at left is the player's rank within this season's team list.
+  const topPlayers={"2020":[["Dalvin Cook","RB",3],["Stefon Diggs","WR",3],["Jonathan Taylor","RB",4]],"2021":[["Jonathan Taylor","RB",1],["Deebo Samuel Sr.","WR",2],["James Conner","RB",5]],"2022":[["Tyreek Hill","WR",3],["Geno Smith","QB",5],["Kirk Cousins","QB",7]],"2023":[["Dak Prescott","QB",3],["Mike Evans","WR",4],["Joe Mixon","RB",6]],"2024":[["Trey McBride","TE",3],["Mike Evans","WR",7],["Joe Mixon","RB",11]],"2025":[["Dallas Goedert","TE",2],["Caleb Williams","QB",6],["De'Von Achane","RB",7]]
+  };
+  function renderTopPlayers(year){
+    const players=topPlayers[year]||[];
+    return `<section class="hhm-players" aria-labelledby="hhm-players-title-${year}">
+      <div class="hhm-players-head"><h3 id="hhm-players-title-${year}">${year} key players</h3></div>
+      <ol class="hhm-players-list" aria-label="Three key players by final position rank">
+        ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Pos. rank ${rank}</span></div></div></li>`).join('')}
+      </ol>
+      <p class="hhm-note">Position rank from FantasyPros database.</p>
+    </section>`;
+  }
+  function renderRows(){
+    tbody.innerHTML=displayedSeasons.map(([year,w,l,pts,finish])=>{
+      const expanded=selected===year;
+      const cls=finish==='Champion'?'hhm-champion':finish?'hhm-finalist':'';
+      const finishText=finish&&finish.includes(' ')?finish.replace(' ','<span class="hhm-mobile-break"><br></span> '):(finish||'Not recorded');
+      const outcome=finish==='Champion'?'Won the championship':finish==='Runner-up'?'Reached the championship':finish==='Missed playoffs'?'Did not qualify for the playoffs':finish?`Finished ${finish}`:'Playoff result unavailable';
+      return `<tr class="${expanded?'hhm-selected':''}"><td><button class="hhm-year" type="button" data-year="${year}" aria-label="${year} season details" aria-expanded="${expanded}" aria-controls="hhm-detail-${year}"><span class="hhm-caret" aria-hidden="true">${expanded?'−':'+'}</span>${year}</button></td><td class="hhm-num">${w}–${l}</td><td class="hhm-num hhm-pct">${(100*w/(w+l)).toFixed(1)}%</td><td class="hhm-num">${pts===null?'—':`${fmt(pts)} <span class="hhm-finish">(${ordinal(pointsRanks[year])})</span>`}</td><td><span class="hhm-finish ${cls} ${finish==='Missed playoffs'?'hhm-missed-playoffs':finish==='Quarterfinal exit'?'hhm-quarterfinal-exit':''}">${finishText}</span></td></tr>
+      <tr id="hhm-detail-${year}" ${expanded?'':'hidden'}><td class="hhm-detail-cell" colspan="5"><div class="hhm-detail"><div><div class="hhm-kicker">${year} postseason</div><strong>${outcome}</strong><small>${finish==='Champion'?'':finish==='Runner-up'?'':finish==='Missed playoffs'?'':''}</small></div><div><div class="hhm-kicker">Points per game</div><strong>${pts===null?'Unavailable':`${fmt(pts/(w+l))} (${ordinal(ppgRanks[year])})`}</strong><small>Regular season</small></div>${renderTopPlayers(year)}</div></td></tr>`;
+    }).join('');
+  }
+  tbody.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-year]');
+    if(!button)return;
+    const year=Number(button.dataset.year);
+    selected=selected===year?null:year;
+    renderRows();
+    tbody.querySelector(`button[data-year="${year}"]`).focus({preventScroll:true});
+  });
+  function renderDesign(){root.dataset.density=state.density;root.style.setProperty('--hhm-accent',state.accent);root.querySelector('.hhm-titles').hidden=!state.banners;}
+  renderRows();renderDesign();
+  if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:renderDesign});tweak.addSelect(state,'density',{label:'Page density',options:['Editorial','Compact']});tweak.addSelect(state,'accent',{label:'Team accent',options:[{label:'League red',value:'#d61f2c'},{label:'Sunset orange',value:'#e07a2d'}]});tweak.addToggle(state,'banners',{label:'Championship banners'});}
+})();
+
+    </script>
+  </body>
+</html>
