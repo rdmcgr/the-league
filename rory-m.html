@@ -82,6 +82,7 @@
 #hhm-page[data-density="Compact"] .hhm-monogram {height:80px;width:80px;font-size:24px}
 #hhm-page[data-density="Compact"] td {padding-top:9px;padding-bottom:9px}
 #hhm-page [hidden] {display:none!important}
+#hhm-page .hhm-mobile-break {display:none}
 @media(max-width:680px) {#hhm-page .hhm-titles {width:100%} #hhm-page .hhm-banner {display:flex;align-items:center;gap:12px;padding:8px 15px;flex:1} #hhm-page .hhm-banner strong {font-size:21px} #hhm-page .hhm-hero {flex-wrap:wrap;gap:16px} #hhm-page .hhm-monogram {width:72px;height:72px;font-size:22px} #hhm-page .hhm-career {grid-template-columns:1fr 1fr;row-gap:20px} #hhm-page .hhm-body {padding:20px} #hhm-page .hhm-chrome {padding:14px 20px} #hhm-page th,#hhm-page td {padding-left:10px;padding-right:10px} #hhm-page th:first-child {width:21%} #hhm-page th:nth-child(2) {width:18%} #hhm-page th:nth-child(4) {width:27%} #hhm-page th:last-child {width:34%} #hhm-page .hhm-detail {grid-template-columns:1fr 1fr;padding:15px;gap:15px} #hhm-page .hhm-detail > div:first-child {grid-column:1/-1}}
 @media(max-width:400px) {#hhm-page .hhm-body {padding:16px 12px} #hhm-page .hhm-chrome {padding:12px} #hhm-page .hhm-brand {font-size:19px} #hhm-page .hhm-chrome .hhm-kicker {font-size:9px} #hhm-page .hhm-concept {font-size:10px;padding:3px 6px} #hhm-page .hhm-monogram {width:54px;height:64px;font-size:17px} #hhm-page .hhm-hero {gap:12px} #hhm-page h1 {font-size:29px} #hhm-page .hhm-subtitle {font-size:12px} #hhm-page th,#hhm-page td {padding-left:7px;padding-right:7px} #hhm-page table {font-size:12px} #hhm-page .hhm-finish {font-size:11px}}
 
@@ -112,6 +113,7 @@
   #hhm-page .hhm-year {gap:1px;font-size:10px}
   #hhm-page .hhm-year .hhm-caret {font-size:12px}
   #hhm-page .hhm-finish {font-size:9px;line-height:1.15;overflow-wrap:anywhere}
+  #hhm-page .hhm-mobile-break {display:inline}
   #hhm-page .hhm-missed-playoffs {display:inline-block;max-width:46px}
   #hhm-page .hhm-quarterfinal-exit {display:inline-block;max-width:62px}
   #hhm-page .hhm-detail strong {font-size:12px}
@@ -236,8 +238,9 @@
     tbody.innerHTML=displayedSeasons.map(([year,w,l,pts,finish])=>{
       const expanded=selected===year;
       const cls=finish==='Champion'?'hhm-champion':finish?'hhm-finalist':'';
+      const finishText=finish&&finish.includes(' ')?finish.replace(' ','<span class="hhm-mobile-break"><br></span> '):(finish||'Not recorded');
       const outcome=finish==='Champion'?'Won the championship':finish==='Runner-up'?'Reached the championship':finish==='Third place'?'Finished in third place':finish==='Quarterfinal exit'?'Lost in the quarterfinals':finish==='Missed playoffs'?'Did not qualify for the playoffs':'Playoff result unavailable';
-      return `<tr class="${expanded?'hhm-selected':''}"><td><button class="hhm-year" type="button" data-year="${year}" aria-label="${year} season details" aria-expanded="${expanded}" aria-controls="hhm-detail-${year}"><span class="hhm-caret" aria-hidden="true">${expanded?'−':'+'}</span>${year}</button></td><td class="hhm-num">${w}–${l}</td><td class="hhm-num hhm-pct">${(100*w/(w+l)).toFixed(1)}%</td><td class="hhm-num">${pts===null?'—':`${fmt(pts)} <span class="hhm-finish">(${ordinal(pointsRanks[year])})</span>`}</td><td><span class="hhm-finish ${cls} ${finish==='Missed playoffs'?'hhm-missed-playoffs':finish==='Quarterfinal exit'?'hhm-quarterfinal-exit':''}">${finish||'Not recorded'}</span></td></tr>
+      return `<tr class="${expanded?'hhm-selected':''}"><td><button class="hhm-year" type="button" data-year="${year}" aria-label="${year} season details" aria-expanded="${expanded}" aria-controls="hhm-detail-${year}"><span class="hhm-caret" aria-hidden="true">${expanded?'−':'+'}</span>${year}</button></td><td class="hhm-num">${w}–${l}</td><td class="hhm-num hhm-pct">${(100*w/(w+l)).toFixed(1)}%</td><td class="hhm-num">${pts===null?'—':`${fmt(pts)} <span class="hhm-finish">(${ordinal(pointsRanks[year])})</span>`}</td><td><span class="hhm-finish ${cls} ${finish==='Missed playoffs'?'hhm-missed-playoffs':finish==='Quarterfinal exit'?'hhm-quarterfinal-exit':''}">${finishText}</span></td></tr>
       <tr id="hhm-detail-${year}" ${expanded?'':'hidden'}><td class="hhm-detail-cell" colspan="5"><div class="hhm-detail"><div><div class="hhm-kicker">${year} postseason</div><strong>${outcome}</strong><small>${finish==='Champion'?'1st place':finish==='Runner-up'?'2nd place':finish==='Third place'?'3rd place':finish==='Quarterfinal exit'?'Eliminated in first playoff round':finish==='Missed playoffs'?'':'Historical result needed'}</small></div><div><div class="hhm-kicker">Points per game</div><strong>${pts===null?'Unavailable':`${fmt(pts/(w+l))} (${ordinal(pointsRanks[year])})`}</strong><small>Regular season</small></div>${renderTopPlayers(year)}</div></td></tr>`;
     }).join('');
   }
