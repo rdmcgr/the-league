@@ -263,7 +263,7 @@
   if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:renderDesign});tweak.addSelect(state,'density',{label:'Page density',options:['Editorial','Compact']});tweak.addSelect(state,'accent',{label:'Team accent',options:[{label:'League red',value:'#d61f2c'},{label:'Nikki blue',value:'#4da3ff'}]});tweak.addToggle(state,'banners',{label:'Championship banners'});}
 })();
 
-// One short, lightweight celebration for the current champion page.
+// A lightweight celebration for the current champion page.
 (() => {
   const canvas = document.getElementById('champion-celebration');
   if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -278,11 +278,17 @@
   const beltImage = new Image();
   beltImage.src = './images/the-league-belt.png';
   const started = performance.now();
-  const duration = 3800;
+  const duration = 7600;
   let width = 0;
   let height = 0;
   let last = started;
   let burstIndex = 0;
+  const burstSchedule = [
+    [420, 0.28, 0.28],
+    [980, 0.72, 0.22],
+    [3000, 0.52, 0.3],
+    [5200, 0.2, 0.25]
+  ];
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -307,10 +313,10 @@
       color: colors[i % colors.length]
     });
   }
-  for (let i = 0; i < (compact ? 3 : 6); i += 1) {
+  for (let i = 0; i < (compact ? 6 : 12); i += 1) {
     belts.push({
       x: width * (0.12 + Math.random() * 0.76),
-      y: -40 - Math.random() * height * 0.18,
+      y: -40 - Math.random() * height * 0.55,
       vx: (Math.random() - 0.5) * 0.35,
       vy: 1.15 + Math.random() * 1.1,
       size: compact ? 25 : 34,
@@ -338,15 +344,13 @@
 
   function draw(now) {
     const elapsed = now - started;
-    const step = Math.min(32, now - last) / 16;
+    const delta = Math.min(32, now - last);
+    const step = delta / 16;
     last = now;
-    if (elapsed > 420 && burstIndex === 0) {
-      addBurst(width * 0.28, height * 0.28);
-      burstIndex = 1;
-    }
-    if (elapsed > 980 && burstIndex === 1) {
-      addBurst(width * 0.72, height * 0.22);
-      burstIndex = 2;
+    while (burstIndex < burstSchedule.length && elapsed > burstSchedule[burstIndex][0]) {
+      const [, x, y] = burstSchedule[burstIndex];
+      addBurst(width * x, height * y);
+      burstIndex += 1;
     }
 
     context.clearRect(0, 0, width, height);
@@ -355,6 +359,10 @@
       piece.x += piece.vx * step;
       piece.y += piece.vy * step;
       piece.rotation += piece.spin * step;
+      if (piece.y > height + 20) {
+        piece.x = Math.random() * width;
+        piece.y = -20 - Math.random() * height * 0.15;
+      }
       context.save();
       context.globalAlpha = fade * 0.9;
       context.translate(piece.x, piece.y);
@@ -369,6 +377,10 @@
         belt.x += belt.vx * step;
         belt.y += belt.vy * step;
         belt.rotation += belt.spin * step;
+        if (belt.y > height + 60) {
+          belt.x = width * (0.08 + Math.random() * 0.84);
+          belt.y = -40 - Math.random() * height * 0.25;
+        }
         context.save();
         context.globalAlpha = fade;
         context.translate(belt.x, belt.y);
@@ -379,7 +391,7 @@
     }
 
     bursts.forEach((spark) => {
-      spark.age += Math.min(32, now - last + 16);
+      spark.age += delta;
       spark.x += spark.vx * step;
       spark.y += spark.vy * step;
       spark.vy += spark.gravity * step;
