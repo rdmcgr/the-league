@@ -313,13 +313,13 @@
       color: colors[i % colors.length]
     });
   }
-  for (let i = 0; i < (compact ? 6 : 12); i += 1) {
+  for (let i = 0; i < (compact ? 8 : 16); i += 1) {
     belts.push({
       x: width * (0.12 + Math.random() * 0.76),
-      y: -40 - Math.random() * height * 0.55,
+      y: -20 - Math.random() * height * 0.28,
       vx: (Math.random() - 0.5) * 0.35,
       vy: 1.15 + Math.random() * 1.1,
-      size: compact ? 25 : 34,
+      size: compact ? 30 : 42,
       rotation: (Math.random() - 0.5) * 0.35,
       spin: (Math.random() - 0.5) * 0.035
     });
@@ -385,6 +385,8 @@
         context.globalAlpha = fade;
         context.translate(belt.x, belt.y);
         context.rotate(belt.rotation);
+        context.shadowColor = '#f2c14e';
+        context.shadowBlur = compact ? 6 : 9;
         context.drawImage(beltImage, -belt.size / 2, -belt.size * 0.34, belt.size, belt.size * 0.68);
         context.restore();
       });
