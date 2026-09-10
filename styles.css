@@ -999,14 +999,6 @@ main {
   gap: 0.15rem;
 }
 
-.team-directory-monogram {
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, #e07a2d, #8f3d20);
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
 
 .team-directory-card small {
   color: var(--muted);
