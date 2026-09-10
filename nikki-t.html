@@ -116,13 +116,18 @@
   #hhm-page .hhm-mobile-break {display:inline}
   #hhm-page .hhm-missed-playoffs {display:inline-block;max-width:46px}
   #hhm-page .hhm-quarterfinal-exit {display:inline-block;max-width:62px}
-  #hhm-page .hhm-detail strong {font-size:12px}
-  #hhm-page .hhm-detail small {font-size:10px}
-  #hhm-page .hhm-players h3 {font-size:12px}
-  #hhm-page .hhm-player {padding:10px;gap:8px}
-  #hhm-page .hhm-player-rank {font-size:9px;padding-top:2px}
-  #hhm-page .hhm-player strong {font-size:9px!important;line-height:1.1}
-  #hhm-page .hhm-player-meta {font-size:8px!important;gap:2px 5px}
+  #hhm-page .hhm-detail {padding:10px;gap:10px}
+  #hhm-page .hhm-detail .hhm-kicker {font-size:9px}
+  #hhm-page .hhm-detail strong {font-size:10px}
+  #hhm-page .hhm-detail small {font-size:9px}
+  #hhm-page .hhm-players {padding-top:10px}
+  #hhm-page .hhm-players h3 {font-size:10px}
+  #hhm-page .hhm-players-list {gap:6px}
+  #hhm-page .hhm-player {padding:8px;gap:6px}
+  #hhm-page .hhm-player-rank {font-size:9px;padding-top:1px}
+  #hhm-page .hhm-player-body {display:block}
+  #hhm-page .hhm-player strong {font-size:10px!important;line-height:1.1}
+  #hhm-page .hhm-player-meta {display:flex;justify-content:flex-start;font-size:9px!important;gap:2px 6px;margin-top:2px;white-space:nowrap}
   #hhm-page .hhm-player-meta span:last-child {white-space:nowrap}
   #hhm-page tbody > tr[id^="hhm-detail-"] td {padding:0;border-bottom:1px solid var(--hhm-line)}
   #hhm-page tbody > tr[id^="hhm-detail-"] .hhm-detail {margin-top:0;border:0;border-left:3px solid var(--hhm-accent);border-radius:0}
@@ -224,7 +229,7 @@
     return `<section class="hhm-players" aria-labelledby="hhm-players-title-${year}">
       <div class="hhm-players-head"><h3 id="hhm-players-title-${year}">${year} key players</h3></div>
       <ol class="hhm-players-list" aria-label="Three key players by final position rank">
-        ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Pos. rank: ${rank}</span></div></div></li>`).join('')}
+        ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Pos. rank ${rank}</span></div></div></li>`).join('')}
       </ol>
       <p class="hhm-note">Final position rank is sourced from the season’s positional fantasy table.</p>
     </section>`;
