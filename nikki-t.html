@@ -185,15 +185,20 @@
       </div>
       <p class="hhm-note">Playoff finish reflects the final Yahoo bracket. Record and points are regular season.</p>
     </section>
-    <footer class="hhm-footer"><span>Profile: /teams/nikki-t</span><span>Through the 2025 season</span></footer>
   </div>
 </div>
 
     </main>
+    <footer class="site-footer">
+      <p>
+        &copy;2005 - <span id="current-year"></span> Shockafella LLC. <span class="footer-joint">AN <img src="./images/ows-nwo-logo.png" alt="OWS" class="footer-logo" /> JOINT.</span> Made with ❤️ in PDX. Hosted live and free in New Hampshire.
+      </p>
+    </footer>
     <script>
 
 (() => {
   const root=document.getElementById('hhm-page');
+  document.getElementById('current-year').textContent = new Date().getFullYear();
   document.querySelectorAll('.tabs .tab[data-nav-href]').forEach((button)=>button.addEventListener('click',()=>{window.location.href=button.dataset.navHref;}));
   // Permanent profile identity: nikki-t. Team names belong to individual seasons.
   // About Damn Time is the team name across the displayed seasons.
