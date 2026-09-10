@@ -236,7 +236,7 @@
       <ol class="hhm-players-list" aria-label="Three key players by final position rank">
         ${players.map(([name,position,rank],index)=>`<li class="hhm-player"><span class="hhm-player-rank" aria-label="Team player rank ${index+1}">${String(index+1).padStart(2,'0')}</span><div class="hhm-player-body"><strong>${name}</strong><div class="hhm-player-meta"><span>${position}</span><span>Pos. rank ${rank}</span></div></div></li>`).join('')}
       </ol>
-      <p class="hhm-note">Final position rank is sourced from the season’s positional fantasy table.</p>
+      <p class="hhm-note">Position rank from FantasyPros database.</p>
     </section>`;
   }
   function renderRows(){
