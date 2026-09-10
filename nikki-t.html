@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./styles.css?v=20260909a" />
     <style>
       main.profile-main { padding: 0; max-width: none; }
-      .tabs .tab { display: inline-block; text-decoration: none; font-family: Arial, sans-serif; font-size: 13.3333px; font-weight: 700; line-height: normal; }
       .tabs .tab[hidden] { display: none !important; }
       
 #hhm-page { --hhm-bg:light-dark(#f2f4f7,#0c0f14); --hhm-panel:light-dark(#ffffff,#161d27); --hhm-ink:light-dark(#18202c,#f4f7fb); --hhm-muted:light-dark(#576477,#9aa8bb); --hhm-line:light-dark(#d7dde5,#2a3443); --hhm-accent:#d61f2c; --hhm-gold:light-dark(#825f10,#f2c14e); color:var(--hhm-ink); background:var(--hhm-bg); font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-size:14px; line-height:1.5; overflow:hidden; }
@@ -141,13 +140,13 @@
       </div>
     </header>
     <nav class="tabs" aria-label="Views">
-      <a class="tab" href="./index.html#dashboard">Dashboard</a>
-      <a class="tab active" href="./index.html#teams" aria-current="page" hidden>Teams</a>
-      <a class="tab" href="./index.html#keepers">Keepers</a>
-      <a class="tab" href="./index.html#trophies">Trophies</a>
-      <a class="tab" href="./index.html#points">Points</a>
-      <a class="tab" href="./index.html#wins">Wins</a>
-      <a class="tab" href="./index.html#sportsbook">Sportsbook</a>
+      <button class="tab" type="button" data-nav-href="./index.html#dashboard">Dashboard</button>
+      <button class="tab" type="button" data-nav-href="./index.html#teams" hidden>Teams</button>
+      <button class="tab" type="button" data-nav-href="./index.html#keepers">Keepers</button>
+      <button class="tab" type="button" data-nav-href="./index.html#trophies">Trophies</button>
+      <button class="tab" type="button" data-nav-href="./index.html#points">Points</button>
+      <button class="tab" type="button" data-nav-href="./index.html#wins">Wins</button>
+      <button class="tab" type="button" data-nav-href="./index.html#sportsbook">Sportsbook</button>
     </nav>
     <aside class="site-announcement" aria-label="League announcement">
       <span class="site-announcement-label">SHOCCA Sportsbook</span>
@@ -186,6 +185,7 @@
 
 (() => {
   const root=document.getElementById('hhm-page');
+  document.querySelectorAll('.tabs .tab[data-nav-href]').forEach((button)=>button.addEventListener('click',()=>{window.location.href=button.dataset.navHref;}));
   // Permanent profile identity: nikki-t. Team names belong to individual seasons.
   // About Damn Time is the team name across the displayed seasons.
   // W–L: workbook's labeled year columns in All Time Wins - Regular Season.
